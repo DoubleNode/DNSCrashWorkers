@@ -51,7 +51,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
 
         try nextWorker!.doLoadImage(for: url, with: progress, and:block)
     }
-    
+
     override open func doUpdateObject(for id: String,
                                       with progress: PTCLProgressBlock?,
                                       and block: PTCLCacheBlockVoidAnyError?) throws {
