@@ -1,5 +1,5 @@
 //
-//  WKRBlankAnalyticsWorker.swift
+//  WKRCrashAnalyticsWorker.swift
 //  DoubleNode Core - DNSCrashWorkers
 //
 //  Created by Darren Ehlers on 2019/08/12.
