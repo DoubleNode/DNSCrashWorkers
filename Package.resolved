@@ -6,8 +6,13 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
+<<<<<<< HEAD
           "revision": "7af6d623e5884c09e11ac016add201cff144156d",
           "version": "1.0.7"
+=======
+          "revision": "ad4ff30f1e45c89d860747152e30a4e7100f1af4",
+          "version": "1.0.10"
+>>>>>>> Added WKRCrashNFCTagsWorker
         }
       },
       {
@@ -15,8 +20,13 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
+<<<<<<< HEAD
           "revision": "7026f486173f7919a6e46672123162ce1d1d1b29",
           "version": "1.0.6"
+=======
+          "revision": "ef31d641a4f483cb4b95a2c220b8eab62a746bf3",
+          "version": "1.0.8"
+>>>>>>> Added WKRCrashNFCTagsWorker
         }
       }
     ]
