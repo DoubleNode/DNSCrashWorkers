@@ -14,9 +14,10 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
 {
     // MARK: - Business Logic / Single Item CRUD
 
-    override open func doRangeBeacons(for keys: [UUID],
-                                      with progress: PTCLProgressBlock?,
-                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
+    override open func doRangeBeacons(named uuids: [UUID],
+                        for processKey: String,
+                        with progress: PTCLProgressBlock?,
+                        and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -24,10 +25,10 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                 method: "\(#function)")
         }
 
-        try nextWorker!.doRangeBeacons(for: keys, with: progress, and: block)
+        try nextWorker!.doRangeBeacons(named: uuids, for: processKey, with: progress, and: block)
     }
 
-    override open func doStopRangeBeacons() throws {
+    override open func doStopRangeBeacons(for processKey: String) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -35,6 +36,6 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                 method: "\(#function)")
         }
 
-        try nextWorker!.doStopRangeBeacons()
+        try nextWorker!.doStopRangeBeacons(for: processKey)
     }
 }
