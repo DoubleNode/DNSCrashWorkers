@@ -16,7 +16,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
 
     override open func doCheckAuthentication(using parameters: [String : Any],
                                              with progress: PTCLProgressBlock?,
-                                             and block: PTCLAuthenticationBlockVoidBoolAccessDataError) throws {
+                                             and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
             NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
                              reason: "Crash worker should not be actually used!",
@@ -33,7 +33,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 and password: String?,
                                 using parameters: [String: Any],
                                 with progress: PTCLProgressBlock?,
-                                and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataError) throws {
+                                and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
             NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
                              reason: "Crash worker should not be actually used!",
@@ -50,7 +50,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
 
     override open func doSignOut(using parameters: [String: Any],
                                  with progress: PTCLProgressBlock?,
-                                 and block: @escaping PTCLAuthenticationBlockVoidBoolError) throws {
+                                 and block: @escaping PTCLAuthenticationBlockVoidBoolDNSError) throws {
         guard nextWorker != nil else {
             NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
                              reason: "Crash worker should not be actually used!",
