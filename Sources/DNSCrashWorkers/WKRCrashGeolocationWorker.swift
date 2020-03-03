@@ -15,7 +15,7 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
     // MARK: - Business Logic / Single Item CRUD
 
     override open func doLocate(with progress: PTCLProgressBlock?,
-                                and block: PTCLGeolocationBlockVoidStringError?) throws {
+                                and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -28,7 +28,7 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
 
     override open func doTrackLocation(for processKey: String,
                                        with progress: PTCLProgressBlock?,
-                                       and block: PTCLGeolocationBlockVoidStringError?) throws {
+                                       and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",

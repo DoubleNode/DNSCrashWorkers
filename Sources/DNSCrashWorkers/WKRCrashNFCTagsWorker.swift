@@ -15,7 +15,7 @@ open class WKRCrashNFCTagsWorker: WKRBlankNFCTagsWorker
     // MARK: - Business Logic / Single Item CRUD
     override open func doScanTags(for key: String,
                                   with progress: PTCLProgressBlock?,
-                                  and block: PTCLNFCTagsBlockVoidArrayNFCNDEFMessageError?) throws {
+                                  and block: PTCLNFCTagsBlockVoidArrayNFCNDEFMessageDNSError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",

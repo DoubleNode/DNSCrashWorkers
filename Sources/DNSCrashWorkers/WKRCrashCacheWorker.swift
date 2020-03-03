@@ -15,7 +15,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
     // MARK: - Business Logic / Single Item CRUD
     override open func doDeleteObject(for id: String,
                                       with progress: PTCLProgressBlock?,
-                                      and block: PTCLCacheBlockVoidError?) throws {
+                                      and block: PTCLCacheBlockVoidDNSError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -28,7 +28,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
 
     override open func doReadObject(for id: String,
                                     with progress: PTCLProgressBlock?,
-                                    and block: PTCLCacheBlockVoidAnyError?) throws {
+                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -42,7 +42,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
     override open func doLoadImage(from url: NSURL,
                                    for id: String,
                                    with progress: PTCLProgressBlock?,
-                                   and block: PTCLCacheBlockVoidAnyError?) throws {
+                                   and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -56,7 +56,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
     override open func doUpdate(object: Any,
                                 for id: String,
                                 with progress: PTCLProgressBlock?,
-                                and block: PTCLCacheBlockVoidAnyError?) throws {
+                                and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
