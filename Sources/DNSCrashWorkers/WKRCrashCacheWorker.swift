@@ -15,7 +15,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
     // MARK: - Business Logic / Single Item CRUD
     override open func doDeleteObject(for id: String,
                                       with progress: PTCLProgressBlock?,
-                                      and block: PTCLCacheBlockVoidAnyError?) throws {
+                                      and block: PTCLCacheBlockVoidError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -39,7 +39,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
         try nextWorker!.doReadObject(for: id, with: progress, and:block)
     }
 
-    override open func doLoadImage(for url: NSURL,
+    override open func doLoadImage(from url: NSURL,
+                                   for id: String,
                                    with progress: PTCLProgressBlock?,
                                    and block: PTCLCacheBlockVoidAnyError?) throws {
         guard nextWorker != nil else {
@@ -49,12 +50,13 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                 method: "\(#function)")
         }
 
-        try nextWorker!.doLoadImage(for: url, with: progress, and:block)
+        try nextWorker!.doLoadImage(from: url, for: id, with: progress, and:block)
     }
 
-    override open func doUpdateObject(for id: String,
-                                      with progress: PTCLProgressBlock?,
-                                      and block: PTCLCacheBlockVoidAnyError?) throws {
+    override open func doUpdate(object: Any,
+                                for id: String,
+                                with progress: PTCLProgressBlock?,
+                                and block: PTCLCacheBlockVoidAnyError?) throws {
         guard nextWorker != nil else {
             throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
                 file: "\(#file)",
@@ -62,6 +64,6 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                 method: "\(#function)")
         }
 
-        try nextWorker!.doUpdateObject(for: id, with: progress, and:block)
+        try nextWorker!.doUpdate(object: object, for: id, with: progress, and:block)
     }
 }
