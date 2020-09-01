@@ -17,7 +17,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
 
     override open func doCheckAuthentication(using parameters: [String : Any],
                                              with progress: PTCLProgressBlock?,
-                                             and block: PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError) throws {
+                                             and block: @escaping PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
             NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
                              reason: "Crash worker should not be actually used!",
