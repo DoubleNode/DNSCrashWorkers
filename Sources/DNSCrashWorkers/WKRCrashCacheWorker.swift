@@ -39,6 +39,19 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
         try nextWorker!.doReadObject(for: id, with: progress, and:block)
     }
 
+    override open func doReadObject(for id: String,
+                                    with progress: PTCLProgressBlock?,
+                                    and block: PTCLCacheBlockVoidStringDNSError?) throws {
+        guard nextWorker != nil else {
+            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                                      file: "\(#file)",
+                                                      line: "\(#line)",
+                                                      method: "\(#function)")
+        }
+
+        try nextWorker!.doReadObject(for: id, with: progress, and:block)
+    }
+
     override open func doLoadImage(from url: NSURL,
                                    for id: String,
                                    with progress: PTCLProgressBlock?,
