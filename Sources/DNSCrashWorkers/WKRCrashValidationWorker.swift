@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSProtocols
 import Foundation
 
@@ -18,7 +19,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                            and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -30,7 +31,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                        and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -42,7 +43,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                         and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -54,7 +55,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                       and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -66,7 +67,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                         and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -78,7 +79,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                           and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -90,7 +91,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                             and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -102,7 +103,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                        and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -114,7 +115,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                         and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -126,7 +127,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                        and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -138,7 +139,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                                 and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }

@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSProtocols
 import Foundation
 
@@ -18,7 +19,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                       and block: PTCLCacheBlockVoidDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -30,7 +31,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -42,7 +43,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     and block: PTCLCacheBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -55,7 +56,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -68,7 +69,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                 and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }

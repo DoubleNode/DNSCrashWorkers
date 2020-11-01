@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSProtocols
 import Foundation
 
@@ -16,7 +17,7 @@ open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker
     override open func doReview() throws -> Bool {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }

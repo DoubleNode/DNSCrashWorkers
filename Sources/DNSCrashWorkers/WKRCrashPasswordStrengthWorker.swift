@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSProtocols
 import Foundation
 
@@ -17,7 +18,7 @@ open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker
     override open func doCheckPasswordStrength(for password: String) throws -> PTCLPasswordStrengthType {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }

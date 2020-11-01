@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSProtocols
 import Foundation
@@ -20,7 +21,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -32,7 +33,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -44,7 +45,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                                       and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -53,7 +54,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
     override open func doStopRangeBeacons(for processKey: String) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }

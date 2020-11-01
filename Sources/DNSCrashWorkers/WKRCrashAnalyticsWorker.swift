@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSProtocols
 import Foundation
 
@@ -18,7 +19,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
         guard nextWorker != nil else
         {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -31,7 +32,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
         guard nextWorker != nil else
         {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -44,7 +45,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
         guard nextWorker != nil else
         {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
@@ -57,7 +58,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
         guard nextWorker != nil else
         {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }

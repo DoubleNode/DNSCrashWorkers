@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSProtocols
 import Foundation
 
@@ -18,7 +19,7 @@ open class WKRCrashNFCTagsWorker: WKRBlankNFCTagsWorker
                                   and block: PTCLNFCTagsBlockVoidArrayNFCNDEFMessageDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: "\(#file)",
+                                               file: DNSCore.shortenErrorPath("\(#file)"),
                                                line: "\(#line)",
                                                method: "\(#function)")
         }
