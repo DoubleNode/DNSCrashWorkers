@@ -17,12 +17,11 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                       with progress: PTCLProgressBlock?,
                                       and block: PTCLCacheBlockVoidDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doDeleteObject(for: id, with: progress, and:block)
     }
 
@@ -30,12 +29,11 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     with progress: PTCLProgressBlock?,
                                     and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doReadObject(for: id, with: progress, and:block)
     }
 
@@ -43,12 +41,11 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     with progress: PTCLProgressBlock?,
                                     and block: PTCLCacheBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                                      file: "\(#file)",
-                                                      line: "\(#line)",
-                                                      method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doReadObject(for: id, with: progress, and:block)
     }
 
@@ -57,12 +54,11 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                    with progress: PTCLProgressBlock?,
                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doLoadImage(from: url, for: id, with: progress, and:block)
     }
 
@@ -71,12 +67,11 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                 with progress: PTCLProgressBlock?,
                                 and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doUpdate(object: object, for: id, with: progress, and:block)
     }
 }

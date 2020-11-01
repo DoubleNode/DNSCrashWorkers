@@ -17,12 +17,11 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
     override open func doLocate(with progress: PTCLProgressBlock?,
                                 and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doLocate(with: progress, and: block)
     }
 
@@ -30,12 +29,11 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
                                        with progress: PTCLProgressBlock?,
                                        and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doTrackLocation(for: processKey,
                                         with: progress,
                                         and: block)
@@ -43,12 +41,11 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
 
     override open func doStopTrackLocation(for processKey: String) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doStopTrackLocation(for: processKey)
     }
 }

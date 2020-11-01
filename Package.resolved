@@ -2,11 +2,20 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "097e1f03166d49b31f824507fb85ad843b14fc13",
+          "version": "5.3.0"
+        }
+      },
+      {
         "package": "AtomicSwift",
         "repositoryURL": "https://github.com/DoubleNodeOpen/AtomicSwift.git",
         "state": {
           "branch": null,
-          "revision": "33cc39dfb1b48898b32922b67d11a95e2bfa2e57",
+          "revision": "58fbeed795715d9c8dd7bb7ae1c36f37f2827089",
           "version": "1.2.2"
         }
       },
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "c37bdedc276bea933363715e769d7e28bb035ee3",
-          "version": "1.2.4"
+          "revision": "f954ac897fa460507c988768c06dc76c09a46bbb",
+          "version": "1.2.8"
         }
       },
       {
@@ -24,8 +33,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
           "branch": null,
-          "revision": "88667f69eddbb0c6e27ac025486b848f0c1d2f16",
-          "version": "1.2.37"
+          "revision": "1d62e86b5027eaf563d02096e9d1d7ad243fc46f",
+          "version": "1.2.57"
         }
       },
       {
@@ -42,8 +51,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSDataObjects.git",
         "state": {
           "branch": null,
-          "revision": "03d1f021ed6928be8224612e0e92d7e3b472510c",
-          "version": "1.2.3"
+          "revision": "c357585b7b2c27396b859f08e3809d7d42cb794f",
+          "version": "1.2.9"
         }
       },
       {
@@ -51,8 +60,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "1cfebd43cf09646d49efc7397a978806cdee5d89",
-          "version": "1.2.4"
+          "revision": "e84153c3956adec865e61206e1fdada3de6f4b9a",
+          "version": "1.2.11"
         }
       },
       {
@@ -69,8 +78,8 @@
         "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
         "state": {
           "branch": null,
-          "revision": "e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176",
-          "version": "1.9.1"
+          "revision": "c7b2fceb3fd0095acba4792c728f3f062baf8fb9",
+          "version": "1.9.2"
         }
       }
     ]

@@ -16,12 +16,11 @@ open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker
 
     override open func doCheckPasswordStrength(for password: String) throws -> PTCLPasswordStrengthType {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         return try nextWorker!.doCheckPasswordStrength(for: password)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSProtocols
 import Foundation
 
 open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
@@ -16,12 +17,11 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker?.doIdentify(userId: userId, traits: traits, options: options)
     }
 
@@ -30,12 +30,11 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker?.doTrack(event: event, properties: properties, options: options)
     }
 
@@ -44,12 +43,11 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker?.doScreen(screenTitle: screenTitle, properties: properties, options: options)
     }
 
@@ -58,12 +56,11 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker?.doGroup(groupId: groupId, traits: traits, options: options)
     }
 }

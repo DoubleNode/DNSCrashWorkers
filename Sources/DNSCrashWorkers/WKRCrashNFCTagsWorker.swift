@@ -17,12 +17,11 @@ open class WKRCrashNFCTagsWorker: WKRBlankNFCTagsWorker
                                   with progress: PTCLProgressBlock?,
                                   and block: PTCLNFCTagsBlockVoidArrayNFCNDEFMessageDNSError?) throws {
         guard nextWorker != nil else {
-            throw DNSBlankWorkersError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                file: "\(#file)",
-                line: "\(#line)",
-                method: "\(#function)")
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doScanTags(for: key, with: progress, and:block)
     }
 }

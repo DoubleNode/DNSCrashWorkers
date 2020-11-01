@@ -19,12 +19,11 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                              with progress: PTCLProgressBlock?,
                                              and block: @escaping PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doCheckAuthentication(using: parameters,
                                               with: progress,
                                               and: block)
@@ -35,12 +34,11 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 with progress: PTCLProgressBlock?,
                                 and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doSignIn(from: username,
                                  and: password,
                                  using: parameters,
@@ -51,12 +49,11 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                  with progress: PTCLProgressBlock?,
                                  and block: @escaping PTCLAuthenticationBlockVoidBoolDNSError) throws {
         guard nextWorker != nil else {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-
         try nextWorker!.doSignOut(using: parameters,
                                   with: progress,
                                   and: block)
@@ -67,12 +64,11 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 with progress: PTCLProgressBlock?,
                                 and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
-            NSException.init(name: NSExceptionName(rawValue: "\(type(of: self)) Exception"),
-                             reason: "Crash worker should not be actually used!",
-                             userInfo: nil).raise()
-            return
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: "\(#file)",
+                                               line: "\(#line)",
+                                               method: "\(#function)")
         }
-        
         try nextWorker!.doSignUp(from: user,
                                  and: password,
                                  using: parameters,
