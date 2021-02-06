@@ -1,7 +1,7 @@
-![DoubleNode Swift Framework](https://github.com/DoubleNode/DNSCore/raw/master/DNSFrameworkLogo.png)
+![DoubleNode Swift Framework](https://github.com/DoubleNode/DNSCrashWorkers/raw/master/DNSFrameworkLogo.png)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6f473642e4404426b55fda500602e662)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DoubleNode/DNSCore&amp;utm_campaign=Badge_Grade)
-[![codecov](https://codecov.io/gh/DoubleNode/DNSCore/branch/master/graph/badge.svg?token=NcFMBk0g9t)](https://codecov.io/gh/DoubleNode/DNSCore)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6f473642e4404426b55fda500602e662)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DoubleNode/DNSCrashWorkers&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/DoubleNode/DNSCrashWorkers/branch/master/graph/badge.svg?token=NcFMBk0g9t)](https://codecov.io/gh/DoubleNode/DNSCrashWorkers)
 
 # DNSCrashWorkers
 
@@ -34,13 +34,13 @@ Once you have your Swift package set up, adding Alamofire as a dependency is as 
 
 ```swift
 dependencies: [
-.package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.2.0")
+.package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.3.0")
 ]
 ```
 
 ## Dependencies
 
--   DNSBlankWorkers v1.2.0+
+-   DNSBlankWorkers v1.3.0+
 
 ## Credits
 
