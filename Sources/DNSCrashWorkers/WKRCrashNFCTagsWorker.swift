@@ -9,6 +9,7 @@
 import DNSBlankWorkers
 import DNSCore
 import DNSProtocols
+import DNSProtocolsAdvanced
 import Foundation
 
 open class WKRCrashNFCTagsWorker: WKRBlankNFCTagsWorker

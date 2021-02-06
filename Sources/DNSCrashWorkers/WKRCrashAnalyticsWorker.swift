@@ -21,7 +21,18 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
         }
         try nextWorker!.doAutoTrack(class: `class`, method: method, properties: properties, options: options)
     }
-    
+
+    // MARK: - Group -
+    override open func doGroup(groupId: String, traits: [String: Any], options: [String: Any]) throws
+    {
+        guard nextWorker != nil else
+        {
+            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
+                                               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+        }
+        try nextWorker?.doGroup(groupId: groupId, traits: traits, options: options)
+    }
+
     // MARK: - Identify -
     override open func doIdentify(userId: String, traits: [String: Any], options: [String: Any]) throws
     {
@@ -31,17 +42,6 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
                file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
         }
         try nextWorker?.doIdentify(userId: userId, traits: traits, options: options)
-    }
-
-    // MARK: - Track -
-    override open func doTrack(event: String, properties: [String: Any], options: [String: Any]) throws
-    {
-        guard nextWorker != nil else
-        {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
-        }
-        try nextWorker?.doTrack(event: event, properties: properties, options: options)
     }
 
     // MARK: - Screen -
@@ -55,14 +55,14 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
         try nextWorker?.doScreen(screenTitle: screenTitle, properties: properties, options: options)
     }
 
-    // MARK: - Group -
-    override open func doGroup(groupId: String, traits: [String: Any], options: [String: Any]) throws
+    // MARK: - Track -
+    override open func doTrack(event: String, properties: [String: Any], options: [String: Any]) throws
     {
         guard nextWorker != nil else
         {
             throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+                                               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
         }
-        try nextWorker?.doGroup(groupId: groupId, traits: traits, options: options)
+        try nextWorker?.doTrack(event: event, properties: properties, options: options)
     }
 }
