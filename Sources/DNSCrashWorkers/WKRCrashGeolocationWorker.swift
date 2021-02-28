@@ -18,10 +18,8 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
     override open func doLocate(with progress: PTCLProgressBlock?,
                                 and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLocate(with: progress, and: block)
     }
@@ -30,10 +28,8 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
                                        with progress: PTCLProgressBlock?,
                                        and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doTrackLocation(for: processKey,
                                         with: progress,
@@ -42,10 +38,8 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
 
     override open func doStopTrackLocation(for processKey: String) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doStopTrackLocation(for: processKey)
     }

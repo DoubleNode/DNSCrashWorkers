@@ -18,10 +18,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                       with progress: PTCLProgressBlock?,
                                       and block: PTCLCacheBlockVoidDNSError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doDeleteObject(for: id, with: progress, and:block)
     }
@@ -30,10 +28,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     with progress: PTCLProgressBlock?,
                                     and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doReadObject(for: id, with: progress, and:block)
     }
@@ -42,10 +38,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     with progress: PTCLProgressBlock?,
                                     and block: PTCLCacheBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doReadObject(for: id, with: progress, and:block)
     }
@@ -55,10 +49,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                    with progress: PTCLProgressBlock?,
                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLoadImage(from: url, for: id, with: progress, and:block)
     }
@@ -68,10 +60,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                 with progress: PTCLProgressBlock?,
                                 and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doUpdate(object: object, for: id, with: progress, and:block)
     }

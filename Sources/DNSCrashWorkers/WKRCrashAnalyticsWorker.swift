@@ -16,8 +16,8 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     // MARK: - Auto-Track -
     override open func doAutoTrack(class: String, method: String, properties: [String: Any], options: [String: Any]) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doAutoTrack(class: `class`, method: method, properties: properties, options: options)
     }
@@ -27,8 +27,8 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker?.doGroup(groupId: groupId, traits: traits, options: options)
     }
@@ -38,8 +38,8 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker?.doIdentify(userId: userId, traits: traits, options: options)
     }
@@ -49,8 +49,8 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker?.doScreen(screenTitle: screenTitle, properties: properties, options: options)
     }
@@ -60,8 +60,8 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     {
         guard nextWorker != nil else
         {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker?.doTrack(event: event, properties: properties, options: options)
     }

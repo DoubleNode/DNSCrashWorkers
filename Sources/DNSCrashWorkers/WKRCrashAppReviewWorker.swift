@@ -16,10 +16,8 @@ open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker
     // MARK: - Business Logic / Single Item CRUD
     override open func doReview() throws -> Bool {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-                                               file: DNSCore.shortenErrorPath("\(#file)"),
-                                               line: "\(#line)",
-                                               method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         return try nextWorker!.doReview()
     }

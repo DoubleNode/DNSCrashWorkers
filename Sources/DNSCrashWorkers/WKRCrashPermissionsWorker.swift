@@ -20,8 +20,8 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                                  with progress: PTCLProgressBlock?,
                                  and block: @escaping PTCLPermissionsBlockVoidPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doRequest(desire, permission, with: progress, and: block)
     }
@@ -30,8 +30,8 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                                  with progress: PTCLProgressBlock?,
                                  and block: @escaping PTCLPermissionsBlockVoidArrayPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doRequest(desire, permissions, with: progress, and: block)
     }
@@ -39,8 +39,8 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                                 with progress: PTCLProgressBlock?,
                                 and block: @escaping PTCLPermissionsBlockVoidArrayPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doStatus(of: permissions, with: progress, and: block)
     }
@@ -48,8 +48,8 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                               with progress: PTCLProgressBlock?,
                               and block: @escaping PTCLPermissionsBlockVoidPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError.notImplemented(domain: "com.doublenode.\(type(of: self))",
-               file: DNSCore.shortenErrorPath("\(#file)"), line: "\(#line)", method: "\(#function)")
+            throw PTCLBaseError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doWait(for: permission, with: progress, and: block)
     }
