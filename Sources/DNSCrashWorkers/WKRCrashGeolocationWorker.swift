@@ -19,27 +19,25 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
                                 and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLocate(with: progress, and: block)
     }
-
     override open func doTrackLocation(for processKey: String,
                                        with progress: PTCLProgressBlock?,
                                        and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doTrackLocation(for: processKey,
                                         with: progress,
                                         and: block)
     }
-
     override open func doStopTrackLocation(for processKey: String) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doStopTrackLocation(for: processKey)
     }

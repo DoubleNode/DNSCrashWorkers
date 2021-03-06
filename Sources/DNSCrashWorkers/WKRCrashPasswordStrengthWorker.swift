@@ -18,7 +18,7 @@ open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker
     override open func doCheckPasswordStrength(for password: String) throws -> PTCLPasswordStrengthType {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         return try nextWorker!.doCheckPasswordStrength(for: password)
     }

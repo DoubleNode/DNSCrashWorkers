@@ -19,49 +19,45 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                       and block: PTCLCacheBlockVoidDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doDeleteObject(for: id, with: progress, and:block)
     }
-
-    override open func doReadObject(for id: String,
-                                    with progress: PTCLProgressBlock?,
-                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doReadObject(for: id, with: progress, and:block)
-    }
-
-    override open func doReadObject(for id: String,
-                                    with progress: PTCLProgressBlock?,
-                                    and block: PTCLCacheBlockVoidStringDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doReadObject(for: id, with: progress, and:block)
-    }
-
     override open func doLoadImage(from url: NSURL,
                                    for id: String,
                                    with progress: PTCLProgressBlock?,
                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLoadImage(from: url, for: id, with: progress, and:block)
     }
-
+    override open func doReadObject(for id: String,
+                                    with progress: PTCLProgressBlock?,
+                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
+        guard nextWorker != nil else {
+            throw PTCLBaseError
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        }
+        try nextWorker!.doReadObject(for: id, with: progress, and:block)
+    }
+    override open func doReadObject(for id: String,
+                                    with progress: PTCLProgressBlock?,
+                                    and block: PTCLCacheBlockVoidStringDNSError?) throws {
+        guard nextWorker != nil else {
+            throw PTCLBaseError
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        }
+        try nextWorker!.doReadObject(for: id, with: progress, and:block)
+    }
     override open func doUpdate(object: Any,
                                 for id: String,
                                 with progress: PTCLProgressBlock?,
                                 and block: PTCLCacheBlockVoidAnyDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doUpdate(object: object, for: id, with: progress, and:block)
     }

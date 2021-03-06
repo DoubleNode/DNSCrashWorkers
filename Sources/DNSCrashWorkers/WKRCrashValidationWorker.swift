@@ -19,7 +19,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                            and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateBirthdate(for: birthdate, with: progress, and: block)
     }
@@ -29,7 +29,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                        and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateEmail(for: email, with: progress, and: block)
     }
@@ -39,7 +39,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                         and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateHandle(for: handle, with: progress, and: block)
     }
@@ -49,7 +49,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                       and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateName(for: name, with: progress, and: block)
     }
@@ -59,7 +59,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                         and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateNumber(for: number, with: progress, and: block)
     }
@@ -69,7 +69,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                           and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidatePassword(for: password, with: progress, and: block)
     }
@@ -79,7 +79,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                             and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidatePercentage(for: percentage, with: progress, and: block)
     }
@@ -89,7 +89,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                        and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidatePhone(for: phone, with: progress, and: block)
     }
@@ -99,7 +99,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                         and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateSearch(for: search, with: progress, and: block)
     }
@@ -109,7 +109,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                        and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateState(for: state, with: progress, and: block)
     }
@@ -119,7 +119,7 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
                                                 and block: PTCLValidationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doValidateUnsignedNumber(for: number, with: progress, and: block)
     }

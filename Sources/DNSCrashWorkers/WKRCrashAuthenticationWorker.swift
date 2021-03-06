@@ -21,7 +21,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                              and block: @escaping PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doCheckAuthentication(using: parameters,
                                               with: progress,
@@ -34,7 +34,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doSignIn(from: username,
                                  and: password,
@@ -47,7 +47,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                  and block: @escaping PTCLAuthenticationBlockVoidBoolDNSError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doSignOut(using: parameters,
                                   with: progress,
@@ -60,7 +60,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doSignUp(from: user,
                                  and: password,

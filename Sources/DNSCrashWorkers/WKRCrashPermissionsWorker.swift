@@ -21,7 +21,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                                  and block: @escaping PTCLPermissionsBlockVoidPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doRequest(desire, permission, with: progress, and: block)
     }
@@ -31,7 +31,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                                  and block: @escaping PTCLPermissionsBlockVoidArrayPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doRequest(desire, permissions, with: progress, and: block)
     }
@@ -40,7 +40,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                                 and block: @escaping PTCLPermissionsBlockVoidArrayPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doStatus(of: permissions, with: progress, and: block)
     }
@@ -49,7 +49,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
                               and block: @escaping PTCLPermissionsBlockVoidPTCLPermissionActionError) throws {
         guard nextWorker != nil else {
             throw PTCLBaseError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doWait(for: permission, with: progress, and: block)
     }
