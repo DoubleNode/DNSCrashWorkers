@@ -7,58 +7,64 @@
 //
 
 import DNSBlankWorkers
+import Combine
 import DNSCore
 import DNSProtocols
-import Foundation
+import UIKit
 
 open class WKRCrashCacheWorker: WKRBlankCacheWorker
 {
     // MARK: - Business Logic / Single Item CRUD
     override open func doDeleteObject(for id: String,
-                                      with progress: PTCLProgressBlock?,
-                                      and block: PTCLCacheBlockVoidDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBaseError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                                      with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+        guard let nextWorker = self.nextWorker else {
+            return Future<Bool, Error> { promise in
+                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                promise(.failure(error))
+            }.eraseToAnyPublisher()
         }
-        try nextWorker!.doDeleteObject(for: id, with: progress, and:block)
+        return nextWorker.doDeleteObject(for: id, with: progress)
     }
     override open func doLoadImage(from url: NSURL,
                                    for id: String,
-                                   with progress: PTCLProgressBlock?,
-                                   and block: PTCLCacheBlockVoidAnyDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBaseError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                                   with progress: PTCLProgressBlock?) -> AnyPublisher<UIImage, Error> {
+        guard let nextWorker = self.nextWorker else {
+            return Future<UIImage, Error> { promise in
+                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                promise(.failure(error))
+            }.eraseToAnyPublisher()
         }
-        try nextWorker!.doLoadImage(from: url, for: id, with: progress, and:block)
+        return nextWorker.doLoadImage(from: url, for: id, with: progress)
     }
     override open func doReadObject(for id: String,
-                                    with progress: PTCLProgressBlock?,
-                                    and block: PTCLCacheBlockVoidAnyDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBaseError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                                    with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
+        guard let nextWorker = self.nextWorker else {
+            return Future<Any, Error> { promise in
+                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                promise(.failure(error))
+            }.eraseToAnyPublisher()
         }
-        try nextWorker!.doReadObject(for: id, with: progress, and:block)
+        return nextWorker.doReadObject(for: id, with: progress)
     }
     override open func doReadObject(for id: String,
-                                    with progress: PTCLProgressBlock?,
-                                    and block: PTCLCacheBlockVoidStringDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBaseError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                                    with progress: PTCLProgressBlock?) -> AnyPublisher<String, Error> {
+        guard let nextWorker = self.nextWorker else {
+            return Future<String, Error> { promise in
+                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                promise(.failure(error))
+            }.eraseToAnyPublisher()
         }
-        try nextWorker!.doReadObject(for: id, with: progress, and:block)
+        return nextWorker.doReadObject(for: id, with: progress)
     }
     override open func doUpdate(object: Any,
                                 for id: String,
-                                with progress: PTCLProgressBlock?,
-                                and block: PTCLCacheBlockVoidAnyDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBaseError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                                with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
+        guard let nextWorker = self.nextWorker else {
+            return Future<Any, Error> { promise in
+                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                promise(.failure(error))
+            }.eraseToAnyPublisher()
         }
-        try nextWorker!.doUpdate(object: object, for: id, with: progress, and:block)
+        return nextWorker.doUpdate(object: object, for: id, with: progress)
     }
 }
