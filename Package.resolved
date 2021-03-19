@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "acfbeea1e0a7e8d4cb16e288415053d2c869cac5",
-          "version": "1.4.3"
+          "revision": "0c0c7185266fb36ebe8746465e63aee84989d7b8",
+          "version": "1.4.4"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
           "branch": null,
-          "revision": "435b14a10b05bde1aca508648e677dd979894574",
-          "version": "1.4.1"
+          "revision": "20abbcb4ae2f5194b9aa4f16cd67dd49dac41542",
+          "version": "1.4.9"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCoreThreading.git",
         "state": {
           "branch": null,
-          "revision": "a41bf74644708924903ea0b6b9ec56903b7e28f2",
-          "version": "1.4.0"
+          "revision": "724161e2eb715e9131b693558f096c546efe2261",
+          "version": "1.4.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSDataObjects.git",
         "state": {
           "branch": null,
-          "revision": "0b21d4532a42277dd4afd1182df4f277e2305489",
-          "version": "1.4.3"
+          "revision": "1f4a7a52626fec54343693d973d504db5cc1aeef",
+          "version": "1.4.4"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "dbd65e55c28d5143f5606903aac0135b4a2c8dad",
-          "version": "1.4.7"
+          "revision": "76b54903f06b543c6d726247579a875a40b7c725",
+          "version": "1.4.8"
         }
       },
       {
