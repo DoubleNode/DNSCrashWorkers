@@ -56,7 +56,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     }
 
     // MARK: - Track -
-    override open func doTrack(event: String, properties: [String: Any], options: [String: Any]) throws
+    override open func doTrack(event: PTCLAnalyticsEvents, properties: [String: Any], options: [String: Any]) throws
     {
         guard nextWorker != nil else
         {
