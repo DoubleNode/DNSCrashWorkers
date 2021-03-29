@@ -16,7 +16,7 @@ open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker
     // MARK: - Business Logic / Single Item CRUD
     override open func doReview() throws -> Bool {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLAppReviewError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         return try nextWorker!.doReview()

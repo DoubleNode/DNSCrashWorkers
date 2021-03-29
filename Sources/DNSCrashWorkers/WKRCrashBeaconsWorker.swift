@@ -20,7 +20,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                                      with progress: PTCLProgressBlock?,
                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLBeaconsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLoadBeacons(in: center, with: progress, and: block)
@@ -30,7 +30,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                                      with progress: PTCLProgressBlock?,
                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLBeaconsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLoadBeacons(in: center, for: activity, with: progress, and: block)
@@ -40,14 +40,14 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
                                       with progress: PTCLProgressBlock?,
                                       and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLBeaconsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doRangeBeacons(named: uuids, for: processKey, with: progress, and: block)
     }
     override open func doStopRangeBeacons(for processKey: String) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLBeaconsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doStopRangeBeacons(for: processKey)

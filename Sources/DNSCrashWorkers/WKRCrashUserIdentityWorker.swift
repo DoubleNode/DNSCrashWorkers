@@ -19,7 +19,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
     override open func doClearIdentity(with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Bool, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }
@@ -29,7 +29,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
                               with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Bool, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }
@@ -39,7 +39,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
                                with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Bool, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }
@@ -49,7 +49,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
                                      with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Bool, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }

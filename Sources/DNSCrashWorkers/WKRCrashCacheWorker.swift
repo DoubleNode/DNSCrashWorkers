@@ -19,7 +19,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                       with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Bool, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }
@@ -30,7 +30,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                    with progress: PTCLProgressBlock?) -> AnyPublisher<UIImage, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<UIImage, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }
@@ -40,7 +40,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Any, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }
@@ -50,7 +50,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                     with progress: PTCLProgressBlock?) -> AnyPublisher<String, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<String, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }
@@ -61,7 +61,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                 with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Any, Error> { promise in
-                let error = PTCLBaseError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
         }

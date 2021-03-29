@@ -20,7 +20,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                              with progress: PTCLProgressBlock?,
                                              and block: @escaping PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doCheckAuthentication(using: parameters,
@@ -33,7 +33,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 with progress: PTCLProgressBlock?,
                                 and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doSignIn(from: username,
@@ -46,7 +46,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                  with progress: PTCLProgressBlock?,
                                  and block: @escaping PTCLAuthenticationBlockVoidBoolDNSError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doSignOut(using: parameters,
@@ -59,7 +59,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 with progress: PTCLProgressBlock?,
                                 and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doSignUp(from: user,

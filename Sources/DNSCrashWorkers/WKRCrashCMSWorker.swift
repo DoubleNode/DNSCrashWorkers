@@ -19,7 +19,7 @@ open class WKRCrashCMSWorker: WKRBlankCMSWorker
                               with progress: PTCLProgressBlock?,
                               and block: @escaping PTCLCMSBlockVoidArrayDNSError) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLCMSError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLoad(for: group, with: progress, and: block)

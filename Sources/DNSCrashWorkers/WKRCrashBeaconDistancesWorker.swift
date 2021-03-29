@@ -18,7 +18,7 @@ open class WKRCrashBeaconDistancesWorker: WKRBlankBeaconDistancesWorker
     override open func doLoadBeaconDistances(with progress: PTCLProgressBlock?,
                                              and block: PTCLBeaconDistancesBlockVoidArrayDAOBeaconDistanceError?) throws {
         guard nextWorker != nil else {
-            throw PTCLBaseError
+            throw PTCLBeaconDistancesError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
         }
         try nextWorker!.doLoadBeaconDistances(with: progress, and: block)

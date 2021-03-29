@@ -19,7 +19,7 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker
     override open func doGetUpdatedCount(with progress: PTCLProgressBlock?) -> AnyPublisher<Int, Error> {
         guard let nextWorker = self.nextWorker else {
             return Future<Int, Error> { promise in
-                let error = PTCLBaseError
+                let error = PTCLSupportError
                     .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
                 promise(.failure(error))
             }.eraseToAnyPublisher()
