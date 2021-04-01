@@ -26,4 +26,32 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker
         }
         return nextWorker.doGetUpdatedCount(with: progress)
     }
+    override open func doPrepare(attachment image: UIImage,
+                        with progress: PTCLProgressBlock?) -> AnyPublisher<PTCLSupportAttachment, Error> {
+        guard let nextWorker = self.nextWorker else {
+            return Future<PTCLSupportAttachment, Error> {
+                let error = PTCLSupportError
+                    .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                $0(.failure(error))
+            }.eraseToAnyPublisher()
+        }
+        return nextWorker.doPrepare(attachment: image, with: progress)
+    }
+    override open func doSendRequest(subject: String,
+                            body: String,
+                            tags: [String],
+                            attachments: [PTCLSupportAttachment],
+                            properties: [String: String],
+                            with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+        guard let nextWorker = self.nextWorker else {
+            return Future<Bool, Error> {
+                let error = PTCLSupportError
+                    .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                $0(.failure(error))
+            }.eraseToAnyPublisher()
+        }
+        return nextWorker.doSendRequest(subject: subject, body: body, tags: tags,
+                                        attachments: attachments, properties: properties,
+                                        with: progress)
+    }
 }
