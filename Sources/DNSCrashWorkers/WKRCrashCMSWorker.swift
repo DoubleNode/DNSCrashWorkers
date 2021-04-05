@@ -17,7 +17,7 @@ open class WKRCrashCMSWorker: WKRBlankCMSWorker
 
     override open func doLoad(for group: String,
                               with progress: PTCLProgressBlock?,
-                              and block: @escaping PTCLCMSBlockVoidArrayDNSError) throws {
+                              and block: PTCLCMSBlockVoidArrayDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLCMSError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))

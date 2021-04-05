@@ -18,7 +18,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     override open func doRequest(_ desire: PTCLPermissions.Desire,
                                  _ permission: PTCLPermissions.Permission,
                                  with progress: PTCLProgressBlock?,
-                                 and block: @escaping PTCLPermissionsBlockVoidPTCLPermissionActionError) throws {
+                                 and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?) throws {
         guard nextWorker != nil else {
             throw PTCLPermissionsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
@@ -28,7 +28,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     override open func doRequest(_ desire: PTCLPermissions.Desire,
                                  _ permissions: [PTCLPermissions.Permission],
                                  with progress: PTCLProgressBlock?,
-                                 and block: @escaping PTCLPermissionsBlockVoidArrayPTCLPermissionActionError) throws {
+                                 and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?) throws {
         guard nextWorker != nil else {
             throw PTCLPermissionsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
@@ -37,7 +37,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     }
     override open func doStatus(of permissions: [PTCLPermissions.Permission],
                                 with progress: PTCLProgressBlock?,
-                                and block: @escaping PTCLPermissionsBlockVoidArrayPTCLPermissionActionError) throws {
+                                and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?) throws {
         guard nextWorker != nil else {
             throw PTCLPermissionsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
@@ -46,7 +46,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     }
     override open func doWait(for permission: PTCLPermissions.Permission,
                               with progress: PTCLProgressBlock?,
-                              and block: @escaping PTCLPermissionsBlockVoidPTCLPermissionActionError) throws {
+                              and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?) throws {
         guard nextWorker != nil else {
             throw PTCLPermissionsError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))

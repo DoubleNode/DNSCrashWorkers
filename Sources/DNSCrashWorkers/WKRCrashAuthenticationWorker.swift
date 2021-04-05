@@ -18,7 +18,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
 
     override open func doCheckAuthentication(using parameters: [String : Any],
                                              with progress: PTCLProgressBlock?,
-                                             and block: @escaping PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError) throws {
+                                             and block: PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
@@ -31,7 +31,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 and password: String?,
                                 using parameters: [String: Any],
                                 with progress: PTCLProgressBlock?,
-                                and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
+                                and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
@@ -44,7 +44,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
     }
     override open func doSignOut(using parameters: [String: Any],
                                  with progress: PTCLProgressBlock?,
-                                 and block: @escaping PTCLAuthenticationBlockVoidBoolDNSError) throws {
+                                 and block: PTCLAuthenticationBlockVoidBoolDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
@@ -57,7 +57,7 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
                                 and password: String?,
                                 using parameters: [String: Any],
                                 with progress: PTCLProgressBlock?,
-                                and block: @escaping PTCLAuthenticationBlockVoidBoolAccessDataDNSError) throws {
+                                and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?) throws {
         guard nextWorker != nil else {
             throw PTCLAuthenticationError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
