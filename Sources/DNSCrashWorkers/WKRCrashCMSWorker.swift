@@ -13,15 +13,17 @@ import UIKit
 
 open class WKRCrashCMSWorker: WKRBlankCMSWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLCMS_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doLoad(for group: String,
                               with progress: PTCLProgressBlock?,
                               and block: PTCLCMSBlockVoidArrayDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLCMSError
+        throw PTCLCMSError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doLoad(for: group, with: progress, and: block)
     }
 }

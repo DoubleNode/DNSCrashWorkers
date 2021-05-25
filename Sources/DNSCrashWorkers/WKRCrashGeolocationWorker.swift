@@ -13,32 +13,26 @@ import Foundation
 
 open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLGeolocation_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doLocate(with progress: PTCLProgressBlock?,
                                 and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLGeolocationError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doLocate(with: progress, and: block)
+        throw PTCLGeolocationError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doTrackLocation(for processKey: String,
                                        with progress: PTCLProgressBlock?,
                                        and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLGeolocationError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doTrackLocation(for: processKey,
-                                        with: progress,
-                                        and: block)
+        throw PTCLGeolocationError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doStopTrackLocation(for processKey: String) throws {
-        guard nextWorker != nil else {
-            throw PTCLGeolocationError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doStopTrackLocation(for: processKey)
+        throw PTCLGeolocationError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
 }

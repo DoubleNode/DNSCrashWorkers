@@ -14,58 +14,39 @@ import Foundation
 
 open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLAuthentication_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doCheckAuthentication(using parameters: [String : Any],
                                              with progress: PTCLProgressBlock?,
                                              and block: PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLAuthenticationError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doCheckAuthentication(using: parameters,
-                                              with: progress,
-                                              and: block)
+        throw PTCLAuthenticationError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doSignIn(from username: String?,
                                 and password: String?,
                                 using parameters: [String: Any],
                                 with progress: PTCLProgressBlock?,
                                 and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLAuthenticationError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doSignIn(from: username,
-                                 and: password,
-                                 using: parameters,
-                                 with: progress,
-                                 and: block)
+        throw PTCLAuthenticationError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doSignOut(using parameters: [String: Any],
                                  with progress: PTCLProgressBlock?,
                                  and block: PTCLAuthenticationBlockVoidBoolDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLAuthenticationError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doSignOut(using: parameters,
-                                  with: progress,
-                                  and: block)
+        throw PTCLAuthenticationError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doSignUp(from user: DAOUser?,
                                 and password: String?,
                                 using parameters: [String: Any],
                                 with progress: PTCLProgressBlock?,
                                 and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLAuthenticationError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doSignUp(from: user,
-                                 and: password,
-                                 using: parameters,
-                                 with: progress,
-                                 and: block)
+        throw PTCLAuthenticationError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
 }

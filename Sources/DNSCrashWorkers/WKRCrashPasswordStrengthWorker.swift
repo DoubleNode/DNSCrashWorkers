@@ -13,13 +13,15 @@ import Foundation
 
 open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLPasswordStrength_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doCheckPasswordStrength(for password: String) throws -> PTCLPasswordStrengthType {
-        guard nextWorker != nil else {
-            throw PTCLPasswordStrengthError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        return try nextWorker!.doCheckPasswordStrength(for: password)
+        throw PTCLPasswordStrengthError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
 }

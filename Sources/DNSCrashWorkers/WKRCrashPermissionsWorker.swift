@@ -13,44 +13,37 @@ import UIKit
 
 open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLPermissions_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doRequest(_ desire: PTCLPermissions.Desire,
                                  _ permission: PTCLPermissions.Permission,
                                  with progress: PTCLProgressBlock?,
                                  and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLPermissionsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doRequest(desire, permission, with: progress, and: block)
+        throw PTCLPermissionsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doRequest(_ desire: PTCLPermissions.Desire,
                                  _ permissions: [PTCLPermissions.Permission],
                                  with progress: PTCLProgressBlock?,
                                  and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLPermissionsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doRequest(desire, permissions, with: progress, and: block)
+        throw PTCLPermissionsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doStatus(of permissions: [PTCLPermissions.Permission],
                                 with progress: PTCLProgressBlock?,
                                 and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLPermissionsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doStatus(of: permissions, with: progress, and: block)
+        throw PTCLPermissionsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doWait(for permission: PTCLPermissions.Permission,
                               with progress: PTCLProgressBlock?,
                               and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLPermissionsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doWait(for: permission, with: progress, and: block)
+        throw PTCLPermissionsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
 }

@@ -14,57 +14,48 @@ import UIKit
 
 open class WKRCrashCacheWorker: WKRBlankCacheWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLCache_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
     override open func doDeleteObject(for id: String,
                                       with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<Bool, Error> { promise in
-                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                promise(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doDeleteObject(for: id, with: progress)
+        return Future<Bool, Error> { promise in
+            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
     }
     override open func doLoadImage(from url: NSURL,
                                    for id: String,
                                    with progress: PTCLProgressBlock?) -> AnyPublisher<UIImage, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<UIImage, Error> { promise in
-                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                promise(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doLoadImage(from: url, for: id, with: progress)
+        return Future<UIImage, Error> { promise in
+            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
     }
     override open func doReadObject(for id: String,
                                     with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<Any, Error> { promise in
-                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                promise(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doReadObject(for: id, with: progress)
+        return Future<Any, Error> { promise in
+            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
     }
     override open func doReadObject(for id: String,
                                     with progress: PTCLProgressBlock?) -> AnyPublisher<String, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<String, Error> { promise in
-                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                promise(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doReadObject(for: id, with: progress)
+        return Future<String, Error> { promise in
+            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
     }
     override open func doUpdate(object: Any,
                                 for id: String,
                                 with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<Any, Error> { promise in
-                let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                promise(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doUpdate(object: object, for: id, with: progress)
+        return Future<Any, Error> { promise in
+            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
     }
 }

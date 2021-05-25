@@ -15,20 +15,19 @@ import UIKit
 
 open class WKRCrashPassportsWorker: WKRBlankPassportsWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLPassports_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doLoadPassport(of passportType: PTCLPassportsProtocolPassportTypes,
                                       for account: DAOAccount,
                                       with progress: PTCLProgressBlock?) -> AnyPublisher<Data, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<Data, Error> { promise in
-                let error = PTCLPassportsError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                promise(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doLoadPassport(of: passportType,
-                                         for: account,
-                                         with: progress)
+        return Future<Data, Error> { promise in
+            let error = PTCLPassportsError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
     }
-
 }

@@ -14,28 +14,27 @@ import UIKit
 
 open class WKRCrashSupportWorker: WKRBlankSupportWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLSupport_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doGetUpdatedCount(with progress: PTCLProgressBlock?) -> AnyPublisher<Int, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<Int, Error> { promise in
-                let error = PTCLSupportError
-                    .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                promise(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doGetUpdatedCount(with: progress)
+        return Future<Int, Error> { promise in
+            let error = PTCLSupportError
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
     }
     override open func doPrepare(attachment image: UIImage,
                         with progress: PTCLProgressBlock?) -> AnyPublisher<PTCLSupportAttachment, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<PTCLSupportAttachment, Error> {
-                let error = PTCLSupportError
-                    .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                $0(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doPrepare(attachment: image, with: progress)
+        return Future<PTCLSupportAttachment, Error> {
+            let error = PTCLSupportError
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            $0(.failure(error))
+        }.eraseToAnyPublisher()
     }
     override open func doSendRequest(subject: String,
                             body: String,
@@ -43,15 +42,10 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker
                             attachments: [PTCLSupportAttachment],
                             properties: [String: String],
                             with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
-        guard let nextWorker = self.nextWorker else {
-            return Future<Bool, Error> {
-                let error = PTCLSupportError
-                    .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-                $0(.failure(error))
-            }.eraseToAnyPublisher()
-        }
-        return nextWorker.doSendRequest(subject: subject, body: body, tags: tags,
-                                        attachments: attachments, properties: properties,
-                                        with: progress)
+        return Future<Bool, Error> {
+            let error = PTCLSupportError
+                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            $0(.failure(error))
+        }.eraseToAnyPublisher()
     }
 }

@@ -14,42 +14,35 @@ import Foundation
 
 open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLBeacons_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
-
     override open func doLoadBeacons(in center: DAOCenter,
                                      with progress: PTCLProgressBlock?,
                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBeaconsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doLoadBeacons(in: center, with: progress, and: block)
+        throw PTCLBeaconsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doLoadBeacons(in center: DAOCenter,
                                      for activity: DAOActivity,
                                      with progress: PTCLProgressBlock?,
                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBeaconsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doLoadBeacons(in: center, for: activity, with: progress, and: block)
+        throw PTCLBeaconsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doRangeBeacons(named uuids: [UUID],
                                       for processKey: String,
                                       with progress: PTCLProgressBlock?,
                                       and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
-        guard nextWorker != nil else {
-            throw PTCLBeaconsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doRangeBeacons(named: uuids, for: processKey, with: progress, and: block)
+        throw PTCLBeaconsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
     override open func doStopRangeBeacons(for processKey: String) throws {
-        guard nextWorker != nil else {
-            throw PTCLBeaconsError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        try nextWorker!.doStopRangeBeacons(for: processKey)
+        throw PTCLBeaconsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
 }

@@ -13,12 +13,15 @@ import Foundation
 
 open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker
 {
+    @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
+    public required init(call callNextWhen: PTCLCallNextWhen,
+                         nextWorker: PTCLAppReview_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    
+    public required init() { super.init() }
+    
     // MARK: - Business Logic / Single Item CRUD
     override open func doReview() throws -> Bool {
-        guard nextWorker != nil else {
-            throw PTCLAppReviewError
-                .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-        }
-        return try nextWorker!.doReview()
+        throw PTCLAppReviewError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
 }
