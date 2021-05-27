@@ -19,19 +19,22 @@ open class WKRCrashGeolocationWorker: WKRBlankGeolocationWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doLocate(with progress: PTCLProgressBlock?,
-                                and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
+    // MARK: - Internal Work Methods
+    override open func intDoLocate(with progress: PTCLProgressBlock?,
+                                   and block: PTCLGeolocationBlockVoidStringDNSError?,
+                                   then resultBlock: PTCLResultBlock?) throws {
         throw PTCLGeolocationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doTrackLocation(for processKey: String,
-                                       with progress: PTCLProgressBlock?,
-                                       and block: PTCLGeolocationBlockVoidStringDNSError?) throws {
+    override open func intDoTrackLocation(for processKey: String,
+                                          with progress: PTCLProgressBlock?,
+                                          and block: PTCLGeolocationBlockVoidStringDNSError?,
+                                          then resultBlock: PTCLResultBlock?) throws {
         throw PTCLGeolocationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doStopTrackLocation(for processKey: String) throws {
+    override open func intDoStopTrackLocation(for processKey: String,
+                                              then resultBlock: PTCLResultBlock?) throws {
         throw PTCLGeolocationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

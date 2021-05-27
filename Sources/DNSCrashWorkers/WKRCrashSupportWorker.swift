@@ -20,28 +20,31 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doGetUpdatedCount(with progress: PTCLProgressBlock?) -> AnyPublisher<Int, Error> {
+    // MARK: - Internal Work Methods
+    override open func intDoGetUpdatedCount(with progress: PTCLProgressBlock?,
+                                            then resultBlock: PTCLResultBlock?) -> AnyPublisher<Int, Error> {
         return Future<Int, Error> { promise in
             let error = PTCLSupportError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doPrepare(attachment image: UIImage,
-                        with progress: PTCLProgressBlock?) -> AnyPublisher<PTCLSupportAttachment, Error> {
+    override open func intDoPrepare(attachment image: UIImage,
+                                    with progress: PTCLProgressBlock?,
+                                    then resultBlock: PTCLResultBlock?) -> AnyPublisher<PTCLSupportAttachment, Error> {
         return Future<PTCLSupportAttachment, Error> {
             let error = PTCLSupportError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doSendRequest(subject: String,
-                            body: String,
-                            tags: [String],
-                            attachments: [PTCLSupportAttachment],
-                            properties: [String: String],
-                            with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+    override open func intDoSendRequest(subject: String,
+                                        body: String,
+                                        tags: [String],
+                                        attachments: [PTCLSupportAttachment],
+                                        properties: [String: String],
+                                        with progress: PTCLProgressBlock?,
+                                        then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> {
             let error = PTCLSupportError
                 .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))

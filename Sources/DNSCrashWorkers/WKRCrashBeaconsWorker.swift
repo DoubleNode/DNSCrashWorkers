@@ -20,28 +20,32 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doLoadBeacons(in center: DAOCenter,
-                                     with progress: PTCLProgressBlock?,
-                                     and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
+    // MARK: - Internal Work Methods
+    override open func intDoLoadBeacons(in center: DAOCenter,
+                                        with progress: PTCLProgressBlock?,
+                                        and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?,
+                                        then resultBlock: PTCLResultBlock?) throws {
         throw PTCLBeaconsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doLoadBeacons(in center: DAOCenter,
-                                     for activity: DAOActivity,
-                                     with progress: PTCLProgressBlock?,
-                                     and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
+    override open func intDoLoadBeacons(in center: DAOCenter,
+                                        for activity: DAOActivity,
+                                        with progress: PTCLProgressBlock?,
+                                        and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?,
+                                        then resultBlock: PTCLResultBlock?) throws {
         throw PTCLBeaconsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doRangeBeacons(named uuids: [UUID],
-                                      for processKey: String,
-                                      with progress: PTCLProgressBlock?,
-                                      and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?) throws {
+    override open func intDoRangeBeacons(named uuids: [UUID],
+                                         for processKey: String,
+                                         with progress: PTCLProgressBlock?,
+                                         and block: PTCLBeaconsBlockVoidArrayDAOBeaconError?,
+                                         then resultBlock: PTCLResultBlock?) throws {
         throw PTCLBeaconsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doStopRangeBeacons(for processKey: String) throws {
+    override open func intDoStopRangeBeacons(for processKey: String,
+                                             then resultBlock: PTCLResultBlock?) throws {
         throw PTCLBeaconsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

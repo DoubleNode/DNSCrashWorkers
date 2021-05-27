@@ -21,10 +21,11 @@ open class WKRCrashPassportsWorker: WKRBlankPassportsWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doLoadPassport(of passportType: PTCLPassportsProtocolPassportTypes,
-                                      for account: DAOAccount,
-                                      with progress: PTCLProgressBlock?) -> AnyPublisher<Data, Error> {
+    // MARK: - Internal Work Methods
+    override open func intDoLoadPassport(of passportType: PTCLPassportsProtocolPassportTypes,
+                                         for account: DAOAccount,
+                                         with progress: PTCLProgressBlock?,
+                                         then resultBlock: PTCLResultBlock?) -> AnyPublisher<Data, Error> {
         return Future<Data, Error> { promise in
             let error = PTCLPassportsError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

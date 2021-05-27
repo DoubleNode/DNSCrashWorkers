@@ -20,39 +20,44 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doDeleteObject(for id: String,
-                                      with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+    // MARK: - Internal Work Methods
+    override open func intDoDeleteObject(for id: String,
+                                         with progress: PTCLProgressBlock?,
+                                         then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
             let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doLoadImage(from url: NSURL,
-                                   for id: String,
-                                   with progress: PTCLProgressBlock?) -> AnyPublisher<UIImage, Error> {
+    override open func intDoLoadImage(from url: NSURL,
+                                      for id: String,
+                                      with progress: PTCLProgressBlock?,
+                                      then resultBlock: PTCLResultBlock?) -> AnyPublisher<UIImage, Error> {
         return Future<UIImage, Error> { promise in
             let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doReadObject(for id: String,
-                                    with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
+    override open func intDoReadObject(for id: String,
+                                       with progress: PTCLProgressBlock?,
+                                       then resultBlock: PTCLResultBlock?) -> AnyPublisher<Any, Error> {
         return Future<Any, Error> { promise in
             let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doReadObject(for id: String,
-                                    with progress: PTCLProgressBlock?) -> AnyPublisher<String, Error> {
+    override open func intDoReadObject(for id: String,
+                                       with progress: PTCLProgressBlock?,
+                                       then resultBlock: PTCLResultBlock?) -> AnyPublisher<String, Error> {
         return Future<String, Error> { promise in
             let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doUpdate(object: Any,
-                                for id: String,
-                                with progress: PTCLProgressBlock?) -> AnyPublisher<Any, Error> {
+    override open func intDoUpdate(object: Any,
+                                   for id: String,
+                                   with progress: PTCLProgressBlock?,
+                                   then resultBlock: PTCLResultBlock?) -> AnyPublisher<Any, Error> {
         return Future<Any, Error> { promise in
             let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

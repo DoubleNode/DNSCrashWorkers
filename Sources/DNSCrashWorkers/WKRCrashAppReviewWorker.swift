@@ -19,8 +19,8 @@ open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doReview() throws -> Bool {
+    // MARK: - Internal Work Methods
+    override open func intDoReview(then resultBlock: PTCLResultBlock?) throws -> Bool {
         throw PTCLAppReviewError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

@@ -19,10 +19,11 @@ open class WKRCrashCMSWorker: WKRBlankCMSWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doLoad(for group: String,
-                              with progress: PTCLProgressBlock?,
-                              and block: PTCLCMSBlockVoidArrayDNSError?) throws {
+    // MARK: - Internal Work Methods
+    override open func intDoLoad(for group: String,
+                                 with progress: PTCLProgressBlock?,
+                                 and block: PTCLCMSBlockVoidArrayDNSError?,
+                                 then resultBlock: PTCLResultBlock?) throws {
         throw PTCLCMSError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

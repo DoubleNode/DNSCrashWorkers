@@ -20,64 +20,76 @@ open class WKRCrashValidationWorker: WKRBlankValidationWorker
 
     public required init() { super.init() }
 
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doValidateBirthdate(for birthdate: Date?,
-                                           with config: PTCLValidationBirthdateConfig) throws -> DNSError? {
+    // MARK: - Internal Work Methods
+    override open func intDoValidateBirthdate(for birthdate: Date?,
+                                              with config: PTCLValidationBirthdateConfig,
+                                              then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateDate(for date: Date?,
-                                      with config: PTCLValidationDateConfig) throws -> DNSError? {
+    override open func intDoValidateDate(for date: Date?,
+                                         with config: PTCLValidationDateConfig,
+                                         then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateEmail(for email: String?,
-                                       with config: PTCLValidationEmailConfig) throws -> DNSError? {
+    override open func intDoValidateEmail(for email: String?,
+                                          with config: PTCLValidationEmailConfig,
+                                          then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateHandle(for handle: String?,
-                                        with config: PTCLValidationHandleConfig) throws -> DNSError? {
+    override open func intDoValidateHandle(for handle: String?,
+                                           with config: PTCLValidationHandleConfig,
+                                           then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateName(for name: String?,
-                                      with config: PTCLValidationNameConfig) throws -> DNSError? {
+    override open func intDoValidateName(for name: String?,
+                                         with config: PTCLValidationNameConfig,
+                                         then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateNumber(for number: String?,
-                                        with config: PTCLValidationNumberConfig) throws -> DNSError? {
+    override open func intDoValidateNumber(for number: String?,
+                                           with config: PTCLValidationNumberConfig,
+                                           then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidatePassword(for password: String?,
-                                          with config: PTCLValidationPasswordConfig) throws -> DNSError? {
+    override open func intDoValidatePassword(for password: String?,
+                                             with config: PTCLValidationPasswordConfig,
+                                             then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidatePercentage(for percentage: String?,
-                                            with config: PTCLValidationPercentageConfig) throws -> DNSError? {
+    override open func intDoValidatePercentage(for percentage: String?,
+                                               with config: PTCLValidationPercentageConfig,
+                                               then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidatePhone(for phone: String?,
-                                       with config: PTCLValidationPhoneConfig) throws -> DNSError? {
+    override open func intDoValidatePhone(for phone: String?,
+                                          with config: PTCLValidationPhoneConfig,
+                                          then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateSearch(for search: String?,
-                                        with config: PTCLValidationSearchConfig) throws -> DNSError? {
+    override open func intDoValidateSearch(for search: String?,
+                                           with config: PTCLValidationSearchConfig,
+                                           then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateState(for state: String?,
-                                       with config: PTCLValidationStateConfig) throws -> DNSError? {
+    override open func intDoValidateState(for state: String?,
+                                          with config: PTCLValidationStateConfig,
+                                          then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doValidateUnsignedNumber(for number: String?,
-                                                with config: PTCLValidationUnsignedNumberConfig) throws -> DNSError? {
+    override open func intDoValidateUnsignedNumber(for number: String?,
+                                                   with config: PTCLValidationUnsignedNumberConfig,
+                                                   then resultBlock: PTCLResultBlock?) throws -> DNSError? {
         throw PTCLValidationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

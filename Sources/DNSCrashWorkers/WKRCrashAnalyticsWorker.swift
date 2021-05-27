@@ -19,35 +19,37 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     
     public required init() { super.init() }
     
-    // MARK: - Auto-Track -
-    override open func doAutoTrack(class: String, method: String, properties: [String: Any], options: [String: Any]) throws {
+    // MARK: - Internal Work Methods
+    override open func intDoAutoTrack(class: String, method: String,
+                                      properties: [String: Any], options: [String: Any],
+                                      then resultBlock: PTCLResultBlock?) throws {
         throw PTCLAnalyticsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-
-    // MARK: - Group -
-    override open func doGroup(groupId: String, traits: [String: Any], options: [String: Any]) throws
+    override open func intDoGroup(groupId: String, traits: [String: Any],
+                                  options: [String: Any],
+                                  then resultBlock: PTCLResultBlock?) throws
     {
         throw PTCLAnalyticsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-
-    // MARK: - Identify -
-    override open func doIdentify(userId: String, traits: [String: Any], options: [String: Any]) throws
+    override open func intDoIdentify(userId: String, traits: [String: Any],
+                                     options: [String: Any],
+                                     then resultBlock: PTCLResultBlock?) throws
     {
         throw PTCLAnalyticsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-
-    // MARK: - Screen -
-    override open func doScreen(screenTitle: String, properties: [String: Any], options: [String: Any]) throws
+    override open func intDoScreen(screenTitle: String, properties: [String: Any],
+                                   options: [String: Any],
+                                   then resultBlock: PTCLResultBlock?) throws
     {
         throw PTCLAnalyticsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-
-    // MARK: - Track -
-    override open func doTrack(event: PTCLAnalyticsEvents, properties: [String: Any], options: [String: Any]) throws
+    override open func intDoTrack(event: PTCLAnalyticsEvents, properties: [String: Any],
+                                  options: [String: Any],
+                                  then resultBlock: PTCLResultBlock?) throws
     {
         throw PTCLAnalyticsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))

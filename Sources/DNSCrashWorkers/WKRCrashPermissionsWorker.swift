@@ -19,30 +19,34 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doRequest(_ desire: PTCLPermissions.Desire,
-                                 _ permission: PTCLPermissions.Permission,
+    // MARK: - Internal Work Methods
+    override open func intDoRequest(_ desire: PTCLPermissions.Desire,
+                                    _ permission: PTCLPermissions.Permission,
+                                    with progress: PTCLProgressBlock?,
+                                    and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?,
+                                    then resultBlock: PTCLResultBlock?) throws {
+        throw PTCLPermissionsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+    }
+    override open func intDoRequest(_ desire: PTCLPermissions.Desire,
+                                    _ permissions: [PTCLPermissions.Permission],
+                                    with progress: PTCLProgressBlock?,
+                                    and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?,
+                                    then resultBlock: PTCLResultBlock?) throws {
+        throw PTCLPermissionsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+    }
+    override open func intDoStatus(of permissions: [PTCLPermissions.Permission],
+                                   with progress: PTCLProgressBlock?,
+                                   and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?,
+                                   then resultBlock: PTCLResultBlock?) throws {
+        throw PTCLPermissionsError
+            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+    }
+    override open func intDoWait(for permission: PTCLPermissions.Permission,
                                  with progress: PTCLProgressBlock?,
-                                 and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?) throws {
-        throw PTCLPermissionsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-    }
-    override open func doRequest(_ desire: PTCLPermissions.Desire,
-                                 _ permissions: [PTCLPermissions.Permission],
-                                 with progress: PTCLProgressBlock?,
-                                 and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?) throws {
-        throw PTCLPermissionsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-    }
-    override open func doStatus(of permissions: [PTCLPermissions.Permission],
-                                with progress: PTCLProgressBlock?,
-                                and block: PTCLPermissionsBlockVoidArrayPTCLPermissionActionError?) throws {
-        throw PTCLPermissionsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
-    }
-    override open func doWait(for permission: PTCLPermissions.Permission,
-                              with progress: PTCLProgressBlock?,
-                              and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?) throws {
+                                 and block: PTCLPermissionsBlockVoidPTCLPermissionActionError?,
+                                 then resultBlock: PTCLResultBlock?) throws {
         throw PTCLPermissionsError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

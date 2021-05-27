@@ -20,29 +20,33 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doClearIdentity(with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+    // MARK: - Internal Work Methods
+    override open func intDoClearIdentity(with progress: PTCLProgressBlock?,
+                                          then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
             let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doJoin(group: String,
-                              with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+    override open func intDoJoin(group: String,
+                                 with progress: PTCLProgressBlock?,
+                                 then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
             let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doLeave(group: String,
-                               with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+    override open func intDoLeave(group: String,
+                                  with progress: PTCLProgressBlock?,
+                                  then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
             let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func doSetIdentity(using data: [String: Any?],
-                                     with progress: PTCLProgressBlock?) -> AnyPublisher<Bool, Error> {
+    override open func intDoSetIdentity(using data: [String: Any?],
+                                        with progress: PTCLProgressBlock?,
+                                        then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
             let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

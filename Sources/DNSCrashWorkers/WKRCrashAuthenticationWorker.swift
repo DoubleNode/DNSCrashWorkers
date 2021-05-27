@@ -20,32 +20,36 @@ open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doCheckAuthentication(using parameters: [String : Any],
-                                             with progress: PTCLProgressBlock?,
-                                             and block: PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError?) throws {
+    // MARK: - Internal Work Methods
+    override open func intDoCheckAuthentication(using parameters: [String : Any],
+                                                with progress: PTCLProgressBlock?,
+                                                and block: PTCLAuthenticationBlockVoidBoolBoolAccessDataDNSError?,
+                                                then resultBlock: PTCLResultBlock?) throws {
         throw PTCLAuthenticationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doSignIn(from username: String?,
-                                and password: String?,
-                                using parameters: [String: Any],
-                                with progress: PTCLProgressBlock?,
-                                and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?) throws {
+    override open func intDoSignIn(from username: String?,
+                                   and password: String?,
+                                   using parameters: [String: Any],
+                                   with progress: PTCLProgressBlock?,
+                                   and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?,
+                                   then resultBlock: PTCLResultBlock?) throws {
         throw PTCLAuthenticationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doSignOut(using parameters: [String: Any],
-                                 with progress: PTCLProgressBlock?,
-                                 and block: PTCLAuthenticationBlockVoidBoolDNSError?) throws {
+    override open func intDoSignOut(using parameters: [String: Any],
+                                    with progress: PTCLProgressBlock?,
+                                    and block: PTCLAuthenticationBlockVoidBoolDNSError?,
+                                    then resultBlock: PTCLResultBlock?) throws {
         throw PTCLAuthenticationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func doSignUp(from user: DAOUser?,
-                                and password: String?,
-                                using parameters: [String: Any],
-                                with progress: PTCLProgressBlock?,
-                                and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?) throws {
+    override open func intDoSignUp(from user: DAOUser?,
+                                   and password: String?,
+                                   using parameters: [String: Any],
+                                   with progress: PTCLProgressBlock?,
+                                   and block: PTCLAuthenticationBlockVoidBoolAccessDataDNSError?,
+                                   then resultBlock: PTCLResultBlock?) throws {
         throw PTCLAuthenticationError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

@@ -19,8 +19,9 @@ open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doCheckPasswordStrength(for password: String) throws -> PTCLPasswordStrengthType {
+    // MARK: - Internal Work Methods
+    override open func intDoCheckPasswordStrength(for password: String,
+                                                  then resultBlock: PTCLResultBlock?) throws -> PTCLPasswordStrengthType {
         throw PTCLPasswordStrengthError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }

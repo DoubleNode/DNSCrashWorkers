@@ -19,9 +19,10 @@ open class WKRCrashBeaconDistancesWorker: WKRBlankBeaconDistancesWorker
     
     public required init() { super.init() }
     
-    // MARK: - Business Logic / Single Item CRUD
-    override open func doLoadBeaconDistances(with progress: PTCLProgressBlock?,
-                                             and block: PTCLBeaconDistancesBlockVoidArrayDAOBeaconDistanceError?) throws {
+    // MARK: - Internal Work Methods
+    override open func intDoLoadBeaconDistances(with progress: PTCLProgressBlock?,
+                                                and block: PTCLBeaconDistancesBlockVoidArrayDAOBeaconDistanceError?,
+                                                then resultBlock: PTCLResultBlock?) throws {
         throw PTCLBeaconDistancesError
             .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
     }
