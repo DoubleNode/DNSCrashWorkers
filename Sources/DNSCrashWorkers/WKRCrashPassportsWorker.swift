@@ -22,7 +22,7 @@ open class WKRCrashPassportsWorker: WKRBlankPassportsWorker
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
-    override open func intDoLoadPassport(of passportType: PTCLPassportsProtocolPassportTypes,
+    override open func intDoLoadPassport(of passportType: String,
                                          for account: DAOAccount,
                                          with progress: PTCLProgressBlock?,
                                          then resultBlock: PTCLResultBlock?) -> AnyPublisher<Data, Error> {
