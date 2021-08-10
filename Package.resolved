@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "3773fa437619e2abc96c998c7832f2847b5a92ba",
-          "version": "1.5.7"
+          "revision": "60ace9cd3c875b051e64220da37c6d1a9b980416",
+          "version": "1.5.8"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "3234f0e4942bae1f9d82404f2bf5644b27c72730",
-          "version": "1.5.9"
+          "revision": "707e0b82091a55e860759ffe5e07e25f3c97d9f3",
+          "version": "1.5.11"
         }
       },
       {
