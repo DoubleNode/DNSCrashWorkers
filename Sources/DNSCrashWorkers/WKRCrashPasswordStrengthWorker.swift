@@ -8,21 +8,22 @@
 
 import DNSBlankWorkers
 import DNSCore
+import DNSError
 import DNSProtocols
 import Foundation
 
 open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLCallNextWhen,
-                         nextWorker: PTCLPasswordStrength_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
+                         nextWorker: PTCLPasswordStrength) { fatalError("Unable to chain CrashWorker(s)") }
     
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
     override open func intDoCheckPasswordStrength(for password: String,
-                                                  then resultBlock: PTCLResultBlock?) throws -> PTCLPasswordStrengthType {
-        throw PTCLPasswordStrengthError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+                                                  then resultBlock: PTCLResultBlock?) throws -> PTCLPasswordStrength.Level {
+        throw DNSError.PasswordStrength
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
 }

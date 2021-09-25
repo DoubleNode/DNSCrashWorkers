@@ -9,14 +9,15 @@
 import DNSBlankWorkers
 import Combine
 import DNSCore
+import DNSError
 import DNSProtocols
 import UIKit
 
 open class WKRCrashCacheWorker: WKRBlankCacheWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLCallNextWhen,
-                         nextWorker: PTCLCache_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
+                         nextWorker: PTCLCache) { fatalError("Unable to chain CrashWorker(s)") }
     
     public required init() { super.init() }
     
@@ -25,7 +26,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                          with progress: PTCLProgressBlock?,
                                          then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
-            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -34,7 +35,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                       with progress: PTCLProgressBlock?,
                                       then resultBlock: PTCLResultBlock?) -> AnyPublisher<UIImage, Error> {
         return Future<UIImage, Error> { promise in
-            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -42,7 +43,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                        with progress: PTCLProgressBlock?,
                                        then resultBlock: PTCLResultBlock?) -> AnyPublisher<Any, Error> {
         return Future<Any, Error> { promise in
-            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -50,7 +51,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                        with progress: PTCLProgressBlock?,
                                        then resultBlock: PTCLResultBlock?) -> AnyPublisher<String, Error> {
         return Future<String, Error> { promise in
-            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -59,7 +60,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
                                    with progress: PTCLProgressBlock?,
                                    then resultBlock: PTCLResultBlock?) -> AnyPublisher<Any, Error> {
         return Future<Any, Error> { promise in
-            let error = PTCLCacheError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }

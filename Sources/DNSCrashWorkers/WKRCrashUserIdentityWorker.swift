@@ -9,14 +9,15 @@
 import DNSBlankWorkers
 import Combine
 import DNSCore
+import DNSError
 import DNSProtocols
 import UIKit
 
 open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLCallNextWhen,
-                         nextWorker: PTCLUserIdentity_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
+                         nextWorker: PTCLUserIdentity) { fatalError("Unable to chain CrashWorker(s)") }
     
     public required init() { super.init() }
     
@@ -24,7 +25,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
     override open func intDoClearIdentity(with progress: PTCLProgressBlock?,
                                           then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
-            let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.UserIdentity.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -32,7 +33,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
                                  with progress: PTCLProgressBlock?,
                                  then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
-            let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.UserIdentity.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -40,7 +41,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
                                   with progress: PTCLProgressBlock?,
                                   then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
-            let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.UserIdentity.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -48,7 +49,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker
                                         with progress: PTCLProgressBlock?,
                                         then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
-            let error = PTCLUserIdentityError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.UserIdentity.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }

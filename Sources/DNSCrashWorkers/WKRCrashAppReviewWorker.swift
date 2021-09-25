@@ -8,20 +8,21 @@
 
 import DNSBlankWorkers
 import DNSCore
+import DNSError
 import DNSProtocols
 import Foundation
 
 open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLCallNextWhen,
-                         nextWorker: PTCLAppReview_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
+                         nextWorker: PTCLAppReview) { fatalError("Unable to chain CrashWorker(s)") }
     
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
     override open func intDoReview(then resultBlock: PTCLResultBlock?) throws -> Bool {
-        throw PTCLAppReviewError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        throw DNSError.AppReview
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
 }

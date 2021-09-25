@@ -10,14 +10,15 @@ import DNSBlankWorkers
 import Combine
 import DNSCore
 import DNSDataObjects
+import DNSError
 import DNSProtocols
 import UIKit
 
 open class WKRCrashPassportsWorker: WKRBlankPassportsWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLCallNextWhen,
-                         nextWorker: PTCLPassports_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
+                         nextWorker: PTCLPassports) { fatalError("Unable to chain CrashWorker(s)") }
     
     public required init() { super.init() }
     
@@ -28,7 +29,7 @@ open class WKRCrashPassportsWorker: WKRBlankPassportsWorker
                                           with progress: PTCLProgressBlock?,
                                           then resultBlock: PTCLResultBlock?) -> AnyPublisher<Data, Error> {
         return Future<Data, Error> { promise in
-            let error = PTCLPassportsError.notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Passports.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }

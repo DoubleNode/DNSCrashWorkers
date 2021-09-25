@@ -1,5 +1,5 @@
 //
-//  DNSCrashWorkersCodeLocation.swift
+//  DNSCodeLocation.crashWorkers.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCore
 //
 //  Created by Darren Ehlers.
@@ -7,7 +7,11 @@
 //
 
 import DNSError
+import DNSProtocols
 
+public extension DNSCodeLocation {
+    typealias crashWorkers = DNSCrashWorkersCodeLocation
+}
 open class DNSCrashWorkersCodeLocation: DNSCodeLocation {
     override open class var domainPreface: String { "com.doublenode.crashWorkers." }
 }

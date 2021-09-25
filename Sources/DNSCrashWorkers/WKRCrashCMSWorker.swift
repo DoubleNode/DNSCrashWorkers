@@ -8,23 +8,24 @@
 
 import DNSBlankWorkers
 import DNSCore
+import DNSError
 import DNSProtocols
 import UIKit
 
 open class WKRCrashCMSWorker: WKRBlankCMSWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLCallNextWhen,
-                         nextWorker: PTCLCMS_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
-    
+    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
+                         nextWorker: PTCLCms) { fatalError("Unable to chain CrashWorker(s)") }
+
     public required init() { super.init() }
-    
+
     // MARK: - Internal Work Methods
     override open func intDoLoad(for group: String,
                                  with progress: PTCLProgressBlock?,
-                                 and block: PTCLCMSBlockVoidArrayDNSError?,
+                                 and block: PTCLCmsBlockVoidArrayAny?,
                                  then resultBlock: PTCLResultBlock?) throws {
-        throw PTCLCMSError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        throw DNSError.Cms
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
 }

@@ -8,14 +8,15 @@
 
 import DNSBlankWorkers
 import DNSCore
+import DNSError
 import DNSProtocols
 import Foundation
 
 open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLCallNextWhen,
-                         nextWorker: PTCLAnalytics_Protocol) { fatalError("Unable to chain CrashWorker(s)") }
+    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
+                         nextWorker: PTCLAnalytics) { fatalError("Unable to chain CrashWorker(s)") }
     
     public required init() { super.init() }
     
@@ -23,35 +24,35 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker
     override open func intDoAutoTrack(class: String, method: String,
                                       properties: [String: Any], options: [String: Any],
                                       then resultBlock: PTCLResultBlock?) throws {
-        throw PTCLAnalyticsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        throw DNSError.Analytics
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoGroup(groupId: String, traits: [String: Any],
                                   options: [String: Any],
                                   then resultBlock: PTCLResultBlock?) throws
     {
-        throw PTCLAnalyticsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        throw DNSError.Analytics
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoIdentify(userId: String, traits: [String: Any],
                                      options: [String: Any],
                                      then resultBlock: PTCLResultBlock?) throws
     {
-        throw PTCLAnalyticsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        throw DNSError.Analytics
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoScreen(screenTitle: String, properties: [String: Any],
                                    options: [String: Any],
                                    then resultBlock: PTCLResultBlock?) throws
     {
-        throw PTCLAnalyticsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        throw DNSError.Analytics
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoTrack(event: PTCLAnalyticsEvents, properties: [String: Any],
                                   options: [String: Any],
                                   then resultBlock: PTCLResultBlock?) throws
     {
-        throw PTCLAnalyticsError
-            .notImplemented(DNSCrashWorkersCodeLocation(self, "\(#file),\(#line),\(#function)"))
+        throw DNSError.Analytics
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
 }
