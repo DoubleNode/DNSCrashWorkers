@@ -9,6 +9,7 @@
 import DNSBlankWorkers
 import Combine
 import DNSCore
+import DNSDataObjects
 import DNSError
 import DNSProtocols
 import UIKit
@@ -29,10 +30,17 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
         throw DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoLoadSystemHistory(for id: String,
-                                              with progress: PTCLProgressBlock?,
-                                              and block: PTCLSystemsBlockVoidArraySystemState?,
-                                              then resultBlock: PTCLResultBlock?) throws {
+    override open func intDoLoadEndPoints(for system: DAOSystem,
+                                          with progress: PTCLProgressBlock?,
+                                          and block: PTCLSystemsBlockVoidArraySystemEndPoint?,
+                                          then resultBlock: PTCLResultBlock?) throws {
+        throw DNSError.Systems
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+    }
+    override open func intDoLoadHistory(for system: DAOSystem,
+                                        with progress: PTCLProgressBlock?,
+                                        and block: PTCLSystemsBlockVoidArraySystemState?,
+                                        then resultBlock: PTCLResultBlock?) throws {
         throw DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
@@ -42,11 +50,11 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
         throw DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoReportState(of state: String,
-                                        for system: String,
-                                        and endPoint: String,
-                                        with progress: PTCLProgressBlock?,
-                                        then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
+    override open func intDoReport(state: String,
+                                   for systemId: String,
+                                   and endPointId: String,
+                                   with progress: PTCLProgressBlock?,
+                                   then resultBlock: PTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> {
             let error = DNSError.Systems
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
