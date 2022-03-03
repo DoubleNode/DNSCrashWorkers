@@ -58,6 +58,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoReport(state: String,
+                                   and failureCode: String,
                                    for systemId: String,
                                    and endPointId: String,
                                    with progress: PTCLProgressBlock?,
