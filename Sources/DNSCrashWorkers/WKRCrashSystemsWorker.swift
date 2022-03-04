@@ -38,6 +38,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoLoadHistory(for system: DAOSystem,
+                                        since time: Date,
                                         with progress: PTCLProgressBlock?,
                                         and block: PTCLSystemsBlockVoidArraySystemState?,
                                         then resultBlock: PTCLResultBlock?) throws {
@@ -45,6 +46,8 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoLoadHistory(for endPoint: DAOSystemEndPoint,
+                                        since time: Date,
+                                        include failureCodes: Bool,
                                         with progress: PTCLProgressBlock?,
                                         and block: PTCLSystemsBlockVoidArraySystemState?,
                                         then resultBlock: PTCLResultBlock?) throws {
