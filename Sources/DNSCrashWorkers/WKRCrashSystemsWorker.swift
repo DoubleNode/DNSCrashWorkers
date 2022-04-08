@@ -60,6 +60,14 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
         throw DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
+    override open func intDoOverride(system: DAOSystem,
+                                     with state: DAOSystemState.State,
+                                     with progress: PTCLProgressBlock?,
+                                     and block: PTCLSystemsBlockVoidSystem?,
+                                     then resultBlock: PTCLResultBlock?) throws {
+        throw DNSError.Systems
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+    }
     override open func intDoReport(state: String,
                                    and failureCode: String,
                                    for systemId: String,
