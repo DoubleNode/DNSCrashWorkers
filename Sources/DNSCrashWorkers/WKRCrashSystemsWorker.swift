@@ -70,6 +70,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
     }
     override open func intDoReport(state: String,
                                    and failureCode: String,
+                                   and debugString: String,
                                    for systemId: String,
                                    and endPointId: String,
                                    with progress: PTCLProgressBlock?,
