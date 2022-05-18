@@ -68,7 +68,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
         throw DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoReport(state: String,
+    override open func intDoReport(result: PTCLSystemsData.Result,
                                    and failureCode: String,
                                    and debugString: String,
                                    for systemId: String,

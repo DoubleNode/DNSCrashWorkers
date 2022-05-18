@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
-          "version": "5.5.0"
+          "revision": "354dda32d89fc8cd4f5c46487f64957d355f53d8",
+          "version": "5.6.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "dc29f70a5f53da5667c9c01cd898e5d99333ec48",
-          "version": "1.7.13"
+          "revision": "190a6de2014f3873f35b83c964132cf3e594f2be",
+          "version": "1.7.14"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
           "branch": null,
-          "revision": "ed40f97a0cf9218c5e8b0ce27b5be8a0b74f2f5a",
-          "version": "1.6.59"
+          "revision": "c9b6ce55df129609102c8075997b2001a9819a55",
+          "version": "1.7.4"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "7199e8732d2a40e48420a93e3dd959ef64c99b43",
-          "version": "1.7.17"
+          "revision": "733e685987cd4c138ec1065fa7f0144097186e81",
+          "version": "1.7.19"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
         "state": {
           "branch": null,
-          "revision": "2c039501d6eeb4d4cd4aec4a8d884ad28862e044",
-          "version": "1.9.5"
+          "revision": "12b5acf96d98f91d50de447369bd18df74600f1a",
+          "version": "1.9.6"
         }
       }
     ]
