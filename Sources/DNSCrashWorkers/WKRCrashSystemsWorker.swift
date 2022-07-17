@@ -61,7 +61,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoOverride(system: DAOSystem,
-                                     with state: DAOSystemState.State,
+                                     with state: DNSSystemState,
                                      with progress: PTCLProgressBlock?,
                                      and block: PTCLSystemsBlockVoidSystem?,
                                      then resultBlock: PTCLResultBlock?) throws {
