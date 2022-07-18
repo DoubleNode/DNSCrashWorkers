@@ -14,23 +14,23 @@ import Foundation
 
 open class WKRCrashAccountWorker: WKRBlankAccountWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+    public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLAccount) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
     override open func intDoLoadAccount(for user: DAOUser,
-                                        with progress: WKRPTCLProgressBlock?,
+                                        with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLAccountBlockAccount?,
-                                        then resultBlock: WKRPTCLResultBlock?) throws {
+                                        then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(account: DAOAccount,
-                                   with progress: WKRPTCLProgressBlock?,
+                                   with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLAccountBlockBool?,
-                                   then resultBlock: WKRPTCLResultBlock?) throws {
+                                   then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }

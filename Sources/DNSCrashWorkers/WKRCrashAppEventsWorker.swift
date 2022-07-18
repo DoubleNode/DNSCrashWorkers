@@ -13,15 +13,15 @@ import Foundation
 
 open class WKRCrashAppEventsWorker: WKRBlankAppEventsWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+    public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLAppEvents) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
-    override open func intDoLoadAppEvents(with progress: WKRPTCLProgressBlock?,
+    override open func intDoLoadAppEvents(with progress: DNSPTCLProgressBlock?,
                                           and block: WKRPTCLAppEventsBlockArrayAppEvent?,
-                                          then resultBlock: WKRPTCLResultBlock?) throws {
+                                          then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }

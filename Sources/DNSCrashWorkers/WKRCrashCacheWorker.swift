@@ -16,15 +16,15 @@ import UIKit
 open class WKRCrashCacheWorker: WKRBlankCacheWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+    public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLCache) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
     override open func intDoDeleteObject(for id: String,
-                                         with progress: WKRPTCLProgressBlock?,
-                                         then resultBlock: WKRPTCLResultBlock?) -> AnyPublisher<Bool, Error> {
+                                         with progress: DNSPTCLProgressBlock?,
+                                         then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
             let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -32,24 +32,24 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
     }
     override open func intDoLoadImage(from url: NSURL,
                                       for id: String,
-                                      with progress: WKRPTCLProgressBlock?,
-                                      then resultBlock: WKRPTCLResultBlock?) -> AnyPublisher<UIImage, Error> {
+                                      with progress: DNSPTCLProgressBlock?,
+                                      then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<UIImage, Error> {
         return Future<UIImage, Error> { promise in
             let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoReadObject(for id: String,
-                                       with progress: WKRPTCLProgressBlock?,
-                                       then resultBlock: WKRPTCLResultBlock?) -> AnyPublisher<Any, Error> {
+                                       with progress: DNSPTCLProgressBlock?,
+                                       then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<Any, Error> {
         return Future<Any, Error> { promise in
             let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoReadObject(for id: String,
-                                       with progress: WKRPTCLProgressBlock?,
-                                       then resultBlock: WKRPTCLResultBlock?) -> AnyPublisher<String, Error> {
+                                       with progress: DNSPTCLProgressBlock?,
+                                       then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<String, Error> {
         return Future<String, Error> { promise in
             let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -57,8 +57,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker
     }
     override open func intDoUpdate(object: Any,
                                    for id: String,
-                                   with progress: WKRPTCLProgressBlock?,
-                                   then resultBlock: WKRPTCLResultBlock?) -> AnyPublisher<Any, Error> {
+                                   with progress: DNSPTCLProgressBlock?,
+                                   then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<Any, Error> {
         return Future<Any, Error> { promise in
             let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

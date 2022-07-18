@@ -15,16 +15,16 @@ import UIKit
 open class WKRCrashCMSWorker: WKRBlankCMSWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+    public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLCms) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
     override open func intDoLoad(for group: String,
-                                 with progress: WKRPTCLProgressBlock?,
+                                 with progress: DNSPTCLProgressBlock?,
                                  and block: WKRPTCLCmsBlockArrayAny?,
-                                 then resultBlock: WKRPTCLResultBlock?) throws {
+                                 then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Cms
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }

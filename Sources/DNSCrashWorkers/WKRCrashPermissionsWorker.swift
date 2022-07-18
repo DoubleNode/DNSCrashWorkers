@@ -15,7 +15,7 @@ import UIKit
 open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+    public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLPermissions) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
@@ -23,31 +23,31 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     // MARK: - Internal Work Methods
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
                                     _ permission: WKRPTCLPermissions.Data.System,
-                                    with progress: WKRPTCLProgressBlock?,
+                                    with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLPermissionsBlockPermissionAction?,
-                                    then resultBlock: WKRPTCLResultBlock?) throws {
+                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
                                     _ permissions: [WKRPTCLPermissions.Data.System],
-                                    with progress: WKRPTCLProgressBlock?,
+                                    with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLPermissionsBlockArrayPermissionAction?,
-                                    then resultBlock: WKRPTCLResultBlock?) throws {
+                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoStatus(of permissions: [WKRPTCLPermissions.Data.System],
-                                   with progress: WKRPTCLProgressBlock?,
+                                   with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPermissionsBlockArrayPermissionAction?,
-                                   then resultBlock: WKRPTCLResultBlock?) throws {
+                                   then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoWait(for permission: WKRPTCLPermissions.Data.System,
-                                 with progress: WKRPTCLProgressBlock?,
+                                 with progress: DNSPTCLProgressBlock?,
                                  and block: WKRPTCLPermissionsBlockPermissionAction?,
-                                 then resultBlock: WKRPTCLResultBlock?) throws {
+                                 then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }

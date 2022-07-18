@@ -14,7 +14,7 @@ import Foundation
 
 open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+    public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLActivities) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
@@ -22,17 +22,17 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
     // MARK: - Internal Work Methods
     override open func intDoLoadActivities(for center: DAOCenter,
                                            using activityTypes: [DAOActivityType],
-                                           with progress: WKRPTCLProgressBlock?,
+                                           with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLActivitiesBlockArrayActivity?,
-                                           then resultBlock: WKRPTCLResultBlock?) throws {
+                                           then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ activities: [DAOActivity],
                                    for center: DAOCenter,
-                                   with progress: WKRPTCLProgressBlock?,
+                                   with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLActivitiesBlockBool?,
-                                   then resultBlock: WKRPTCLResultBlock?) throws {
+                                   then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }

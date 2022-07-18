@@ -1,5 +1,5 @@
 //
-//  DNSCodeLocation.crashWorkers.swift
+//  DNSCrashWorkersCodeLocation.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCore
 //
 //  Created by Darren Ehlers.

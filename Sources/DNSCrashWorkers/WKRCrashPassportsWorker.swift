@@ -17,7 +17,7 @@ import UIKit
 open class WKRCrashPassportsWorker: WKRBlankPassportsWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+    public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLPassports) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
@@ -26,8 +26,8 @@ open class WKRCrashPassportsWorker: WKRBlankPassportsWorker
     override open func intDoBuildPassport(ofType passportType: String,
                                           using data: [String: String],
                                           for account: DAOAccount,
-                                          with progress: WKRPTCLProgressBlock?,
-                                          then resultBlock: WKRPTCLResultBlock?) -> AnyPublisher<Data, Error> {
+                                          with progress: DNSPTCLProgressBlock?,
+                                          then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<Data, Error> {
         return Future<Data, Error> { promise in
             let error = DNSError.Passports.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
