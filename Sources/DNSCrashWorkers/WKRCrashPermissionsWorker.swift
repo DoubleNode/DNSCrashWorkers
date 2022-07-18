@@ -15,39 +15,39 @@ import UIKit
 open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
 {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
-    public required init(call callNextWhen: PTCLProtocol.Call.NextWhen,
-                         nextWorker: PTCLPermissions) { fatalError("Unable to chain CrashWorker(s)") }
-    
+    public required init(call callNextWhen: WKRPTCLWorker.Call.NextWhen,
+                         nextWorker: WKRPTCLPermissions) { fatalError("Unable to chain CrashWorker(s)") }
+
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
-    override open func intDoRequest(_ desire: PTCLPermissions.Data.Desire,
-                                    _ permission: PTCLPermissions.Data.System,
-                                    with progress: PTCLProgressBlock?,
-                                    and block: PTCLPermissionsBlockVoidPermissionAction?,
-                                    then resultBlock: PTCLResultBlock?) throws {
+    override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
+                                    _ permission: WKRPTCLPermissions.Data.System,
+                                    with progress: WKRPTCLProgressBlock?,
+                                    and block: WKRPTCLPermissionsBlockPermissionAction?,
+                                    then resultBlock: WKRPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoRequest(_ desire: PTCLPermissions.Data.Desire,
-                                    _ permissions: [PTCLPermissions.Data.System],
-                                    with progress: PTCLProgressBlock?,
-                                    and block: PTCLPermissionsBlockVoidArrayPermissionAction?,
-                                    then resultBlock: PTCLResultBlock?) throws {
+    override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
+                                    _ permissions: [WKRPTCLPermissions.Data.System],
+                                    with progress: WKRPTCLProgressBlock?,
+                                    and block: WKRPTCLPermissionsBlockArrayPermissionAction?,
+                                    then resultBlock: WKRPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoStatus(of permissions: [PTCLPermissions.Data.System],
-                                   with progress: PTCLProgressBlock?,
-                                   and block: PTCLPermissionsBlockVoidArrayPermissionAction?,
-                                   then resultBlock: PTCLResultBlock?) throws {
+    override open func intDoStatus(of permissions: [WKRPTCLPermissions.Data.System],
+                                   with progress: WKRPTCLProgressBlock?,
+                                   and block: WKRPTCLPermissionsBlockArrayPermissionAction?,
+                                   then resultBlock: WKRPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoWait(for permission: PTCLPermissions.Data.System,
-                                 with progress: PTCLProgressBlock?,
-                                 and block: PTCLPermissionsBlockVoidPermissionAction?,
-                                 then resultBlock: PTCLResultBlock?) throws {
+    override open func intDoWait(for permission: WKRPTCLPermissions.Data.System,
+                                 with progress: WKRPTCLProgressBlock?,
+                                 and block: WKRPTCLPermissionsBlockPermissionAction?,
+                                 then resultBlock: WKRPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
