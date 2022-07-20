@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSBlankWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import Combine
@@ -23,32 +23,36 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
     // MARK: - Internal Work Methods
     override open func intDoLoadAlerts(for center: DAOCenter,
                                        with progress: DNSPTCLProgressBlock?,
-                                       then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<[DAOAlert], Error> {
-        return Future<[DAOAlert], Error> { promise in
-            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+                                       then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
+        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+            let error = DNSError.Cache
+                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoLoadAlerts(for district: DAODistrict,
                                        with progress: DNSPTCLProgressBlock?,
-                                       then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<[DAOAlert], Error> {
-        return Future<[DAOAlert], Error> { promise in
-            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+                                       then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
+        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+            let error = DNSError.Cache
+                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoLoadAlerts(for region: DAORegion,
                                        with progress: DNSPTCLProgressBlock?,
-                                       then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<[DAOAlert], Error> {
-        return Future<[DAOAlert], Error> { promise in
-            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+                                       then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
+        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+            let error = DNSError.Cache
+                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoLoadAlerts(with progress: DNSPTCLProgressBlock?,
-                                       then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<[DAOAlert], Error> {
-        return Future<[DAOAlert], Error> { promise in
-            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+                                       then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
+        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+            let error = DNSError.Cache
+                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }

@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -12,8 +12,7 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
-{
+open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLPermissions) { fatalError("Unable to chain CrashWorker(s)") }
@@ -24,7 +23,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
                                     _ permission: WKRPTCLPermissions.Data.System,
                                     with progress: DNSPTCLProgressBlock?,
-                                    and block: WKRPTCLPermissionsBlockPermissionAction?,
+                                    and block: WKRPTCLPermissionsBlkAction?,
                                     then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
@@ -32,21 +31,21 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
                                     _ permissions: [WKRPTCLPermissions.Data.System],
                                     with progress: DNSPTCLProgressBlock?,
-                                    and block: WKRPTCLPermissionsBlockArrayPermissionAction?,
+                                    and block: WKRPTCLPermissionsBlkAAction?,
                                     then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoStatus(of permissions: [WKRPTCLPermissions.Data.System],
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLPermissionsBlockArrayPermissionAction?,
+                                   and block: WKRPTCLPermissionsBlkAAction?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoWait(for permission: WKRPTCLPermissions.Data.System,
                                  with progress: DNSPTCLProgressBlock?,
-                                 and block: WKRPTCLPermissionsBlockPermissionAction?,
+                                 and block: WKRPTCLPermissionsBlkAction?,
                                  then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSBlankWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -20,7 +20,7 @@ open class WKRCrashAppEventsWorker: WKRBlankAppEventsWorker {
 
     // MARK: - Internal Work Methods
     override open func intDoLoadAppEvents(with progress: DNSPTCLProgressBlock?,
-                                          and block: WKRPTCLAppEventsBlockArrayAppEvent?,
+                                          and block: WKRPTCLAppEventsBlkAAppEvent?,
                                           then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

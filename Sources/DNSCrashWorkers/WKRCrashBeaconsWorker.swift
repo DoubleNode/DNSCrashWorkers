@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -13,8 +13,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
-{
+open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLBeacons) { fatalError("Unable to chain CrashWorker(s)") }
@@ -24,7 +23,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
     // MARK: - Internal Work Methods
     override open func intDoLoadBeacons(in center: DAOCenter,
                                         with progress: DNSPTCLProgressBlock?,
-                                        and block: WKRPTCLBeaconsBlockArrayBeacon?,
+                                        and block: WKRPTCLBeaconsBlkABeacon?,
                                         then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
@@ -32,7 +31,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
     override open func intDoLoadBeacons(in center: DAOCenter,
                                         for activity: DAOActivity,
                                         with progress: DNSPTCLProgressBlock?,
-                                        and block: WKRPTCLBeaconsBlockArrayBeacon?,
+                                        and block: WKRPTCLBeaconsBlkABeacon?,
                                         then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
@@ -40,7 +39,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker
     override open func intDoRangeBeacons(named uuids: [UUID],
                                          for processKey: String,
                                          with progress: DNSPTCLProgressBlock?,
-                                         and block: WKRPTCLBeaconsBlockArrayBeacon?,
+                                         and block: WKRPTCLBeaconsBlkABeacon?,
                                          then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

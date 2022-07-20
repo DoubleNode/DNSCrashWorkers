@@ -1,9 +1,9 @@
 //
-//  WKRCrashBeaconDistancesWorker.swift
+//  WKRCrashBeaconDistWorker.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -12,19 +12,18 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashBeaconDistancesWorker: WKRBlankBeaconDistancesWorker
-{
+open class WKRCrashBeaconDistWorker: WKRBlankBeaconDistWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLBeaconDistances) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLBeaconDist) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
     override open func intDoLoadBeaconDistances(with progress: DNSPTCLProgressBlock?,
-                                                and block: WKRPTCLBeaconDistancesBlockArrayBeaconDistance?,
+                                                and block: WKRPTCLBeaconDistBlkABeaconDistance?,
                                                 then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.BeaconDistances
+        throw DNSError.BeaconDist
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
 }

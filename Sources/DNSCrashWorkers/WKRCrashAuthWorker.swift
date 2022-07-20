@@ -1,9 +1,9 @@
 //
-//  WKRCrashAuthenticationWorker.swift
+//  WKRCrashAuthWorker.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -13,45 +13,44 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashAuthenticationWorker: WKRBlankAuthenticationWorker
-{
+open class WKRCrashAuthWorker: WKRBlankAuthWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLAuthentication) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLAuth) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
     override open func intDoCheckAuthentication(using parameters: [String : Any],
                                                 with progress: DNSPTCLProgressBlock?,
-                                                and block: WKRPTCLAuthenticationBlockBoolBoolAccessData?,
+                                                and block: WKRPTCLAuthBlkBoolBoolAccessData?,
                                                 then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Authentication
+        throw DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoSignIn(from username: String?,
                                    and password: String?,
                                    using parameters: [String: Any],
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLAuthenticationBlockBoolAccessData?,
+                                   and block: WKRPTCLAuthBlkBoolAccessData?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Authentication
+        throw DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoSignOut(using parameters: [String: Any],
                                     with progress: DNSPTCLProgressBlock?,
-                                    and block: WKRPTCLAuthenticationBlockBool?,
+                                    and block: WKRPTCLAuthBlkBool?,
                                     then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Authentication
+        throw DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoSignUp(from user: DAOUser?,
                                    and password: String?,
                                    using parameters: [String: Any],
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLAuthenticationBlockBoolAccessData?,
+                                   and block: WKRPTCLAuthBlkBoolAccessData?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Authentication
+        throw DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
 }

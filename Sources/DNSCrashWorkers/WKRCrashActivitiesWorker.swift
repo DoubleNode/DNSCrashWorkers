@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSBlankWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -23,7 +23,7 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
     override open func intDoLoadActivities(for center: DAOCenter,
                                            using activityTypes: [DAOActivityType],
                                            with progress: DNSPTCLProgressBlock?,
-                                           and block: WKRPTCLActivitiesBlockArrayActivity?,
+                                           and block: WKRPTCLActivitiesBlkAActivity?,
                                            then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
@@ -31,7 +31,7 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
     override open func intDoUpdate(_ activities: [DAOActivity],
                                    for center: DAOCenter,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLActivitiesBlockBool?,
+                                   and block: WKRPTCLActivitiesBlkBool?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

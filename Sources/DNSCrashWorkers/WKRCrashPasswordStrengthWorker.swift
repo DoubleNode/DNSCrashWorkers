@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -12,8 +12,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker
-{
+open class WKRCrashPasswordStrengthWorker: WKRBlankPasswordStrengthWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLPasswordStrength) { fatalError("Unable to chain CrashWorker(s)") }

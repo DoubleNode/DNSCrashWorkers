@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSBlankWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -20,34 +20,34 @@ open class WKRCrashUsersWorker: WKRBlankUsersWorker {
 
     // MARK: - Internal Work Methods
     override open func intDoLoadCurrentUser(with progress: DNSPTCLProgressBlock?,
-                                            and block: WKRPTCLUsersBlockUser?,
+                                            and block: WKRPTCLUsersBlkUser?,
                                             then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoLoadUser(for id: String,
                                      with progress: DNSPTCLProgressBlock?,
-                                     and block: WKRPTCLUsersBlockUser?,
+                                     and block: WKRPTCLUsersBlkUser?,
                                      then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoRemoveCurrentUser(with progress: DNSPTCLProgressBlock?,
-                                              and block: WKRPTCLUsersBlockBool?,
+                                              and block: WKRPTCLUsersBlkBool?,
                                               then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoRemove(_ user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLUsersBlockBool?,
+                                   and block: WKRPTCLUsersBlkBool?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLUsersBlockBool?,
+                                   and block: WKRPTCLUsersBlkBool?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

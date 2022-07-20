@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -13,8 +13,7 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashSupportWorker: WKRBlankSupportWorker
-{
+open class WKRCrashSupportWorker: WKRBlankSupportWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLSupport) { fatalError("Unable to chain CrashWorker(s)") }
@@ -23,8 +22,8 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker
     
     // MARK: - Internal Work Methods
     override open func intDoGetUpdatedCount(with progress: DNSPTCLProgressBlock?,
-                                            then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<Int, Error> {
-        return Future<Int, Error> { promise in
+                                            then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubInt {
+        return Future<WKRPTCLSupportRtnInt, Error> { promise in
             let error = DNSError.Support
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -32,8 +31,8 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker
     }
     override open func intDoPrepare(attachment image: UIImage,
                                     with progress: DNSPTCLProgressBlock?,
-                                    then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<WKRPTCLSupportAttachment, Error> {
-        return Future<WKRPTCLSupportAttachment, Error> {
+                                    then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubAttach {
+        return Future<WKRPTCLSupportRtnAttach, Error> {
             let error = DNSError.Support
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))
@@ -45,8 +44,8 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker
                                         attachments: [WKRPTCLSupportAttachment],
                                         properties: [String: String],
                                         with progress: DNSPTCLProgressBlock?,
-                                        then resultBlock: DNSPTCLResultBlock?) -> AnyPublisher<Bool, Error> {
-        return Future<Bool, Error> {
+                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubBool {
+        return Future<WKRPTCLSupportRtnBool, Error> {
             let error = DNSError.Support
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))
