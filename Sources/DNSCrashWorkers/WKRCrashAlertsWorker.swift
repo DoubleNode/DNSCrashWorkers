@@ -21,7 +21,7 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
-    override open func intDoLoadAlerts(for center: DAOCenter,
+    override open func intDoLoadAlerts(for place: DAOPlace,
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
         return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in

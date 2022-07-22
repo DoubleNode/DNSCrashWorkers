@@ -20,7 +20,7 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
-    override open func intDoLoadActivities(for center: DAOCenter,
+    override open func intDoLoadActivities(for place: DAOPlace,
                                            using activityTypes: [DAOActivityType],
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLActivitiesBlkAActivity?,
@@ -29,7 +29,7 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ activities: [DAOActivity],
-                                   for center: DAOCenter,
+                                   for place: DAOPlace,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLActivitiesBlkBool?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {

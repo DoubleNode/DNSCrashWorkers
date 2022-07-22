@@ -1,5 +1,5 @@
 //
-//  WKRCrashCentersWorker.swift
+//  WKRCrashPlacesWorker.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSBlankWorkers
 //
 //  Created by Darren Ehlers.
@@ -13,78 +13,78 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashCentersWorker: WKRBlankCentersWorker {
+open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLCenters) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLPlaces) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
-    override open func intDoFilterCenters(for activity: DAOActivity,
-                                 using centers: [DAOCenter],
+    override open func intDoFilterPlaces(for activity: DAOActivity,
+                                 using places: [DAOPlace],
                                  with progress: DNSPTCLProgressBlock?,
-                                 and block: WKRPTCLCentersBlkACenter?,
+                                 and block: WKRPTCLPlacesBlkAPlace?,
                                  then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoLoadCenter(for centerCode: String,
+    override open func intDoLoadPlace(for placeCode: String,
                               with progress: DNSPTCLProgressBlock?,
-                              and block: WKRPTCLCentersBlkCenter?,
+                              and block: WKRPTCLPlacesBlkPlace?,
                               then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoLoadCenters(with progress: DNSPTCLProgressBlock?,
-                               and block: WKRPTCLCentersBlkACenter?,
+    override open func intDoLoadPlaces(with progress: DNSPTCLProgressBlock?,
+                               and block: WKRPTCLPlacesBlkAPlace?,
                                then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoLoadHolidays(for center: DAOCenter,
+    override open func intDoLoadHolidays(for place: DAOPlace,
                                 with progress: DNSPTCLProgressBlock?,
-                                and block: WKRPTCLCentersBlkACenterHoliday?,
+                                and block: WKRPTCLPlacesBlkAPlaceHoliday?,
                                 then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoLoadHours(for center: DAOCenter,
+    override open func intDoLoadHours(for place: DAOPlace,
                              with progress: DNSPTCLProgressBlock?,
-                             and block: WKRPTCLCentersBlkCenterHours?,
+                             and block: WKRPTCLPlacesBlkPlaceHours?,
                              then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoLoadState(for center: DAOCenter,
+    override open func intDoLoadState(for place: DAOPlace,
                              with progress: DNSPTCLProgressBlock?,
-                             then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCentersPubAlertEventStatus {
-        return Future<WKRPTCLCentersRtnAlertEventStatus, Error> {
-            let error = DNSError.Centers
+                             then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLPlacesPubAlertEventStatus {
+        return Future<WKRPTCLPlacesRtnAlertEventStatus, Error> {
+            let error = DNSError.Places
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func intDoSearchCenter(for geohash: String,
+    override open func intDoSearchPlace(for geohash: String,
                                 with progress: DNSPTCLProgressBlock?,
-                                and block: WKRPTCLCentersBlkCenter?,
+                                and block: WKRPTCLPlacesBlkPlace?,
                                 then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoUpdate(_ center: DAOCenter,
+    override open func intDoUpdate(_ place: DAOPlace,
                           with progress: DNSPTCLProgressBlock?,
-                          and block: WKRPTCLCentersBlkBool?,
+                          and block: WKRPTCLPlacesBlkBool?,
                           then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
-    override open func intDoUpdate(_ hours: DAOCenterHours,
-                          for center: DAOCenter,
+    override open func intDoUpdate(_ hours: DAOPlaceHours,
+                          for place: DAOPlace,
                           with progress: DNSPTCLProgressBlock?,
-                          and block: WKRPTCLCentersBlkBool?,
+                          and block: WKRPTCLPlacesBlkBool?,
                           then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Centers
+        throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
 }
