@@ -20,10 +20,16 @@ open class WKRCrashAccountWorker: WKRBlankAccountWorker {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
-    override open func intDoLoadAccount(for user: DAOUser,
-                                        with progress: DNSPTCLProgressBlock?,
-                                        and block: WKRPTCLAccountBlkAccount?,
-                                        then resultBlock: DNSPTCLResultBlock?) throws {
+    override open func intDoLoadAccounts(for user: DAOUser,
+                                         with progress: DNSProtocols.DNSPTCLProgressBlock?,
+                                         and block: WKRPTCLAccountBlkAAccount?,
+                                         then resultBlock: DNSPTCLResultBlock?) throws {
+        throw DNSError.Analytics
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+    }
+    override open func intDoLoadCurrentAccount(with progress: DNSPTCLProgressBlock?,
+                                               and block: WKRPTCLAccountBlkAccount?,
+                                               then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
