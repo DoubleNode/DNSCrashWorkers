@@ -24,8 +24,8 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
     override open func intDoChange(_ user: DAOUser,
                                    to role: DNSUserRole,
                                    with progress: DNSPTCLProgressBlock?,
-                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubBool {
-        return Future<WKRPTCLAdminRtnBool, Error> { promise in
+                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
+        return Future<WKRPTCLAdminRtnVoid, Error> { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -41,8 +41,8 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
     }
     override open func intDoDenyChangeRequest(for user: DAOUser,
                                               with progress: DNSPTCLProgressBlock?,
-                                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubBool {
-        return Future<WKRPTCLAdminRtnBool, Error> { promise in
+                                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
+        return Future<WKRPTCLAdminRtnVoid, Error> { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -65,8 +65,8 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
     }
     override open func intDoRequestChange(to role: DNSUserRole,
                                           with progress: DNSPTCLProgressBlock?,
-                                          then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubBool {
-        return Future<WKRPTCLAdminRtnBool, Error> { promise in
+                                          then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
+        return Future<WKRPTCLAdminRtnVoid, Error> { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
