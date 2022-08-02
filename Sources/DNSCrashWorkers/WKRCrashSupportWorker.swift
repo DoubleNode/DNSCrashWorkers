@@ -44,8 +44,8 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker {
                                         attachments: [WKRPTCLSupportAttachment],
                                         properties: [String: String],
                                         with progress: DNSPTCLProgressBlock?,
-                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubBool {
-        return Future<WKRPTCLSupportRtnBool, Error> {
+                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubVoid {
+        return Future<WKRPTCLSupportRtnVoid, Error> {
             let error = DNSError.Support
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))

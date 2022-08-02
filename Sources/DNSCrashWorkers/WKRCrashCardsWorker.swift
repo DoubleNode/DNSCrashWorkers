@@ -23,7 +23,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
     override open func intDoAdd(_ card: DAOCard,
                                 to user: DAOUser,
                                 with progress: DNSPTCLProgressBlock?,
-                                and block: WKRPTCLCardsBlkBool?,
+                                and block: WKRPTCLCardsBlkVoid?,
                                 then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
@@ -59,14 +59,14 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
     override open func intDoRemove(_ card: DAOCard,
                                    from user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLCardsBlkBool?,
+                                   and block: WKRPTCLCardsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ card: DAOCard,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLCardsBlkBool?,
+                                   and block: WKRPTCLCardsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

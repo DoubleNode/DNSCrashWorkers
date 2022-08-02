@@ -72,28 +72,28 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
     }
     override open func intDoRemove(_ basket: DAOBasket,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLCartBlkBool?,
+                                   and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoRemove(_ basketItem: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLCartBlkBool?,
+                                   and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ basket: DAOBasket,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLCartBlkBool?,
+                                   and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ basketItem: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLCartBlkBool?,
+                                   and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

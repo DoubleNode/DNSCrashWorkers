@@ -66,7 +66,7 @@ open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
     }
     override open func intDoUpdate(_ activityType: DAOActivityType,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLActivityTypesBlkBool?,
+                                   and block: WKRPTCLActivityTypesBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

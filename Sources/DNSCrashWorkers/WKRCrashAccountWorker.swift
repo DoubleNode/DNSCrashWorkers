@@ -35,7 +35,7 @@ open class WKRCrashAccountWorker: WKRBlankAccountWorker {
     }
     override open func intDoUpdate(account: DAOAccount,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLAccountBlkBool?,
+                                   and block: WKRPTCLAccountBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

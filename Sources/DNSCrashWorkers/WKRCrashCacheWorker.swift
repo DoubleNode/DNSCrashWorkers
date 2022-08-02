@@ -23,8 +23,8 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker {
     // MARK: - Internal Work Methods
     override open func intDoDeleteObject(for id: String,
                                          with progress: DNSPTCLProgressBlock?,
-                                         then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubBool {
-        return Future<WKRPTCLCacheRtnBool, Error> { promise in
+                                         then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubVoid {
+        return Future<WKRPTCLCacheRtnVoid, Error> { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

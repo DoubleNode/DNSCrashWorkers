@@ -39,7 +39,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
     }
     override open func intDoSignOut(using parameters: [String: Any],
                                     with progress: DNSPTCLProgressBlock?,
-                                    and block: WKRPTCLAuthBlkBool?,
+                                    and block: WKRPTCLAuthBlkVoid?,
                                     then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

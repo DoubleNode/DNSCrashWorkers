@@ -35,14 +35,14 @@ open class WKRCrashProductsWorker: WKRBlankProductsWorker {
     }
     override open func intDoRemove(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLProductsBlkBool?,
+                                   and block: WKRPTCLProductsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLProductsBlkBool?,
+                                   and block: WKRPTCLProductsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

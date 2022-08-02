@@ -40,21 +40,21 @@ open class WKRCrashUsersWorker: WKRBlankUsersWorker {
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoRemoveCurrentUser(with progress: DNSPTCLProgressBlock?,
-                                              and block: WKRPTCLUsersBlkBool?,
+                                              and block: WKRPTCLUsersBlkVoid?,
                                               then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
      }
     override open func intDoRemove(_ user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLUsersBlkBool?,
+                                   and block: WKRPTCLUsersBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
     }
     override open func intDoUpdate(_ user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLUsersBlkBool?,
+                                   and block: WKRPTCLUsersBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))

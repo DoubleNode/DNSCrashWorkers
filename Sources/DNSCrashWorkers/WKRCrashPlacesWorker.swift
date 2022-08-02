@@ -74,7 +74,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
     }
     override open func intDoUpdate(_ place: DAOPlace,
                           with progress: DNSPTCLProgressBlock?,
-                          and block: WKRPTCLPlacesBlkBool?,
+                          and block: WKRPTCLPlacesBlkVoid?,
                           then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
@@ -82,7 +82,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
     override open func intDoUpdate(_ hours: DAOPlaceHours,
                           for place: DAOPlace,
                           with progress: DNSPTCLProgressBlock?,
-                          and block: WKRPTCLPlacesBlkBool?,
+                          and block: WKRPTCLPlacesBlkVoid?,
                           then resultBlock: DNSPTCLResultBlock?) throws {
         throw DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
