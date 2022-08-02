@@ -25,7 +25,7 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
                                    to role: DNSUserRole,
                                    with progress: DNSPTCLProgressBlock?,
                                    then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
-        return Future<WKRPTCLAdminRtnVoid, Error> { promise in
+        return WKRPTCLAdminFutVoid { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -33,7 +33,7 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
     }
     override open func intDoCheckAdmin(with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubBool {
-        return Future<WKRPTCLAdminRtnBool, Error> { promise in
+        return WKRPTCLAdminFutBool { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -42,7 +42,7 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
     override open func intDoDenyChangeRequest(for user: DAOUser,
                                               with progress: DNSPTCLProgressBlock?,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
-        return Future<WKRPTCLAdminRtnVoid, Error> { promise in
+        return WKRPTCLAdminFutVoid { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -50,14 +50,14 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
     }
     override open func intDoLoadChangeRequests(with progress: DNSPTCLProgressBlock?,
                                                then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubUserChangeRequest {
-        return Future<WKRPTCLAdminRtnUserChangeRequest, Error> { promise in
+        return WKRPTCLAdminFutUserChangeRequest { promise in
             let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoLoadTabs(with progress: DNSPTCLProgressBlock?,
                                      then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubAString {
-        return Future<WKRPTCLAdminRtnAString, Error> { promise in
+        return WKRPTCLAdminFutAString { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -66,7 +66,7 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
     override open func intDoRequestChange(to role: DNSUserRole,
                                           with progress: DNSPTCLProgressBlock?,
                                           then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
-        return Future<WKRPTCLAdminRtnVoid, Error> { promise in
+        return WKRPTCLAdminFutVoid { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

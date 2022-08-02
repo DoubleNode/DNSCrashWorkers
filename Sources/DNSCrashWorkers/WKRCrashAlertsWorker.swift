@@ -24,7 +24,7 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
     override open func intDoLoadAlerts(for place: DAOPlace,
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
-        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+        return WKRPTCLAlertsFutAAlert { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -33,7 +33,7 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
     override open func intDoLoadAlerts(for district: DAODistrict,
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
-        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+        return WKRPTCLAlertsFutAAlert { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -42,7 +42,7 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
     override open func intDoLoadAlerts(for region: DAORegion,
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
-        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+        return WKRPTCLAlertsFutAAlert { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -50,7 +50,7 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
     }
     override open func intDoLoadAlerts(with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
-        return Future<WKRPTCLAlertsRtnAAlert, Error> { promise in
+        return WKRPTCLAlertsFutAAlert { promise in
             let error = DNSError.Cache
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

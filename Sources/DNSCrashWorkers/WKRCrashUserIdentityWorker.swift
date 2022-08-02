@@ -23,7 +23,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker {
     // MARK: - Internal Work Methods
     override open func intDoClearIdentity(with progress: DNSPTCLProgressBlock?,
                                           then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLUserIdentityPubVoid {
-        return Future<WKRPTCLUserIdentityRtnVoid, Error> { promise in
+        return WKRPTCLUserIdentityFutVoid { promise in
             let error = DNSError.UserIdentity
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -32,7 +32,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker {
     override open func intDoJoin(group: String,
                                  with progress: DNSPTCLProgressBlock?,
                                  then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLUserIdentityPubVoid {
-        return Future<WKRPTCLUserIdentityRtnVoid, Error> { promise in
+        return WKRPTCLUserIdentityFutVoid { promise in
             let error = DNSError.UserIdentity
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -41,7 +41,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker {
     override open func intDoLeave(group: String,
                                   with progress: DNSPTCLProgressBlock?,
                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLUserIdentityPubVoid {
-        return Future<WKRPTCLUserIdentityRtnVoid, Error> { promise in
+        return WKRPTCLUserIdentityFutVoid { promise in
             let error = DNSError.UserIdentity
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -50,7 +50,7 @@ open class WKRCrashUserIdentityWorker: WKRBlankUserIdentityWorker {
     override open func intDoSetIdentity(using data: [String: Any?],
                                         with progress: DNSPTCLProgressBlock?,
                                         then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLUserIdentityPubVoid {
-        return Future<WKRPTCLUserIdentityRtnVoid, Error> { promise in
+        return WKRPTCLUserIdentityFutVoid { promise in
             let error = DNSError.UserIdentity
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))

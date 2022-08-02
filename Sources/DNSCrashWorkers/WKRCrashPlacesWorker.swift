@@ -59,7 +59,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
     override open func intDoLoadState(for place: DAOPlace,
                              with progress: DNSPTCLProgressBlock?,
                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLPlacesPubAlertEventStatus {
-        return Future<WKRPTCLPlacesRtnAlertEventStatus, Error> {
+        return WKRPTCLPlacesFutAlertEventStatus {
             let error = DNSError.Places
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))

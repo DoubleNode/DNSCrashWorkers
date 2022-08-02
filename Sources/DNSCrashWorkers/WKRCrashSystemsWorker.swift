@@ -74,7 +74,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker {
                                    and endPointId: String,
                                    with progress: DNSPTCLProgressBlock?,
                                    then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSystemsPubVoid {
-        return Future<WKRPTCLSystemsRtnVoid, Error> {
+        return WKRPTCLSystemsFutVoid {
             let error = DNSError.Systems
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))

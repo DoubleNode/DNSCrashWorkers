@@ -23,7 +23,7 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker {
     // MARK: - Internal Work Methods
     override open func intDoGetUpdatedCount(with progress: DNSPTCLProgressBlock?,
                                             then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubInt {
-        return Future<WKRPTCLSupportRtnInt, Error> { promise in
+        return WKRPTCLSupportFutInt { promise in
             let error = DNSError.Support
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
@@ -32,7 +32,7 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker {
     override open func intDoPrepare(attachment image: UIImage,
                                     with progress: DNSPTCLProgressBlock?,
                                     then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubAttach {
-        return Future<WKRPTCLSupportRtnAttach, Error> {
+        return WKRPTCLSupportFutAttach {
             let error = DNSError.Support
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))
@@ -45,7 +45,7 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker {
                                         properties: [String: String],
                                         with progress: DNSPTCLProgressBlock?,
                                         then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubVoid {
-        return Future<WKRPTCLSupportRtnVoid, Error> {
+        return WKRPTCLSupportFutVoid {
             let error = DNSError.Support
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             $0(.failure(error))

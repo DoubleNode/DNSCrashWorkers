@@ -27,7 +27,7 @@ open class WKRCrashPassportsWorker: WKRBlankPassportsWorker {
                                           for account: DAOAccount,
                                           with progress: DNSPTCLProgressBlock?,
                                           then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLPassportsPubData {
-        return Future<WKRPTCLPassportsRtnData, Error> { promise in
+        return WKRPTCLPassportsFutData { promise in
             let error = DNSError.Passports
                 .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
             promise(.failure(error))
