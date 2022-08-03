@@ -24,51 +24,58 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                 to user: DAOUser,
                                 with progress: DNSPTCLProgressBlock?,
                                 and block: WKRPTCLCardsBlkVoid?,
-                                then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadCard(for id: String,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCardsBlkCard?,
-                                     then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                     then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadCard(for transaction: DAOTransaction,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCardsBlkCard?,
-                                     then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                     then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadCards(for user: DAOUser,
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLCardsBlkACard?,
-                                      then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                      then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadTransactions(for card: DAOCard,
                                              with progress: DNSPTCLProgressBlock?,
                                              and block: WKRPTCLCardsBlkATransaction?,
-                                             then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                             then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoRemove(_ card: DAOCard,
                                    from user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCardsBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoUpdate(_ card: DAOCard,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCardsBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

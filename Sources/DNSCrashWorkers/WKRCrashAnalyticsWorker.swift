@@ -21,37 +21,42 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker {
 
     // MARK: - Internal Work Methods
     override open func intDoAutoTrack(class: String, method: String,
-                                      properties: [String: Any], options: [String: Any],
-                                      then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                      properties: DNSDataDictionary, options: DNSDataDictionary,
+                                      then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
-    override open func intDoGroup(groupId: String, traits: [String: Any],
-                                  options: [String: Any],
-                                  then resultBlock: DNSPTCLResultBlock?) throws
+    override open func intDoGroup(groupId: String, traits: DNSDataDictionary,
+                                  options: DNSDataDictionary,
+                                  then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
-        throw DNSError.Analytics
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
-    override open func intDoIdentify(userId: String, traits: [String: Any],
-                                     options: [String: Any],
-                                     then resultBlock: DNSPTCLResultBlock?) throws
+    override open func intDoIdentify(userId: String, traits: DNSDataDictionary,
+                                     options: DNSDataDictionary,
+                                     then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
-        throw DNSError.Analytics
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
-    override open func intDoScreen(screenTitle: String, properties: [String: Any],
-                                   options: [String: Any],
-                                   then resultBlock: DNSPTCLResultBlock?) throws
+    override open func intDoScreen(screenTitle: String, properties: DNSDataDictionary,
+                                   options: DNSDataDictionary,
+                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
-        throw DNSError.Analytics
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
-    override open func intDoTrack(event: WKRPTCLAnalyticsEvents, properties: [String: Any],
-                                  options: [String: Any],
-                                  then resultBlock: DNSPTCLResultBlock?) throws
+    override open func intDoTrack(event: WKRPTCLAnalyticsEvents, properties: DNSDataDictionary,
+                                  options: DNSDataDictionary,
+                                  then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
-        throw DNSError.Analytics
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
 }

@@ -24,30 +24,34 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                     _ permission: WKRPTCLPermissions.Data.System,
                                     with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLPermissionsBlkAction?,
-                                    then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Permissions
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
                                     _ permissions: [WKRPTCLPermissions.Data.System],
                                     with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLPermissionsBlkAAction?,
-                                    then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Permissions
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoStatus(of permissions: [WKRPTCLPermissions.Data.System],
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPermissionsBlkAAction?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Permissions
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoWait(for permission: WKRPTCLPermissions.Data.System,
                                  with progress: DNSPTCLProgressBlock?,
                                  and block: WKRPTCLPermissionsBlkAction?,
-                                 then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Permissions
+                                 then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

@@ -22,20 +22,23 @@ open class WKRCrashGeoWorker: WKRBlankGeoWorker {
     // MARK: - Internal Work Methods
     override open func intDoLocate(with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLGeoBlkString?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Geo
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Geo
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoTrackLocation(for processKey: String,
                                           with progress: DNSPTCLProgressBlock?,
                                           and block: WKRPTCLGeoBlkString?,
-                                          then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Geo
+                                          then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Geo
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoStopTrackLocation(for processKey: String,
-                                              then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Geo
+                                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLGeoResVoid {
+        let error = DNSError.Geo
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
 }

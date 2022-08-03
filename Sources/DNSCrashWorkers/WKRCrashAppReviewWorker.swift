@@ -20,8 +20,9 @@ open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker {
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
-    override open func intDoReview(then resultBlock: DNSPTCLResultBlock?) throws -> Bool {
-        throw DNSError.AppReview
+    override open func intDoReview(then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAppReviewResVoid {
+        let error = DNSError.AppReview
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
 }

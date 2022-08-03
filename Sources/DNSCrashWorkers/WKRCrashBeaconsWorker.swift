@@ -24,29 +24,33 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker {
     override open func intDoLoadBeacons(in place: DAOPlace,
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLBeaconsBlkABeacon?,
-                                        then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Beacons
+                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadBeacons(in place: DAOPlace,
                                         for activity: DAOActivity,
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLBeaconsBlkABeacon?,
-                                        then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Beacons
+                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoRangeBeacons(named uuids: [UUID],
                                          for processKey: String,
                                          with progress: DNSPTCLProgressBlock?,
                                          and block: WKRPTCLBeaconsBlkABeacon?,
-                                         then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Beacons
+                                         then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoStopRangeBeacons(for processKey: String,
-                                             then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Beacons
+                                             then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLBeaconsResVoid {
+        let error = DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        return .failure(error)
     }
 }

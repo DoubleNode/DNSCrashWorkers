@@ -22,8 +22,9 @@ open class WKRCrashBeaconDistWorker: WKRBlankBeaconDistWorker {
     // MARK: - Internal Work Methods
     override open func intDoLoadBeaconDistances(with progress: DNSPTCLProgressBlock?,
                                                 and block: WKRPTCLBeaconDistBlkABeaconDistance?,
-                                                then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.BeaconDist
+                                                then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.BeaconDist
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

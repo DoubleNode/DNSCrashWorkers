@@ -21,36 +21,40 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
-    override open func intDoCheckAuthentication(using parameters: [String : Any],
+    override open func intDoCheckAuthentication(using parameters: DNSDataDictionary,
                                                 with progress: DNSPTCLProgressBlock?,
                                                 and block: WKRPTCLAuthBlkBoolBoolAccessData?,
-                                                then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Auth
+                                                then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoSignIn(from username: String?,
                                    and password: String?,
-                                   using parameters: [String: Any],
+                                   using parameters: DNSDataDictionary,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLAuthBlkBoolAccessData?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Auth
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
-    override open func intDoSignOut(using parameters: [String: Any],
+    override open func intDoSignOut(using parameters: DNSDataDictionary,
                                     with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLAuthBlkVoid?,
-                                    then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Auth
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoSignUp(from user: DAOUser?,
                                    and password: String?,
-                                   using parameters: [String: Any],
+                                   using parameters: DNSDataDictionary,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLAuthBlkBoolAccessData?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Auth
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

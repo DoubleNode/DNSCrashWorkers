@@ -24,78 +24,89 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                 to basket: DAOBasket,
                                 with progress: DNSPTCLProgressBlock?,
                                 and block: WKRPTCLCartBlkBasket?,
-                                then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoCheckout(for basket: DAOBasket,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCartBlkOrder?,
-                                     then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                     then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoCreate(with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkBasket?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoCreate(and add: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkBasket?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadOrder(for id: String,
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLCartBlkOrder?,
-                                      then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                      then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadOrders(for account: DAOAccount,
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLCartBlkAOrder?,
-                                       then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                       then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadOrders(for account: DAOAccount,
                                        and state: DNSOrderState,
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLCartBlkAOrder?,
-                                       then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                       then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoRemove(_ basket: DAOBasket,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoRemove(_ basketItem: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoUpdate(_ basket: DAOBasket,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoUpdate(_ basketItem: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Analytics
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

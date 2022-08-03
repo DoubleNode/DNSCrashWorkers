@@ -21,8 +21,9 @@ open class WKRCrashAppEventsWorker: WKRBlankAppEventsWorker {
     // MARK: - Internal Work Methods
     override open func intDoLoadAppEvents(with progress: DNSPTCLProgressBlock?,
                                           and block: WKRPTCLAppEventsBlkAAppEvent?,
-                                          then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                          then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.AppEvents
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

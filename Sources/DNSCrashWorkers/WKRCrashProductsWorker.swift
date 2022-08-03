@@ -23,28 +23,32 @@ open class WKRCrashProductsWorker: WKRBlankProductsWorker {
     override open func intDoLoadProduct(for id: String,
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLProductsBlkProduct?,
-                                        then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoLoadProducts(with progress: DNSPTCLProgressBlock?,
                                          and block: WKRPTCLProductsBlkAProduct?,
-                                         then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                         then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoRemove(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLProductsBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoUpdate(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLProductsBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

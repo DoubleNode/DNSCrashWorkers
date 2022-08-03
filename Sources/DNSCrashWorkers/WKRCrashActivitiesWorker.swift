@@ -24,16 +24,18 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
                                            using activityTypes: [DAOActivityType],
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLActivitiesBlkAActivity?,
-                                           then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                           then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Activities
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
     override open func intDoUpdate(_ activities: [DAOActivity],
                                    for place: DAOPlace,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLActivitiesBlkVoid?,
-                                   then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Analytics
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Activities
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

@@ -23,8 +23,9 @@ open class WKRCrashCMSWorker: WKRBlankCMSWorker {
     override open func intDoLoad(for group: String,
                                  with progress: DNSPTCLProgressBlock?,
                                  and block: WKRPTCLCmsBlkAAny?,
-                                 then resultBlock: DNSPTCLResultBlock?) throws {
-        throw DNSError.Cms
+                                 then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Cms
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
     }
 }

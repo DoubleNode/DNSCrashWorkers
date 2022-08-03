@@ -1,5 +1,5 @@
 //
-//  WKRCrashPasswordStrengthWorkerTests.swift
+//  WKRCrashPassStrengthWorkerTests.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkersTests
 //
 //  Created by Darren Ehlers.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import DNSCrashWorkers
 
-final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
+final class WKRCrashPassStrengthWorkerTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
