@@ -25,7 +25,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                 with progress: DNSPTCLProgressBlock?,
                                 and block: WKRPTCLCardsBlkVoid?,
                                 then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cards
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -33,7 +33,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCardsBlkCard?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cards
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -41,7 +41,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCardsBlkCard?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cards
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -49,7 +49,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLCardsBlkACard?,
                                       then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cards
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -57,7 +57,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                              with progress: DNSPTCLProgressBlock?,
                                              and block: WKRPTCLCardsBlkATransaction?,
                                              then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cards
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -66,7 +66,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCardsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cards
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -74,7 +74,7 @@ open class WKRCrashCardsWorker: WKRBlankCardsWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCardsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cards
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }

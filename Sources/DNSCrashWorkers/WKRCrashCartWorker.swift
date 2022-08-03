@@ -25,7 +25,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                 with progress: DNSPTCLProgressBlock?,
                                 and block: WKRPTCLCartBlkBasket?,
                                 then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -33,14 +33,14 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCartBlkOrder?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
     override open func intDoCreate(with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkBasket?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -48,7 +48,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkBasket?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -56,7 +56,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLCartBlkOrder?,
                                       then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -64,7 +64,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLCartBlkAOrder?,
                                        then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -73,7 +73,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLCartBlkAOrder?,
                                        then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -81,7 +81,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -89,7 +89,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -97,7 +97,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
@@ -105,7 +105,7 @@ open class WKRCrashCartWorker: WKRBlankCartWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Analytics
+        let error = DNSError.Cart
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }

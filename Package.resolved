@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankNetwork.git",
         "state": {
           "branch": null,
-          "revision": "18d3c2dec77e1c49c0043b391ee84483a113c12b",
-          "version": "1.9.9"
+          "revision": "b092e646fa6089668b63b5be32d643c389f4ce7a",
+          "version": "1.9.14"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "72873e804bad77db03b37c6be96ff4c10b00a863",
-          "version": "1.9.15"
+          "revision": "797edba427cdbb13618d5b4d5747d65217ce9e85",
+          "version": "1.9.28"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCrashNetwork.git",
         "state": {
           "branch": null,
-          "revision": "b87b3a672e51d307ad3230def75f4ab95e47c6cc",
-          "version": "1.9.5"
+          "revision": "1744a44ac6c9540a2c03e0383dc4690aa0a44d4f",
+          "version": "1.9.10"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "866fd555feb85949e6a9d86347e4dc2e419b7e46",
-          "version": "1.9.39"
+          "revision": "aaa65010719bb6b0ecfc4956aa5cf7e03777bb05",
+          "version": "1.9.55"
         }
       },
       {
