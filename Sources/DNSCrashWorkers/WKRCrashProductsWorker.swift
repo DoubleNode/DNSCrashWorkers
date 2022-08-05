@@ -28,7 +28,24 @@ open class WKRCrashProductsWorker: WKRBlankProductsWorker {
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
         block?(.failure(error))
     }
+    override open func intDoLoadProduct(for id: String,
+                                        and place: DAOPlace,
+                                        with progress: DNSPTCLProgressBlock?,
+                                        and block: WKRPTCLProductsBlkProduct?,
+                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
+    }
     override open func intDoLoadProducts(with progress: DNSPTCLProgressBlock?,
+                                         and block: WKRPTCLProductsBlkAProduct?,
+                                         then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products
+            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+        block?(.failure(error))
+    }
+    override open func intDoLoadProducts(for place: DAOPlace,
+                                         with progress: DNSPTCLProgressBlock?,
                                          and block: WKRPTCLProductsBlkAProduct?,
                                          then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Products
