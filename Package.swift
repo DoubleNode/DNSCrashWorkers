@@ -26,7 +26,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.9.31"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.9.32"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.9.13"),
         .package(url: "https://github.com/DoubleNode/DNSDataObjects.git", from: "1.9.21"),
         .package(url: "https://github.com/DoubleNode/DNSError.git", from: "1.8.0"),
