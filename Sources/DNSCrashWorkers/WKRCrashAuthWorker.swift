@@ -21,7 +21,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
-    override open func intDoCheckAuthentication(using parameters: DNSDataDictionary,
+    override open func intDoCheckAuth(using parameters: DNSDataDictionary,
                                                 with progress: DNSPTCLProgressBlock?,
                                                 and block: WKRPTCLAuthBlkBoolBoolAccessData?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
