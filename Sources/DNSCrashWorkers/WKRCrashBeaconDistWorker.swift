@@ -25,6 +25,6 @@ open class WKRCrashBeaconDistWorker: WKRBlankBeaconDistWorker {
                                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.BeaconDist
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
 }

@@ -26,7 +26,7 @@ open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoFavorite(_ activityType: DAOActivityType,
                                      for user: DAOUser,
@@ -35,7 +35,7 @@ open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
                                      then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoIsFavorited(_ activityType: DAOActivityType,
                                         for user: DAOUser,
@@ -44,7 +44,7 @@ open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadActivityType(for code: String,
                                              with progress: DNSPTCLProgressBlock?,
@@ -52,14 +52,14 @@ open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
                                              then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadActivityTypes(with progress: DNSPTCLProgressBlock?,
                                               and block: WKRPTCLActivityTypesBlkAActivityType?,
                                               then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoUnfavorite(_ activityType: DAOActivityType,
                                        for user: DAOUser,
@@ -68,7 +68,7 @@ open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
                                        then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoUpdate(_ activityType: DAOActivityType,
                                    with progress: DNSPTCLProgressBlock?,
@@ -76,6 +76,6 @@ open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
 }

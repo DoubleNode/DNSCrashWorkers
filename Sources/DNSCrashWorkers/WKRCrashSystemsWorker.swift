@@ -28,7 +28,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker {
                                        then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadEndPoints(for system: DAOSystem,
                                           with progress: DNSPTCLProgressBlock?,
@@ -36,7 +36,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker {
                                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadHistory(for system: DAOSystem,
                                         since time: Date,
@@ -45,7 +45,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker {
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadHistory(for endPoint: DAOSystemEndPoint,
                                         since time: Date,
@@ -55,14 +55,14 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker {
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadSystems(with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLSystemsBlkASystem?,
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoOverride(system: DAOSystem,
                                      with state: DNSSystemState,
@@ -71,7 +71,7 @@ open class WKRCrashSystemsWorker: WKRBlankSystemsWorker {
                                      then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Systems
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoReport(result: WKRPTCLSystemsData.Result,
                                    and failureCode: String,

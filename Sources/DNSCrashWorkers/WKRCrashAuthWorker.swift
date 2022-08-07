@@ -27,7 +27,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoSignIn(from username: String?,
                                    and password: String?,
@@ -37,7 +37,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoSignOut(using parameters: DNSDataDictionary,
                                     with progress: DNSPTCLProgressBlock?,
@@ -45,7 +45,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoSignUp(from user: DAOUser?,
                                    and password: String?,
@@ -55,6 +55,6 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
 }

@@ -27,7 +27,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker {
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadBeacons(in place: DAOPlace,
                                         for activity: DAOActivity,
@@ -36,7 +36,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker {
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoRangeBeacons(named uuids: [UUID],
                                          for processKey: String,
@@ -45,7 +45,7 @@ open class WKRCrashBeaconsWorker: WKRBlankBeaconsWorker {
                                          then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Beacons
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoStopRangeBeacons(for processKey: String,
                                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLBeaconsResVoid {

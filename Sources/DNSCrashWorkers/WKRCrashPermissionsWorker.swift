@@ -27,7 +27,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
                                     _ permissions: [WKRPTCLPermissions.Data.System],
@@ -36,7 +36,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoStatus(of permissions: [WKRPTCLPermissions.Data.System],
                                    with progress: DNSPTCLProgressBlock?,
@@ -44,7 +44,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoWait(for permission: WKRPTCLPermissions.Data.System,
                                  with progress: DNSPTCLProgressBlock?,
@@ -52,6 +52,6 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                  then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
 }

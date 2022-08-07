@@ -28,7 +28,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
                                  then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadPlace(for placeCode: String,
                               with progress: DNSPTCLProgressBlock?,
@@ -36,14 +36,14 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
                               then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadPlaces(with progress: DNSPTCLProgressBlock?,
                                and block: WKRPTCLPlacesBlkAPlace?,
                                then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadHolidays(for place: DAOPlace,
                                 with progress: DNSPTCLProgressBlock?,
@@ -51,7 +51,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadHours(for place: DAOPlace,
                              with progress: DNSPTCLProgressBlock?,
@@ -59,7 +59,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
                              then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadState(for place: DAOPlace,
                              with progress: DNSPTCLProgressBlock?,
@@ -76,7 +76,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoUpdate(_ place: DAOPlace,
                           with progress: DNSPTCLProgressBlock?,
@@ -84,7 +84,7 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoUpdate(_ hours: DAOPlaceHours,
                           for place: DAOPlace,
@@ -93,6 +93,6 @@ open class WKRCrashPlacesWorker: WKRBlankPlacesWorker {
                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
 }

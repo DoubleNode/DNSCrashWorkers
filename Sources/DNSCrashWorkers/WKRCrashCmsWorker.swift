@@ -26,6 +26,6 @@ open class WKRCrashCmsWorker: WKRBlankCmsWorker {
                                  then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Cms
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
 }

@@ -26,14 +26,14 @@ open class WKRCrashAccountWorker: WKRBlankAccountWorker {
                                          then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoLoadCurrentAccount(with progress: DNSPTCLProgressBlock?,
                                                and block: WKRPTCLAccountBlkAccount?,
                                                then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
     override open func intDoUpdate(account: DAOAccount,
                                    with progress: DNSPTCLProgressBlock?,
@@ -41,6 +41,6 @@ open class WKRCrashAccountWorker: WKRBlankAccountWorker {
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account
             .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
-        block?(.failure(error))
+        fatalError(error.errorString)
     }
 }
