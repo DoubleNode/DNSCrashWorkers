@@ -24,7 +24,7 @@ open class WKRCrashGeoWorker: WKRBlankGeoWorker {
                                    and block: WKRPTCLGeoBlkString?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Geo
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoTrackLocation(for processKey: String,
@@ -32,13 +32,13 @@ open class WKRCrashGeoWorker: WKRBlankGeoWorker {
                                           and block: WKRPTCLGeoBlkString?,
                                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Geo
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoStopTrackLocation(for processKey: String,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLGeoResVoid {
         let error = DNSError.Geo
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         return .failure(error)
     }
 }

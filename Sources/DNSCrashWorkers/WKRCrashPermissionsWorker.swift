@@ -26,7 +26,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                     and block: WKRPTCLPermissionsBlkAction?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
@@ -35,7 +35,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                     and block: WKRPTCLPermissionsBlkAAction?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoStatus(of permissions: [WKRPTCLPermissions.Data.System],
@@ -43,7 +43,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                    and block: WKRPTCLPermissionsBlkAAction?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoWait(for permission: WKRPTCLPermissions.Data.System,
@@ -51,7 +51,7 @@ open class WKRCrashPermissionsWorker: WKRBlankPermissionsWorker {
                                  and block: WKRPTCLPermissionsBlkAction?,
                                  then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Permissions
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

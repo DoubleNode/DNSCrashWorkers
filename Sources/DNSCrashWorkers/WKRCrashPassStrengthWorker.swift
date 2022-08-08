@@ -23,7 +23,7 @@ open class WKRCrashPassStrengthWorker: WKRBlankPassStrengthWorker {
     override open func intDoCheckPassStrength(for password: String,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLPassStrengthResVoid {
         let error = DNSError.PassStrength
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         return .failure(error)
     }
 }

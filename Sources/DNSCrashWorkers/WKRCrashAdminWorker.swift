@@ -26,16 +26,14 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
         return WKRPTCLAdminFutVoid { promise in
-            let error = DNSError.Admin
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Admin.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoCheckAdmin(with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubBool {
         return WKRPTCLAdminFutBool { promise in
-            let error = DNSError.Admin
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Admin.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -43,24 +41,21 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
                                               with progress: DNSPTCLProgressBlock?,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
         return WKRPTCLAdminFutVoid { promise in
-            let error = DNSError.Admin
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Admin.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoLoadChangeRequests(with progress: DNSPTCLProgressBlock?,
                                                then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubUserChangeRequest {
         return WKRPTCLAdminFutUserChangeRequest { promise in
-            let error = DNSError.Admin
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Admin.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoLoadTabs(with progress: DNSPTCLProgressBlock?,
                                      then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubAString {
         return WKRPTCLAdminFutAString { promise in
-            let error = DNSError.Admin
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Admin.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -68,8 +63,7 @@ open class WKRCrashAdminWorker: WKRBlankAdminWorker {
                                           with progress: DNSPTCLProgressBlock?,
                                           then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
         return WKRPTCLAdminFutVoid { promise in
-            let error = DNSError.Admin
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Admin.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }

@@ -26,7 +26,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                                 and block: WKRPTCLAuthBlkBoolBoolAccessData?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoSignIn(from username: String?,
@@ -36,7 +36,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                    and block: WKRPTCLAuthBlkBoolAccessData?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoSignOut(using parameters: DNSDataDictionary,
@@ -44,7 +44,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                     and block: WKRPTCLAuthBlkVoid?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoSignUp(from user: DAOUser?,
@@ -54,7 +54,7 @@ open class WKRCrashAuthWorker: WKRBlankAuthWorker {
                                    and block: WKRPTCLAuthBlkBoolAccessData?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

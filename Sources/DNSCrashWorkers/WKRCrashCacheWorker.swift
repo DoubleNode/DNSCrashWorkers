@@ -25,8 +25,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker {
                                          with progress: DNSPTCLProgressBlock?,
                                          then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubVoid {
         return WKRPTCLCacheFutVoid { promise in
-            let error = DNSError.Cache
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -35,8 +34,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker {
                                       with progress: DNSPTCLProgressBlock?,
                                       then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubImage {
         return WKRPTCLCacheFutImage { promise in
-            let error = DNSError.Cache
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -44,8 +42,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker {
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubAny {
         return WKRPTCLCacheFutAny { promise in
-            let error = DNSError.Cache
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -53,8 +50,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker {
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubString {
         return WKRPTCLCacheFutString { promise in
-            let error = DNSError.Cache
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -63,8 +59,7 @@ open class WKRCrashCacheWorker: WKRBlankCacheWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubAny {
         return WKRPTCLCacheFutAny { promise in
-            let error = DNSError.Cache
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Cache.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }

@@ -25,8 +25,7 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
         return WKRPTCLAlertsFutAAlert { promise in
-            let error = DNSError.Alerts
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Alerts.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -34,8 +33,7 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
         return WKRPTCLAlertsFutAAlert { promise in
-            let error = DNSError.Alerts
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Alerts.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -43,16 +41,14 @@ open class WKRCrashAlertsWorker: WKRBlankAlertsWorker {
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
         return WKRPTCLAlertsFutAAlert { promise in
-            let error = DNSError.Alerts
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Alerts.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
     override open func intDoLoadAlerts(with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
         return WKRPTCLAlertsFutAAlert { promise in
-            let error = DNSError.Alerts
-                .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            let error = DNSError.Alerts.notImplemented(DNSCodeLocation.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }

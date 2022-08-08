@@ -22,7 +22,7 @@ open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker {
     // MARK: - Internal Work Methods
     override open func intDoReview(then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAppReviewResVoid {
         let error = DNSError.AppReview
-            .notImplemented(DNSCodeLocation.crashWorkers(self, "\(#file),\(#line),\(#function)"))
+            .notImplemented(DNSCodeLocation.crashWorkers(self))
         return .failure(error)
     }
 }
