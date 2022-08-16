@@ -25,7 +25,7 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLActivitiesBlkAActivity?,
                                            then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Activities.notImplemented(DNSCodeLocation.crashWorkers(self))
+        let error = DNSError.Activities.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ activities: [DAOActivity],
@@ -33,7 +33,7 @@ open class WKRCrashActivitiesWorker: WKRBlankActivitiesWorker {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLActivitiesBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Activities.notImplemented(DNSCodeLocation.crashWorkers(self))
+        let error = DNSError.Activities.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

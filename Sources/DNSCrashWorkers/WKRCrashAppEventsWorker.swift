@@ -23,7 +23,7 @@ open class WKRCrashAppEventsWorker: WKRBlankAppEventsWorker {
                                           and block: WKRPTCLAppEventsBlkAAppEvent?,
                                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.AppEvents
-            .notImplemented(DNSCodeLocation.crashWorkers(self))
+            .notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

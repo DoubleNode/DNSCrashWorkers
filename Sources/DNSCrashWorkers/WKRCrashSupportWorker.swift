@@ -24,7 +24,7 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker {
     override open func intDoGetUpdatedCount(with progress: DNSPTCLProgressBlock?,
                                             then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubInt {
         return WKRPTCLSupportFutInt { promise in
-            let error = DNSError.Support.notImplemented(DNSCodeLocation.crashWorkers(self))
+            let error = DNSError.Support.notImplemented(.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -32,7 +32,7 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker {
                                     with progress: DNSPTCLProgressBlock?,
                                     then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubAttach {
         return WKRPTCLSupportFutAttach {
-            let error = DNSError.Support.notImplemented(DNSCodeLocation.crashWorkers(self))
+            let error = DNSError.Support.notImplemented(.crashWorkers(self))
             $0(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -44,7 +44,7 @@ open class WKRCrashSupportWorker: WKRBlankSupportWorker {
                                         with progress: DNSPTCLProgressBlock?,
                                         then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLSupportPubVoid {
         return WKRPTCLSupportFutVoid {
-            let error = DNSError.Support.notImplemented(DNSCodeLocation.crashWorkers(self))
+            let error = DNSError.Support.notImplemented(.crashWorkers(self))
             $0(.failure(error))
         }.eraseToAnyPublisher()
     }

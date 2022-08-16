@@ -24,7 +24,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker {
                                       properties: DNSDataDictionary, options: DNSDataDictionary,
                                       then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid {
         let error = DNSError.Analytics
-            .notImplemented(DNSCodeLocation.crashWorkers(self))
+            .notImplemented(.crashWorkers(self))
         return .failure(error)
     }
     override open func intDoGroup(groupId: String, traits: DNSDataDictionary,
@@ -32,7 +32,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker {
                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
         let error = DNSError.Analytics
-            .notImplemented(DNSCodeLocation.crashWorkers(self))
+            .notImplemented(.crashWorkers(self))
         return .failure(error)
     }
     override open func intDoIdentify(userId: String, traits: DNSDataDictionary,
@@ -40,7 +40,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker {
                                      then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
         let error = DNSError.Analytics
-            .notImplemented(DNSCodeLocation.crashWorkers(self))
+            .notImplemented(.crashWorkers(self))
         return .failure(error)
     }
     override open func intDoScreen(screenTitle: String, properties: DNSDataDictionary,
@@ -48,7 +48,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker {
                                    then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
         let error = DNSError.Analytics
-            .notImplemented(DNSCodeLocation.crashWorkers(self))
+            .notImplemented(.crashWorkers(self))
         return .failure(error)
     }
     override open func intDoTrack(event: WKRPTCLAnalyticsEvents, properties: DNSDataDictionary,
@@ -56,7 +56,7 @@ open class WKRCrashAnalyticsWorker: WKRBlankAnalyticsWorker {
                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAnalyticsResVoid
     {
         let error = DNSError.Analytics
-            .notImplemented(DNSCodeLocation.crashWorkers(self))
+            .notImplemented(.crashWorkers(self))
         return .failure(error)
     }
 }

@@ -24,7 +24,7 @@ open class WKRCrashIdentityWorker: WKRBlankIdentityWorker {
     override open func intDoClearIdentity(with progress: DNSPTCLProgressBlock?,
                                           then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLIdentityPubVoid {
         return WKRPTCLIdentityFutVoid { promise in
-            let error = DNSError.Identity.notImplemented(DNSCodeLocation.crashWorkers(self))
+            let error = DNSError.Identity.notImplemented(.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -32,7 +32,7 @@ open class WKRCrashIdentityWorker: WKRBlankIdentityWorker {
                                  with progress: DNSPTCLProgressBlock?,
                                  then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLIdentityPubVoid {
         return WKRPTCLIdentityFutVoid { promise in
-            let error = DNSError.Identity.notImplemented(DNSCodeLocation.crashWorkers(self))
+            let error = DNSError.Identity.notImplemented(.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -40,7 +40,7 @@ open class WKRCrashIdentityWorker: WKRBlankIdentityWorker {
                                   with progress: DNSPTCLProgressBlock?,
                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLIdentityPubVoid {
         return WKRPTCLIdentityFutVoid { promise in
-            let error = DNSError.Identity.notImplemented(DNSCodeLocation.crashWorkers(self))
+            let error = DNSError.Identity.notImplemented(.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
@@ -48,7 +48,7 @@ open class WKRCrashIdentityWorker: WKRBlankIdentityWorker {
                                         with progress: DNSPTCLProgressBlock?,
                                         then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLIdentityPubVoid {
         return WKRPTCLIdentityFutVoid { promise in
-            let error = DNSError.Identity.notImplemented(DNSCodeLocation.crashWorkers(self))
+            let error = DNSError.Identity.notImplemented(.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
