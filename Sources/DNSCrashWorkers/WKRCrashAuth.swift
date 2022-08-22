@@ -1,5 +1,5 @@
 //
-//  WKRCrashAuthWorker.swift
+//  WKRCrashAuth.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
@@ -13,7 +13,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashAuthWorker: WKRBlankAuthWorker {
+open class WKRCrashAuth: WKRBlankAuth {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLAuth) { fatalError("Unable to chain CrashWorker(s)") }

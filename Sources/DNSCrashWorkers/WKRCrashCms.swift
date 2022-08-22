@@ -1,5 +1,5 @@
 //
-//  WKRCrashAppReviewWorker.swift
+//  WKRCrashCms.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
@@ -10,19 +10,22 @@ import DNSBlankWorkers
 import DNSCore
 import DNSError
 import DNSProtocols
-import Foundation
+import UIKit
 
-open class WKRCrashAppReviewWorker: WKRBlankAppReviewWorker {
+open class WKRCrashCms: WKRBlankCms {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLAppReview) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLCms) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
-    
+
     // MARK: - Internal Work Methods
-    override open func intDoReview(then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAppReviewResVoid {
-        let error = DNSError.AppReview
+    override open func intDoLoad(for group: String,
+                                 with progress: DNSPTCLProgressBlock?,
+                                 and block: WKRPTCLCmsBlkAAny?,
+                                 then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Cms
             .notImplemented(.crashWorkers(self))
-        return .failure(error)
+        fatalError(error.errorString)
     }
 }

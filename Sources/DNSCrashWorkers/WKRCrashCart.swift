@@ -1,5 +1,5 @@
 //
-//  WKRCrashCartWorker.swift
+//  WKRCrashCart.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSBlankWorkers
 //
 //  Created by Darren Ehlers.
@@ -12,7 +12,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashCartWorker: WKRBlankCartWorker {
+open class WKRCrashCart: WKRBlankCart {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLCart) { fatalError("Unable to chain CrashWorker(s)") }

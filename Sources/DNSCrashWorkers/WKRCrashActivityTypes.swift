@@ -1,5 +1,5 @@
 //
-//  WKRCrashActivityTypesWorker.swift
+//  WKRCrashActivityTypes.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSBlankWorkers
 //
 //  Created by Darren Ehlers.
@@ -12,7 +12,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashActivityTypesWorker: WKRBlankActivityTypesWorker {
+open class WKRCrashActivityTypes: WKRBlankActivityTypes {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLActivityTypes) { fatalError("Unable to chain CrashWorker(s)") }

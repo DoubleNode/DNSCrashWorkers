@@ -1,5 +1,5 @@
 //
-//  WKRCrashPassportsWorker.swift
+//  WKRCrashPassports.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
@@ -14,7 +14,7 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashPassportsWorker: WKRBlankPassportsWorker {
+open class WKRCrashPassports: WKRBlankPassports {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLPassports) { fatalError("Unable to chain CrashWorker(s)") }

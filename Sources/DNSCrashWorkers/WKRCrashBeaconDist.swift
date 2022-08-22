@@ -1,5 +1,5 @@
 //
-//  WKRCrashBeaconDistWorker.swift
+//  WKRCrashBeaconDist.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
@@ -12,7 +12,7 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashBeaconDistWorker: WKRBlankBeaconDistWorker {
+open class WKRCrashBeaconDist: WKRBlankBeaconDist {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLBeaconDist) { fatalError("Unable to chain CrashWorker(s)") }

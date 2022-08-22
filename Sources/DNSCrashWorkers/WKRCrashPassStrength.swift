@@ -1,5 +1,5 @@
 //
-//  WKRCrashCmsWorker.swift
+//  WKRCrashPassStrength.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
@@ -10,22 +10,20 @@ import DNSBlankWorkers
 import DNSCore
 import DNSError
 import DNSProtocols
-import UIKit
+import Foundation
 
-open class WKRCrashCmsWorker: WKRBlankCmsWorker {
+open class WKRCrashPassStrength: WKRBlankPassStrength {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLCms) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLPassStrength) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
-
+    
     // MARK: - Internal Work Methods
-    override open func intDoLoad(for group: String,
-                                 with progress: DNSPTCLProgressBlock?,
-                                 and block: WKRPTCLCmsBlkAAny?,
-                                 then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cms
+    override open func intDoCheckPassStrength(for password: String,
+                                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLPassStrengthResVoid {
+        let error = DNSError.PassStrength
             .notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        return .failure(error)
     }
 }
