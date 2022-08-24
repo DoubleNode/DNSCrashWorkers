@@ -20,6 +20,27 @@ open class WKRCrashAccount: WKRBlankAccount {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
+    override open func intDoActivate(account: DAOAccount,
+                                     with progress: DNSPTCLProgressBlock?,
+                                     and block: WKRPTCLAccountBlkBool?,
+                                     then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoDeactivate(account: DAOAccount,
+                                       with progress: DNSPTCLProgressBlock?,
+                                       and block: WKRPTCLAccountBlkVoid?,
+                                       then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoDelete(account: DAOAccount,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLAccountBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoLoadAccounts(for user: DAOUser,
                                          with progress: DNSProtocols.DNSPTCLProgressBlock?,
                                          and block: WKRPTCLAccountBlkAAccount?,
