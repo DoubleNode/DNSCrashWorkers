@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -44,6 +45,13 @@ open class WKRCrashActivityTypes: WKRBlankActivityTypes {
         fatalError(error.errorString)
     }
     override open func intDoLoadActivityType(for code: String,
+                                             with progress: DNSPTCLProgressBlock?,
+                                             and block: WKRPTCLActivityTypesBlkActivityType?,
+                                             then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLoadActivityType(for tag: DNSString,
                                              with progress: DNSPTCLProgressBlock?,
                                              and block: WKRPTCLActivityTypesBlkActivityType?,
                                              then resultBlock: DNSPTCLResultBlock?) {
