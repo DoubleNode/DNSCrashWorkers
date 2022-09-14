@@ -29,15 +29,7 @@ open class WKRCrashAlerts: WKRBlankAlerts {
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func intDoLoadAlerts(for district: DAODistrict,
-                                       with progress: DNSPTCLProgressBlock?,
-                                       then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
-        return WKRPTCLAlertsFutAAlert { promise in
-            let error = DNSError.Alerts.notImplemented(.crashWorkers(self))
-            promise(.failure(error))
-        }.eraseToAnyPublisher()
-    }
-    override open func intDoLoadAlerts(for region: DAORegion,
+    override open func intDoLoadAlerts(for section: DAOSection,
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAlertsPubAAlert {
         return WKRPTCLAlertsFutAAlert { promise in
