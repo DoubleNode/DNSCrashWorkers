@@ -46,7 +46,7 @@ open class WKRCrashCache: WKRBlankCache {
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func intDoReadObject(for id: String,
+    override open func intDoReadString(for id: String,
                                        with progress: DNSPTCLProgressBlock?,
                                        then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLCachePubString {
         return WKRPTCLCacheFutString { promise in
