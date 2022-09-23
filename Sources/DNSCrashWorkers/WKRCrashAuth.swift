@@ -22,9 +22,17 @@ open class WKRCrashAuth: WKRBlankAuth {
     
     // MARK: - Internal Work Methods
     override open func intDoCheckAuth(using parameters: DNSDataDictionary,
-                                                with progress: DNSPTCLProgressBlock?,
-                                                and block: WKRPTCLAuthBlkBoolBoolAccessData?,
-                                                then resultBlock: DNSPTCLResultBlock?) {
+                                      with progress: DNSPTCLProgressBlock?,
+                                      and block: WKRPTCLAuthBlkBoolBoolAccessData?,
+                                      then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Auth
+            .notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoRefreshAuth(using parameters: DNSDataDictionary,
+                                        with progress: DNSPTCLProgressBlock?,
+                                        and block: WKRPTCLAuthBlkBoolBoolAccessData?,
+                                        then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
             .notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
