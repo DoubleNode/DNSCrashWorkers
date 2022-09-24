@@ -29,10 +29,12 @@ open class WKRCrashAuth: WKRBlankAuth {
             .notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
-    override open func intDoRefreshAuth(using parameters: DNSDataDictionary,
-                                        with progress: DNSPTCLProgressBlock?,
-                                        and block: WKRPTCLAuthBlkBoolBoolAccessData?,
-                                        then resultBlock: DNSPTCLResultBlock?) {
+    override open func intDoLinkAuth(from username: String,
+                                     and password: String,
+                                     using parameters: DNSDataDictionary,
+                                     with progress: DNSPTCLProgressBlock?,
+                                     and block: WKRPTCLAuthBlkBoolAccessData?,
+                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Auth
             .notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
