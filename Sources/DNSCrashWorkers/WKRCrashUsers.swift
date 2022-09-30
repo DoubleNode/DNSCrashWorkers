@@ -19,6 +19,14 @@ open class WKRCrashUsers: WKRBlankUsers {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
+    override open func intDoActivate(_ user: DAOUser,
+                                     with progress: DNSPTCLProgressBlock?,
+                                     and block: WKRPTCLUsersBlkBool?,
+                                     then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users
+            .notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoLoadCurrentUser(with progress: DNSPTCLProgressBlock?,
                                             and block: WKRPTCLUsersBlkUser?,
                                             then resultBlock: DNSPTCLResultBlock?) {
