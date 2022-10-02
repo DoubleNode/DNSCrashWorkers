@@ -25,8 +25,7 @@ open class WKRCrashAuth: WKRBlankAuth {
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLAuthBlkBoolBoolAccessData?,
                                       then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Auth
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Auth.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLinkAuth(from username: String,
@@ -35,8 +34,15 @@ open class WKRCrashAuth: WKRBlankAuth {
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLAuthBlkBoolAccessData?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Auth
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Auth.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoPasswordResetStart(from username: String?,
+                                               using parameters: DNSDataDictionary,
+                                               with progress: DNSPTCLProgressBlock?,
+                                               and block: WKRPTCLAuthBlkVoid?,
+                                               then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Auth.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoSignIn(from username: String?,
@@ -45,16 +51,14 @@ open class WKRCrashAuth: WKRBlankAuth {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLAuthBlkBoolAccessData?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Auth
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Auth.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoSignOut(using parameters: DNSDataDictionary,
                                     with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLAuthBlkVoid?,
                                     then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Auth
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Auth.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoSignUp(from user: DAOUser?,
@@ -63,8 +67,7 @@ open class WKRCrashAuth: WKRBlankAuth {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLAuthBlkBoolAccessData?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Auth
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Auth.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

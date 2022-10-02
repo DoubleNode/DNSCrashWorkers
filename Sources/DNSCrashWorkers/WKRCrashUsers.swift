@@ -23,54 +23,41 @@ open class WKRCrashUsers: WKRBlankUsers {
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLUsersBlkBool?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Users
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadCurrentUser(with progress: DNSPTCLProgressBlock?,
                                             and block: WKRPTCLUsersBlkUser?,
                                             then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Users
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadUser(for id: String,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLUsersBlkUser?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Users
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadUsers(for account: DAOAccount,
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLUsersBlkAUser?,
                                       then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Users
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
-    override open func intDoRemoveCurrentUser(with progress: DNSPTCLProgressBlock?,
-                                              and block: WKRPTCLUsersBlkVoid?,
-                                              then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Users
-            .notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
-     }
     override open func intDoRemove(_ user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLUsersBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Users
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLUsersBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Users
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

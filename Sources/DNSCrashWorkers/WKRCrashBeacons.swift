@@ -25,8 +25,7 @@ open class WKRCrashBeacons: WKRBlankBeacons {
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLBeaconsBlkABeacon?,
                                         then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Beacons
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Beacons.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadBeacons(in place: DAOPlace,
@@ -34,8 +33,7 @@ open class WKRCrashBeacons: WKRBlankBeacons {
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLBeaconsBlkABeacon?,
                                         then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Beacons
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Beacons.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoRangeBeacons(named uuids: [UUID],
@@ -43,14 +41,12 @@ open class WKRCrashBeacons: WKRBlankBeacons {
                                          with progress: DNSPTCLProgressBlock?,
                                          and block: WKRPTCLBeaconsBlkABeacon?,
                                          then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Beacons
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Beacons.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoStopRangeBeacons(for processKey: String,
                                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLBeaconsResVoid {
-        let error = DNSError.Beacons
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Beacons.notImplemented(.crashWorkers(self))
         return .failure(error)
     }
 }

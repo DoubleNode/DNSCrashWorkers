@@ -25,8 +25,7 @@ open class WKRCrashPermissions: WKRBlankPermissions {
                                     with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLPermissionsBlkAction?,
                                     then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Permissions
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Permissions.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoRequest(_ desire: WKRPTCLPermissions.Data.Desire,
@@ -34,24 +33,21 @@ open class WKRCrashPermissions: WKRBlankPermissions {
                                     with progress: DNSPTCLProgressBlock?,
                                     and block: WKRPTCLPermissionsBlkAAction?,
                                     then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Permissions
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Permissions.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoStatus(of permissions: [WKRPTCLPermissions.Data.System],
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPermissionsBlkAAction?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Permissions
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Permissions.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoWait(for permission: WKRPTCLPermissions.Data.System,
                                  with progress: DNSPTCLProgressBlock?,
                                  and block: WKRPTCLPermissionsBlkAction?,
                                  then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Permissions
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Permissions.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }
