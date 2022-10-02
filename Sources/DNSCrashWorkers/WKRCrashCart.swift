@@ -25,47 +25,41 @@ open class WKRCrashCart: WKRBlankCart {
                                 with progress: DNSPTCLProgressBlock?,
                                 and block: WKRPTCLCartBlkBasket?,
                                 then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoCheckout(for basket: DAOBasket,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCartBlkOrder?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoCreate(with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkBasket?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoCreate(and add: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkBasket?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadOrder(for id: String,
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLCartBlkOrder?,
                                       then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadOrders(for account: DAOAccount,
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLCartBlkAOrder?,
                                        then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadOrders(for account: DAOAccount,
@@ -73,40 +67,35 @@ open class WKRCrashCart: WKRBlankCart {
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLCartBlkAOrder?,
                                        then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoRemove(_ basket: DAOBasket,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoRemove(_ basketItem: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ basket: DAOBasket,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ basketItem: DAOBasketItem,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCartBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cart
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cart.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

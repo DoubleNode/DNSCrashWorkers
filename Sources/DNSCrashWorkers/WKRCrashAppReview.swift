@@ -21,8 +21,7 @@ open class WKRCrashAppReview: WKRBlankAppReview {
     
     // MARK: - Internal Work Methods
     override open func intDoReview(then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAppReviewResVoid {
-        let error = DNSError.AppReview
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.AppReview.notImplemented(.crashWorkers(self))
         return .failure(error)
     }
 }

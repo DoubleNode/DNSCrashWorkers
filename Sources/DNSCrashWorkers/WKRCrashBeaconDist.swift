@@ -23,8 +23,7 @@ open class WKRCrashBeaconDist: WKRBlankBeaconDist {
     override open func intDoLoadBeaconDistances(with progress: DNSPTCLProgressBlock?,
                                                 and block: WKRPTCLBeaconDistBlkABeaconDistance?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.BeaconDist
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.BeaconDist.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

@@ -25,40 +25,35 @@ open class WKRCrashCards: WKRBlankCards {
                                 with progress: DNSPTCLProgressBlock?,
                                 and block: WKRPTCLCardsBlkVoid?,
                                 then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cards
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cards.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadCard(for id: String,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCardsBlkCard?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cards
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cards.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadCard(for transaction: DAOTransaction,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCardsBlkCard?,
                                      then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cards
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cards.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadCards(for user: DAOUser,
                                       with progress: DNSPTCLProgressBlock?,
                                       and block: WKRPTCLCardsBlkACard?,
                                       then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cards
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cards.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadTransactions(for card: DAOCard,
                                              with progress: DNSPTCLProgressBlock?,
                                              and block: WKRPTCLCardsBlkATransaction?,
                                              then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cards
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cards.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoRemove(_ card: DAOCard,
@@ -66,16 +61,14 @@ open class WKRCrashCards: WKRBlankCards {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCardsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cards
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cards.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ card: DAOCard,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCardsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Cards
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Cards.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

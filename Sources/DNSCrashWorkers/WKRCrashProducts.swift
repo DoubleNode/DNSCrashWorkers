@@ -24,8 +24,7 @@ open class WKRCrashProducts: WKRBlankProducts {
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLProductsBlkProduct?,
                                         then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Products
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadProduct(for id: String,
@@ -33,39 +32,34 @@ open class WKRCrashProducts: WKRBlankProducts {
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLProductsBlkProduct?,
                                         then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Products
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadProducts(with progress: DNSPTCLProgressBlock?,
                                          and block: WKRPTCLProductsBlkAProduct?,
                                          then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Products
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoLoadProducts(for place: DAOPlace,
                                          with progress: DNSPTCLProgressBlock?,
                                          and block: WKRPTCLProductsBlkAProduct?,
                                          then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Products
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoRemove(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLProductsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Products
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLProductsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Products
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

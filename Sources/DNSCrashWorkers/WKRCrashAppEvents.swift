@@ -22,8 +22,7 @@ open class WKRCrashAppEvents: WKRBlankAppEvents {
     override open func intDoLoadAppEvents(with progress: DNSPTCLProgressBlock?,
                                           and block: WKRPTCLAppEventsBlkAAppEvent?,
                                           then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.AppEvents
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.AppEvents.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
 }

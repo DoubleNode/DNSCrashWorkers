@@ -23,22 +23,19 @@ open class WKRCrashGeo: WKRBlankGeo {
     override open func intDoLocate(with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLGeoBlkString?,
                                    then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Geo
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Geo.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoTrackLocation(for processKey: String,
                                           with progress: DNSPTCLProgressBlock?,
                                           and block: WKRPTCLGeoBlkString?,
                                           then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.Geo
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Geo.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoStopTrackLocation(for processKey: String,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLGeoResVoid {
-        let error = DNSError.Geo
-            .notImplemented(.crashWorkers(self))
+        let error = DNSError.Geo.notImplemented(.crashWorkers(self))
         return .failure(error)
     }
 }
