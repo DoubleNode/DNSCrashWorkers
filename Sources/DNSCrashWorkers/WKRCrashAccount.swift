@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -58,6 +59,13 @@ open class WKRCrashAccount: WKRBlankAccount {
     override open func intDoLoadCurrentAccounts(with progress: DNSPTCLProgressBlock?,
                                                 and block: WKRPTCLAccountBlkAAccount?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoSearchAccount(using parameters: DNSDataDictionary,
+                                          with progress: DNSPTCLProgressBlock?,
+                                          and block: WKRPTCLAccountBlkAAccount?,
+                                          then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
