@@ -42,6 +42,14 @@ open class WKRCrashAccount: WKRBlankAccount {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoLink(account: DAOAccount,
+                                 to user: DAOUser,
+                                 with progress: DNSPTCLProgressBlock?,
+                                 and block: WKRPTCLAccountBlkVoid?,
+                                 then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoLoadAccount(for id: String,
                                         with progress: DNSProtocols.DNSPTCLProgressBlock?,
                                         and block: WKRPTCLAccountBlkAccount?,
@@ -66,6 +74,14 @@ open class WKRCrashAccount: WKRBlankAccount {
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLAccountBlkAAccount?,
                                            then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnlink(account: DAOAccount,
+                                   from user: DAOUser,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLAccountBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
