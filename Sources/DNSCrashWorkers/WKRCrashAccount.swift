@@ -28,10 +28,24 @@ open class WKRCrashAccount: WKRBlankAccount {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoApprove(linkRequest: DAOAccountLinkRequest,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLAccountBlkVoid?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoDeactivate(account: DAOAccount,
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLAccountBlkVoid?,
                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoDecline(linkRequest: DAOAccountLinkRequest,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLAccountBlkVoid?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
@@ -67,6 +81,13 @@ open class WKRCrashAccount: WKRBlankAccount {
     override open func intDoLoadCurrentAccounts(with progress: DNSPTCLProgressBlock?,
                                                 and block: WKRPTCLAccountBlkAAccount?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLoadLinkRequests(for user: DAOUser,
+                                             with progress: DNSProtocols.DNSPTCLProgressBlock?,
+                                             and block: WKRPTCLAccountBlkAAccountLinkRequest?,
+                                             then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
