@@ -91,6 +91,13 @@ open class WKRCrashAccount: WKRBlankAccount {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoLoadUnverifiedAccounts(for user: DAOUser,
+                                                   with progress: DNSPTCLProgressBlock?,
+                                                   and block: WKRPTCLAccountBlkAAccount?,
+                                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoSearchAccounts(using parameters: DNSDataDictionary,
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLAccountBlkAAccount?,
@@ -107,6 +114,13 @@ open class WKRCrashAccount: WKRBlankAccount {
         fatalError(error.errorString)
     }
     override open func intDoUpdate(account: DAOAccount,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLAccountBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoVerify(account: DAOAccount,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLAccountBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
