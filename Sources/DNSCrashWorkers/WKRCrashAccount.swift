@@ -113,6 +113,14 @@ open class WKRCrashAccount: WKRBlankAccount {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoRename(accountId: String,
+                                   to newAccountId: String,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLAccountBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoSearchAccounts(using parameters: DNSDataDictionary,
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLAccountBlkAAccount?,
