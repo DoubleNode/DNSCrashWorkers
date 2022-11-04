@@ -99,6 +99,13 @@ open class WKRCrashAccount: WKRBlankAccount {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoLoadPendingUsers(for user: DAOUser,
+                                             with progress: DNSPTCLProgressBlock?,
+                                             and block: WKRPTCLAccountBlkAUser?,
+                                             then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoLoadPlaces(for account: DAOAccount,
                                        with progress: DNSProtocols.DNSPTCLProgressBlock?,
                                        and block: WKRPTCLAccountBlkAPlace?,
