@@ -26,9 +26,51 @@ open class WKRCrashUsers: WKRBlankUsers {
         let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoConfirm(pendingUser: DAOUser,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLAccountBlkVoid?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoConsent(childUser: DAOUser,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLAccountBlkVoid?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoLoadCurrentUser(with progress: DNSPTCLProgressBlock?,
                                             and block: WKRPTCLUsersBlkUser?,
                                             then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLoadChildUsers(for user: DAOUser,
+                                           with progress: DNSPTCLProgressBlock?,
+                                           and block: WKRPTCLUsersBlkAUser?,
+                                           then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLoadLinkRequests(for user: DAOUser,
+                                             with progress: DNSProtocols.DNSPTCLProgressBlock?,
+                                             and block: WKRPTCLUsersBlkAAccountLinkRequest?,
+                                             then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLoadPendingUsers(for user: DAOUser,
+                                             with progress: DNSPTCLProgressBlock?,
+                                             and block: WKRPTCLUsersBlkAUser?,
+                                             then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLoadUnverifiedAccounts(for user: DAOUser,
+                                                   with progress: DNSPTCLProgressBlock?,
+                                                   and block: WKRPTCLUsersBlkAAccount?,
+                                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
