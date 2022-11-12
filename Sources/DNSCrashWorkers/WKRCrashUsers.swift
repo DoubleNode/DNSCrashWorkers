@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -54,6 +55,7 @@ open class WKRCrashUsers: WKRBlankUsers {
         fatalError(error.errorString)
     }
     override open func intDoLoadLinkRequests(for user: DAOUser,
+                                             using parameters: DNSDataDictionary,
                                              with progress: DNSProtocols.DNSPTCLProgressBlock?,
                                              and block: WKRPTCLUsersBlkAAccountLinkRequest?,
                                              then resultBlock: DNSPTCLResultBlock?) {
