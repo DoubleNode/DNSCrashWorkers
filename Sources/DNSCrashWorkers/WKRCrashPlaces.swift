@@ -42,6 +42,13 @@ open class WKRCrashPlaces: WKRBlankPlaces {
         let error = DNSError.Places.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoLoadPlaces(for account: DAOAccount,
+                                       with progress: DNSProtocols.DNSPTCLProgressBlock?,
+                                       and block: WKRPTCLPlacesBlkAPlace?,
+                                       then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoLoadPlaces(for section: DAOSection,
                                        with progress: DNSPTCLProgressBlock?,
                                        and block: WKRPTCLPlacesBlkAPlace?,
