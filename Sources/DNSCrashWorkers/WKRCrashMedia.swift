@@ -29,6 +29,14 @@ open class WKRCrashMedia: WKRBlankMedia {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoUpload(from fileUrl: URL,
+                                   to path: String,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLMediaBlkMedia?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Media.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoUpload(_ image: UIImage,
                                    to path: String,
                                    with progress: DNSPTCLProgressBlock?,
