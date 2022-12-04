@@ -30,6 +30,7 @@ open class WKRCrashMedia: WKRBlankMedia {
         fatalError(error.errorString)
     }
     override open func intDoUpload(_ image: UIImage,
+                                   to path: String,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLMediaBlkMedia?,
                                    then resultBlock: DNSPTCLResultBlock?) {
@@ -37,6 +38,7 @@ open class WKRCrashMedia: WKRBlankMedia {
         fatalError(error.errorString)
     }
     override open func intDoUpload(_ pdfDocument: PDFDocument,
+                                   to path: String,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLMediaBlkMedia?,
                                    then resultBlock: DNSPTCLResultBlock?) {
@@ -44,6 +46,7 @@ open class WKRCrashMedia: WKRBlankMedia {
         fatalError(error.errorString)
     }
     override open func intDoUpload(_ text: String,
+                                   to path: String,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLMediaBlkMedia?,
                                    then resultBlock: DNSPTCLResultBlock?) {
