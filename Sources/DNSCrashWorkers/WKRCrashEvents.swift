@@ -38,7 +38,7 @@ open class WKRCrashEvents: WKRBlankEvents {
                                   to event: DAOEvent,
                                   for place: DAOPlace,
                                   with progress: DNSPTCLProgressBlock?,
-                                  and block: WKRPTCLEventsBlkVoid?,
+                                  and block: WKRPTCLEventsBlkMeta?,
                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Events.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
@@ -55,7 +55,7 @@ open class WKRCrashEvents: WKRBlankEvents {
                                     to event: DAOEvent,
                                     for place: DAOPlace,
                                     with progress: DNSPTCLProgressBlock?,
-                                    and block: WKRPTCLEventsBlkVoid?,
+                                    and block: WKRPTCLEventsBlkMeta?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Events.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
@@ -71,7 +71,7 @@ open class WKRCrashEvents: WKRBlankEvents {
     override open func intDoView(_ event: DAOEvent,
                                  for place: DAOPlace,
                                  with progress: DNSPTCLProgressBlock?,
-                                 and block: WKRPTCLEventsBlkVoid?,
+                                 and block: WKRPTCLEventsBlkMeta?,
                                  then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Events.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)

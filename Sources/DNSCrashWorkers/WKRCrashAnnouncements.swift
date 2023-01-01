@@ -44,7 +44,7 @@ open class WKRCrashAnnouncements: WKRBlankAnnouncements {
                                   to announcement: DAOAnnouncement,
                                   for place: DAOPlace,
                                   with progress: DNSPTCLProgressBlock?,
-                                  and block: WKRPTCLAnnouncementsBlkVoid?,
+                                  and block: WKRPTCLAnnouncementsBlkMeta?,
                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Announcements.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
@@ -52,7 +52,7 @@ open class WKRCrashAnnouncements: WKRBlankAnnouncements {
     override open func intDoReact(with reaction: DNSReactionType,
                                   to announcement: DAOAnnouncement,
                                   with progress: DNSPTCLProgressBlock?,
-                                  and block: WKRPTCLAnnouncementsBlkVoid?,
+                                  and block: WKRPTCLAnnouncementsBlkMeta?,
                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Announcements.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
@@ -76,7 +76,7 @@ open class WKRCrashAnnouncements: WKRBlankAnnouncements {
                                     to announcement: DAOAnnouncement,
                                     for place: DAOPlace,
                                     with progress: DNSPTCLProgressBlock?,
-                                    and block: WKRPTCLAnnouncementsBlkVoid?,
+                                    and block: WKRPTCLAnnouncementsBlkMeta?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Announcements.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
@@ -84,7 +84,7 @@ open class WKRCrashAnnouncements: WKRBlankAnnouncements {
     override open func intDoUnreact(with reaction: DNSReactionType,
                                     to announcement: DAOAnnouncement,
                                     with progress: DNSPTCLProgressBlock?,
-                                    and block: WKRPTCLAnnouncementsBlkVoid?,
+                                    and block: WKRPTCLAnnouncementsBlkMeta?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Announcements.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
@@ -106,7 +106,7 @@ open class WKRCrashAnnouncements: WKRBlankAnnouncements {
     }
     override open func intDoView(_ announcement: DAOAnnouncement,
                                  with progress: DNSPTCLProgressBlock?,
-                                 and block: WKRPTCLAnnouncementsBlkVoid?,
+                                 and block: WKRPTCLAnnouncementsBlkMeta?,
                                  then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Announcements.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
@@ -114,7 +114,7 @@ open class WKRCrashAnnouncements: WKRBlankAnnouncements {
     override open func intDoView(_ announcement: DAOAnnouncement,
                                  for place: DAOPlace,
                                  with progress: DNSPTCLProgressBlock?,
-                                 and block: WKRPTCLAnnouncementsBlkVoid?,
+                                 and block: WKRPTCLAnnouncementsBlkMeta?,
                                  then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Announcements.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
