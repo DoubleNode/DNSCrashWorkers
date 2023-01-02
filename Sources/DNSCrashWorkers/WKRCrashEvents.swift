@@ -21,9 +21,9 @@ open class WKRCrashEvents: WKRBlankEvents {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
-    override open func intDoLoadEvents(with progress: DNSPTCLProgressBlock?,
-                                       and block: WKRPTCLEventsBlkAEvent?,
-                                       then resultBlock: DNSPTCLResultBlock?) {
+    override open func intDoLoadCurrentEvents(with progress: DNSPTCLProgressBlock?,
+                                              and block: WKRPTCLEventsBlkAEvent?,
+                                              then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Events.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
@@ -51,6 +51,15 @@ open class WKRCrashEvents: WKRBlankEvents {
         let error = DNSError.Events.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoRemove(_ eventDay: DAOEventDay,
+                                   for event: DAOEvent,
+                                   and place: DAOPlace,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLEventsBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Events.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoUnreact(with reaction: DNSReactionType,
                                     to event: DAOEvent,
                                     for place: DAOPlace,
@@ -62,6 +71,15 @@ open class WKRCrashEvents: WKRBlankEvents {
     }
     override open func intDoUpdate(_ event: DAOEvent,
                                    for place: DAOPlace,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLEventsBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Events.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUpdate(_ eventDay: DAOEventDay,
+                                   for event: DAOEvent,
+                                   and place: DAOPlace,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLEventsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
