@@ -22,7 +22,7 @@ open class WKRCrashEvents: WKRBlankEvents {
 
     // MARK: - Internal Work Methods
     override open func intDoLoadCurrentEvents(with progress: DNSPTCLProgressBlock?,
-                                              and block: WKRPTCLEventsBlkAEvent?,
+                                              and block: WKRPTCLEventsBlkAPlace?,
                                               then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Events.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
