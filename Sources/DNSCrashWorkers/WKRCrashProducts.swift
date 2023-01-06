@@ -20,6 +20,13 @@ open class WKRCrashProducts: WKRBlankProducts {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
+    override open func intDoLoadPricing(for product: DAOProduct,
+                                        with progress: DNSPTCLProgressBlock?,
+                                        and block: WKRPTCLProductsBlkPricing?,
+                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoLoadProduct(for id: String,
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLProductsBlkProduct?,

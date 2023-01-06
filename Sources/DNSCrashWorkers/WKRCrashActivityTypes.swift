@@ -64,6 +64,13 @@ open class WKRCrashActivityTypes: WKRBlankActivityTypes {
         let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoLoadPricing(for activityType: DAOActivityType,
+                                        with progress: DNSPTCLProgressBlock?,
+                                        and block: WKRPTCLActivityTypesBlkPricing?,
+                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoUnfavorite(_ activityType: DAOActivityType,
                                        for user: DAOUser,
                                        with progress: DNSPTCLProgressBlock?,
