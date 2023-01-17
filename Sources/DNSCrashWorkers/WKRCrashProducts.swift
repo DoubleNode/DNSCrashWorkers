@@ -62,6 +62,14 @@ open class WKRCrashProducts: WKRBlankProducts {
         let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoUpdate(_ pricing: DAOPricing,
+                                   for product: DAOProduct,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLProductsBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoUpdate(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLProductsBlkVoid?,

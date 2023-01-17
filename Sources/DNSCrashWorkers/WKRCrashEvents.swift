@@ -34,6 +34,14 @@ open class WKRCrashEvents: WKRBlankEvents {
         let error = DNSError.Events.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoLoadPricing(for event: DAOEvent,
+                                        and place: DAOPlace,
+                                        with progress: DNSPTCLProgressBlock?,
+                                        and block: WKRPTCLEventsBlkPricing?,
+                                        then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Events.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoReact(with reaction: DNSReactionType,
                                   to event: DAOEvent,
                                   for place: DAOPlace,
@@ -78,6 +86,15 @@ open class WKRCrashEvents: WKRBlankEvents {
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ eventDay: DAOEventDay,
+                                   for event: DAOEvent,
+                                   and place: DAOPlace,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLEventsBlkVoid?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Events.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUpdate(_ pricing: DAOPricing,
                                    for event: DAOEvent,
                                    and place: DAOPlace,
                                    with progress: DNSPTCLProgressBlock?,
