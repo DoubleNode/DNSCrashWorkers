@@ -37,6 +37,14 @@ open class WKRCrashAdmin: WKRBlankAdmin {
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
+    override open func intDoCompleteDeleted(account: DAOAccount,
+                                            with progress: DNSPTCLProgressBlock?,
+                                            then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
+        return WKRPTCLAdminFutVoid { promise in
+            let error = DNSError.Admin.notImplemented(.crashWorkers(self))
+            promise(.failure(error))
+        }.eraseToAnyPublisher()
+    }
     override open func intDoDenyChangeRequest(for user: DAOUser,
                                               with progress: DNSPTCLProgressBlock?,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubVoid {
@@ -51,6 +59,19 @@ open class WKRCrashAdmin: WKRBlankAdmin {
             let error = DNSError.Admin.notImplemented(.crashWorkers(self))
             promise(.failure(error))
         }.eraseToAnyPublisher()
+    }
+    override open func intDoLoadDeletedAccounts(thatAre status: DNSPTCLDeletedStatus,
+                                                with progress: DNSPTCLProgressBlock?,
+                                                and block: WKRPTCLAdminBlkAAccount?,
+                                                then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLoadDeletedStatus(with progress: DNSPTCLProgressBlock?,
+                                              and block: WKRPTCLAdminBlkAAccount?,
+                                              then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Account.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
     }
     override open func intDoLoadTabs(with progress: DNSPTCLProgressBlock?,
                                      then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubAString {
