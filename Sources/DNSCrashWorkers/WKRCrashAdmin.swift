@@ -60,7 +60,7 @@ open class WKRCrashAdmin: WKRBlankAdmin {
             promise(.failure(error))
         }.eraseToAnyPublisher()
     }
-    override open func intDoLoadDeletedAccounts(thatAre status: DNSPTCLDeletedStatus,
+    override open func intDoLoadDeletedAccounts(thatAre state: DNSPTCLDeletedStates,
                                                 with progress: DNSPTCLProgressBlock?,
                                                 and block: WKRPTCLAdminBlkAAccount?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
@@ -68,7 +68,7 @@ open class WKRCrashAdmin: WKRBlankAdmin {
         fatalError(error.errorString)
     }
     override open func intDoLoadDeletedStatus(with progress: DNSPTCLProgressBlock?,
-                                              and block: WKRPTCLAdminBlkAAccount?,
+                                              and block: WKRPTCLAdminBlkDeletedStatus?,
                                               then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
