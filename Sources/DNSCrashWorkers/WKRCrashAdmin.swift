@@ -62,7 +62,7 @@ open class WKRCrashAdmin: WKRBlankAdmin {
     }
     override open func intDoLoadDeletedAccounts(thatAre state: DNSPTCLDeletedStates,
                                                 with progress: DNSPTCLProgressBlock?,
-                                                and block: WKRPTCLAdminBlkAAccount?,
+                                                and block: WKRPTCLAdminBlkADeletedAccount?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
