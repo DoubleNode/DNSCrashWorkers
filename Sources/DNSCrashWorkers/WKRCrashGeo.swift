@@ -21,14 +21,21 @@ open class WKRCrashGeo: WKRBlankGeo {
     
     // MARK: - Internal Work Methods
     override open func intDoLocate(with progress: DNSPTCLProgressBlock?,
-                                   and block: WKRPTCLGeoBlkString?,
+                                   and block: WKRPTCLGeoBlkStringLocation?,
+                                   then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Geo.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoLocate(_ address: DNSPostalAddress,
+                                   with progress: DNSPTCLProgressBlock?,
+                                   and block: WKRPTCLGeoBlkStringLocation?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Geo.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
     override open func intDoTrackLocation(for processKey: String,
                                           with progress: DNSPTCLProgressBlock?,
-                                          and block: WKRPTCLGeoBlkString?,
+                                          and block: WKRPTCLGeoBlkStringLocation?,
                                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Geo.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
