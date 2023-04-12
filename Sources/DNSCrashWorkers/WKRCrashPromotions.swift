@@ -7,6 +7,7 @@
 //
 
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -20,6 +21,14 @@ open class WKRCrashPromotions: WKRBlankPromotions {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
+    override open func intDoAnalytics(for object: DAOBaseObject,
+                                      using data: DNSDataDictionary,
+                                      with progress: DNSPTCLProgressBlock?,
+                                      and block: WKRPTCLWorkerBaseBlkAAnalyticsData?,
+                                      then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoDelete(_ promotion: DAOPromotion,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPromotionsBlkVoid?,
