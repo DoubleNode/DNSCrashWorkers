@@ -22,10 +22,26 @@ open class WKRCrashMedia: WKRBlankMedia {
     public required init() { super.init() }
     
     // MARK: - Internal Work Methods
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to media: DAOMedia,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLMediaBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Media.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoRemove(_ media: DAOMedia,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLMediaBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Media.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to media: DAOMedia,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLMediaBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }

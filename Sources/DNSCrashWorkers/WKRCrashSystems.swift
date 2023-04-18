@@ -67,6 +67,14 @@ open class WKRCrashSystems: WKRBlankSystems {
         let error = DNSError.Systems.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to system: DAOSystem,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLSystemsBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Systems.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoReport(result: WKRPTCLSystemsData.Result,
                                    and failureCode: String,
                                    and debugString: String,
@@ -78,5 +86,13 @@ open class WKRCrashSystems: WKRBlankSystems {
             let error = DNSError.Systems.notImplemented(.crashWorkers(self))
             $0(.failure(error))
         }.eraseToAnyPublisher()
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to system: DAOSystem,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLSystemsBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Systems.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
     }
 }

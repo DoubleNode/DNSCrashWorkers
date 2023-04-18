@@ -35,10 +35,26 @@ open class WKRCrashChats: WKRBlankChats {
         let error = DNSError.Chats.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to chat: DAOChat,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLChatsBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Chats.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoRemove(_ message: DAOChatMessage,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLChatsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Chats.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to chat: DAOChat,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLChatsBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Chats.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }

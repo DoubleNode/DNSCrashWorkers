@@ -78,6 +78,14 @@ open class WKRCrashPlaces: WKRBlankPlaces {
             $0(.failure(error))
         }.eraseToAnyPublisher()
     }
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to place: DAOPlace,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLPlacesBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Places.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoSearchPlace(for geohash: String,
                                         with progress: DNSPTCLProgressBlock?,
                                         and block: WKRPTCLPlacesBlkPlace?,
@@ -89,6 +97,14 @@ open class WKRCrashPlaces: WKRBlankPlaces {
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPlacesBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Places.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to place: DAOPlace,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLPlacesBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Places.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }

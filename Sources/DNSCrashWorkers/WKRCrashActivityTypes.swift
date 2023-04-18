@@ -21,29 +21,6 @@ open class WKRCrashActivityTypes: WKRBlankActivityTypes {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
-    override open func intDoLoadAccount(for user: DAOUser,
-                                        with progress: DNSPTCLProgressBlock?,
-                                        and block: WKRPTCLAccountBlkAccount?,
-                                        then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
-    }
-    override open func intDoFavorite(_ activityType: DAOActivityType,
-                                     for user: DAOUser,
-                                     with progress: DNSPTCLProgressBlock?,
-                                     and block: WKRPTCLActivityTypesBlkVoid?,
-                                     then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
-    }
-    override open func intDoIsFavorited(_ activityType: DAOActivityType,
-                                        for user: DAOUser,
-                                        with progress: DNSPTCLProgressBlock?,
-                                        and block: WKRPTCLActivityTypesBlkBool?,
-                                        then resultBlock: DNSPTCLResultBlock?) {
-        let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
-    }
     override open func intDoLoadActivityType(for code: String,
                                              with progress: DNSPTCLProgressBlock?,
                                              and block: WKRPTCLActivityTypesBlkActivityType?,
@@ -71,11 +48,19 @@ open class WKRCrashActivityTypes: WKRBlankActivityTypes {
         let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
-    override open func intDoUnfavorite(_ activityType: DAOActivityType,
-                                       for user: DAOUser,
-                                       with progress: DNSPTCLProgressBlock?,
-                                       and block: WKRPTCLActivityTypesBlkVoid?,
-                                       then resultBlock: DNSPTCLResultBlock?) {
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to activityType: DAOActivityType,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLActivityTypesBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to activityType: DAOActivityType,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLActivityTypesBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.ActivityTypes.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }

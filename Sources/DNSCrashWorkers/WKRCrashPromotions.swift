@@ -64,6 +64,22 @@ open class WKRCrashPromotions: WKRBlankPromotions {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to promotion: DAOPromotion,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLPromotionsBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to promotion: DAOPromotion,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLPromotionsBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoUpdate(_ promotion: DAOPromotion,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPromotionsBlkPromotion?,

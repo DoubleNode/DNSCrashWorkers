@@ -55,10 +55,26 @@ open class WKRCrashProducts: WKRBlankProducts {
         let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to product: DAOProduct,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLProductsBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoRemove(_ product: DAOProduct,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLProductsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Products.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to product: DAOProduct,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLProductsBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Products.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }

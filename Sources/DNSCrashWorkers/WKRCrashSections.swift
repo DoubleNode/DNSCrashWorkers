@@ -48,6 +48,22 @@ open class WKRCrashSections: WKRBlankSections {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to section: DAOSection,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLSectionsBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Sections.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to section: DAOSection,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLSectionsBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Sections.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoUpdate(_ section: DAOSection,
                           with progress: DNSPTCLProgressBlock?,
                           and block: WKRPTCLSectionsBlkVoid?,

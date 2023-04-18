@@ -90,10 +90,26 @@ open class WKRCrashUsers: WKRBlankUsers {
         let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
+    override open func intDoReact(with reaction: DNSReactionType,
+                                  to user: DAOUser,
+                                  with progress: DNSPTCLProgressBlock?,
+                                  and block: WKRPTCLUsersBlkMeta?,
+                                  then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoRemove(_ user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLUsersBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Users.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
+    override open func intDoUnreact(with reaction: DNSReactionType,
+                                    to user: DAOUser,
+                                    with progress: DNSPTCLProgressBlock?,
+                                    and block: WKRPTCLUsersBlkMeta?,
+                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Users.notImplemented(.crashWorkers(self))
         fatalError(error.errorString)
     }
