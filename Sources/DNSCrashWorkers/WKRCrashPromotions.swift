@@ -21,6 +21,13 @@ open class WKRCrashPromotions: WKRBlankPromotions {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
+    override open func intDoActivate(_ id: String,
+                                     with progress: DNSPTCLProgressBlock?,
+                                     and block: WKRPTCLPromotionsBlkVoid?,
+                                     then resultBlock: DNSPTCLResultBlock?) {
+        let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
+        fatalError(error.errorString)
+    }
     override open func intDoAnalytics(for object: DAOBaseObject,
                                       using data: DNSDataDictionary,
                                       with progress: DNSPTCLProgressBlock?,
