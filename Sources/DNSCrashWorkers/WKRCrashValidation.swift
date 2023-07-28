@@ -20,6 +20,42 @@ open class WKRCrashValidation: WKRBlankValidation {
     public required init() { super.init() }
 
     // MARK: - Internal Work Methods
+    override open func intDoValidateAddress(for address: DNSPostalAddress?,
+                                            with config: Config.Address,
+                                            then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLValidationResVoid {
+        let error = DNSError.Validation.notImplemented(.crashWorkers(self))
+        return .failure(error)
+    }
+    override open func intDoValidateAddressCity(for city: String?,
+                                                with config: Config.Address.City,
+                                                then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLValidationResVoid {
+        let error = DNSError.Validation.notImplemented(.crashWorkers(self))
+        return .failure(error)
+    }
+    override open func intDoValidateAddressPostalCode(for postalCode: String?,
+                                                      with config: Config.Address.PostalCode,
+                                                      then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLValidationResVoid {
+        let error = DNSError.Validation.notImplemented(.crashWorkers(self))
+        return .failure(error)
+    }
+    override open func intDoValidateAddressState(for state: String?,
+                                                 with config: Config.Address.State,
+                                                 then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLValidationResVoid {
+        let error = DNSError.Validation.notImplemented(.crashWorkers(self))
+        return .failure(error)
+    }
+    override open func intDoValidateAddressStreet(for street: String?,
+                                                  with config: Config.Address.Street,
+                                                  then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLValidationResVoid {
+        let error = DNSError.Validation.notImplemented(.crashWorkers(self))
+        return .failure(error)
+    }
+    override open func intDoValidateAddressStreet2(for street2: String?,
+                                                   with config: Config.Address.Street2,
+                                                   then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLValidationResVoid {
+        let error = DNSError.Validation.notImplemented(.crashWorkers(self))
+        return .failure(error)
+    }
     override open func intDoValidateBirthdate(for birthdate: Date?,
                                               with config: WKRPTCLValidation.Data.Config.Birthdate,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLValidationResVoid {
