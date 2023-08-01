@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "f9d1f145e967ae9f55dcb0ae99a2da6d573190da",
-        "version" : "1.10.66"
+        "revision" : "3502831348f7c5c8c91f607baabce2230b25d45f",
+        "version" : "1.10.67"
       }
     },
     {
@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "2128a420d01340530641b4721611f0638e47a7ca",
-        "version" : "1.10.96"
+        "revision" : "92632ab1e18ace5bcdc5c5d2df5719782b666c97",
+        "version" : "1.10.97"
       }
     },
     {

@@ -29,6 +29,7 @@ open class WKRCrashCart: WKRBlankCart {
         fatalError(error.errorString)
     }
     override open func intDoCheckout(for basket: DAOBasket,
+                                     using card: DAOCard,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLCartBlkOrder?,
                                      then resultBlock: DNSPTCLResultBlock?) {
