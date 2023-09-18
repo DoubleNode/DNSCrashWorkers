@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
-        "version" : "5.7.1"
+        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
+        "version" : "5.8.0"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "f8b19c044cd6111ec0547d567b2f33dfaf58a4dc",
-        "version" : "1.11.0"
+        "revision" : "5edaab71cf38e8e235ac6ade1eea390ba74c96c5",
+        "version" : "1.11.1"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "0cbe58f6afaafb1486ba6ae60cc0bb8256ac7b01",
-        "version" : "1.11.0"
+        "revision" : "07c5b99590df46f947f3704e9e11a3fed0037704",
+        "version" : "1.11.2"
       }
     },
     {
