@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/AlamofireImage.git",
       "state" : {
-        "revision" : "98cbb00ce0ec5fc8e52a5b50a6bfc08d3e5aee10",
-        "version" : "4.2.0"
+        "revision" : "1eaf3b6c6882bed10f6e7b119665599dd2329aa1",
+        "version" : "4.3.0"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "7acc96bec5acfbb31d6ee0e8bdb8e4c14433f4ed",
-        "version" : "1.11.8"
+        "revision" : "8e4ed730e7b8dae990b82bd3f47a7c469a2ede59",
+        "version" : "1.11.9"
       }
     },
     {
@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "41858ba206c770af01a3aa57749fc9f1b35526d2",
-        "version" : "1.11.0"
+        "revision" : "ea6e9da344ab1579108b08652e68e9a8542ab041",
+        "version" : "1.11.1"
       }
     },
     {
@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "318b0e817b32ae529bc8352228a0bcd3f824d731",
-        "version" : "1.11.1"
+        "revision" : "181cc8772884e9bed9d2d558bbfab70bee5b9d3a",
+        "version" : "1.11.2"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Nirma/SFSymbol",
       "state" : {
-        "revision" : "c18f260b9b69d1c24e40ad367e8a589563fb8f3d",
-        "version" : "2.2.0"
+        "revision" : "1b127194b976a58ea460a2cbe10f00fa994b1ece",
+        "version" : "2.3.0"
       }
     },
     {
