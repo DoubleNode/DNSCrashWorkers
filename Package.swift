@@ -26,11 +26,11 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.11.11"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.11.12"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.3"),
-        .package(url: "https://github.com/DoubleNode/DNSDataObjects.git", from: "1.11.2"),
+        .package(url: "https://github.com/DoubleNode/DNSDataObjects.git", from: "1.11.3"),
         .package(url: "https://github.com/DoubleNode/DNSError.git", from: "1.11.0"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.3"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.4"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
