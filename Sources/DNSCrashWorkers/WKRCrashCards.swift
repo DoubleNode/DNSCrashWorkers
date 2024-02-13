@@ -65,6 +65,7 @@ open class WKRCrashCards: WKRBlankCards {
         fatalError(error.errorString)
     }
     override open func intDoUpdate(_ card: DAOCard,
+                                   for user: DAOUser,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLCardsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
