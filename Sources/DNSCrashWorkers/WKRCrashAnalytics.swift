@@ -12,10 +12,10 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashAnalytics: WKRBlankAnalytics {
+open class WKRCrashAnalytics: WKRBlankAnalytics, @unchecked Sendable {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLAnalytics) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: any WKRPTCLAnalytics) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
 

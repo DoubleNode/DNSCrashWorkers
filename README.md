@@ -20,9 +20,9 @@ DNSCrashWorkers is a collection of Crash worker classes used for the DNSFramewor
 
 ## Requirements
 
--   iOS 16.0+ / macOS 13.3+ / tvOS 16.4+ / watchOS 9.4+
--   Xcode 14.3.1+
--   Swift 5.8+
+-   iOS 17+ / macOS 15+ / tvOS 18+ / watchOS 11+
+-   Xcode 16.4+
+-   Swift 6.0+
 
 ## Installation
 
@@ -34,17 +34,17 @@ Once you have your Swift package set up, adding Alamofire as a dependency is as 
 
 ```swift
 dependencies: [
-.package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.11.17")
+.package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "2.0.0")
 ]
 ```
 
 ## Dependencies
 
--   DNSBlankWorkers v1.11.19+
--   DNSCore v1.11.6+
--   DNSDataObjects v1.11.8+
--   DNSError v1.11.1+
--   DNSProtocols v1.11.10+
+-   DNSBlankWorkers v2.0.0+
+-   DNSCore v2.0.2+
+-   DNSDataObjects v2.0.0+
+-   DNSError v2.0.1+
+-   DNSProtocols v2.0.3+
 
 ## Credits
 

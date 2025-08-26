@@ -14,10 +14,10 @@ import DNSProtocols
 import PDFKit
 import UIKit
 
-open class WKRCrashMedia: WKRBlankMedia {
+open class WKRCrashMedia: WKRBlankMedia, @unchecked Sendable {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLMedia) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: any WKRPTCLMedia) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
     

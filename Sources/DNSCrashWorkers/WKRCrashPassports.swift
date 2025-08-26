@@ -14,10 +14,10 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashPassports: WKRBlankPassports {
+open class WKRCrashPassports: WKRBlankPassports, @unchecked Sendable {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLPassports) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: any WKRPTCLPassports) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
     

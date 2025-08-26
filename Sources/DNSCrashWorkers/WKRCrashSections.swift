@@ -13,10 +13,10 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashSections: WKRBlankSections {
+open class WKRCrashSections: WKRBlankSections, @unchecked Sendable {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLSections) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: any WKRPTCLSections) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
 

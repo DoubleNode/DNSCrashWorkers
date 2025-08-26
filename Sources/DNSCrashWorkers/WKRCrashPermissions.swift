@@ -12,10 +12,10 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashPermissions: WKRBlankPermissions {
+open class WKRCrashPermissions: WKRBlankPermissions, @unchecked Sendable {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLPermissions) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: any WKRPTCLPermissions) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
     

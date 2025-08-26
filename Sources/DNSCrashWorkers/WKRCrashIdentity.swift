@@ -13,10 +13,10 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashIdentity: WKRBlankIdentity {
+open class WKRCrashIdentity: WKRBlankIdentity, @unchecked Sendable {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLIdentity) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: any WKRPTCLIdentity) { fatalError("Unable to chain CrashWorker(s)") }
 
     public required init() { super.init() }
     
