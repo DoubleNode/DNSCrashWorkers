@@ -1,5 +1,5 @@
 //
-//  WKRCrashPasswordStrengthWorkerTests.swift
+//  WKRCrashAppReviewWorkerTests.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkersTests
 //
 //  Created by Darren Ehlers.
@@ -13,12 +13,12 @@ import DNSError
 import DNSProtocols
 @testable import DNSCrashWorkers
 
-final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
-    var worker: WKRCrashPassStrength!
+final class WKRCrashAppReviewWorkerTests: XCTestCase {
+    var worker: WKRCrashAppReview!
     
     override func setUp() {
         super.setUp()
-        worker = WKRCrashPassStrength()
+        worker = WKRCrashAppReview()
     }
     
     override func tearDown() {
@@ -28,8 +28,8 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
     
     func testInitialization() {
         XCTAssertNotNil(worker)
-        XCTAssertTrue(worker is WKRCrashPassStrength)
-        XCTAssertTrue(worker is WKRBlankPassStrength)
+        XCTAssertTrue(worker is WKRCrashAppReview)
+        XCTAssertTrue(worker is WKRBlankAppReview)
     }
     
     func testChainInitializationUnavailable() {
@@ -37,9 +37,9 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
         // This would fail at compile time, but we can verify the error message exists
     }
     
-    func testCheckPassStrengthReturnsNotImplementedError() {
-        // Test that intDoCheckPassStrength returns appropriate DNSError.PassStrength.notImplemented
-        let result = worker.intDoCheckPassStrength(for: "testPassword123", then: nil)
+    func testReviewReturnsNotImplementedError() {
+        // Test that intDoReview returns appropriate DNSError.AppReview.notImplemented
+        let result = worker.intDoReview(then: nil)
         
         switch result {
         case .failure(let error):
@@ -52,30 +52,15 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
         }
     }
     
-    func testCheckPassStrengthWithEmptyPassword() {
-        // Test that intDoCheckPassStrength properly handles empty password
-        let result = worker.intDoCheckPassStrength(for: "", then: nil)
-        
-        switch result {
-        case .failure(let error):
-            XCTAssertTrue(error is (any DNSError))
-            let errorDescription = String(describing: error)
-            XCTAssertTrue(errorDescription.contains("notImplemented"))
-            XCTAssertTrue(errorDescription.contains("DNSCrashWorkers"))
-        case .success:
-            XCTFail("Expected failure, got success")
-        }
-    }
-    
-    func testCheckPassStrengthWithResultBlock() {
-        // Test that intDoCheckPassStrength properly handles result block parameter
+    func testReviewWithResultBlock() {
+        // Test that intDoReview properly handles result block parameter
         var resultBlockCalled = false
         var receivedResult: DNSPTCLWorker.Call.Result?
         
-        let result = worker.intDoCheckPassStrength(for: "password123") { result in
+        let result = worker.intDoReview { result in
             resultBlockCalled = true
             receivedResult = result
-            return nil
+            return receivedResult
         }
         
         // The result block should not be called in crash workers since they return immediately
@@ -96,12 +81,12 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
         // Crash workers are designed to fail when used
         let className = String(describing: type(of: worker))
         XCTAssertTrue(className.contains("Crash"))
-        XCTAssertTrue(className.contains("PassStrength"))
+        XCTAssertTrue(className.contains("AppReview"))
     }
     
     func testInheritsFromBlankWorker() {
         // Verify inheritance chain
-        XCTAssertTrue(worker is WKRBlankPassStrength)
+        XCTAssertTrue(worker is WKRBlankAppReview)
         XCTAssertTrue(worker is WKRBase)
     }
     
@@ -113,8 +98,8 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
     
     func testErrorConsistency() {
         // Test that multiple calls return consistent error types
-        let result1 = worker.intDoCheckPassStrength(for: "password1", then: nil)
-        let result2 = worker.intDoCheckPassStrength(for: "password2", then: nil)
+        let result1 = worker.intDoReview(then: nil)
+        let result2 = worker.intDoReview(then: nil)
         
         switch (result1, result2) {
         case (.failure(let error1), .failure(let error2)):
@@ -137,15 +122,15 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
     
     func testMemoryManagement() {
         // Test that worker can be properly deallocated
-        weak var weakWorker: WKRCrashPassStrength?
+        weak var weakWorker: WKRCrashAppReview?
         
         autoreleasepool {
-            let tempWorker = WKRCrashPassStrength()
+            let tempWorker = WKRCrashAppReview()
             weakWorker = tempWorker
             XCTAssertNotNil(weakWorker)
             
             // Test that it works correctly before deallocation
-            let result = tempWorker.intDoCheckPassStrength(for: "testPassword", then: nil)
+            let result = tempWorker.intDoReview(then: nil)
             switch result {
             case .failure:
                 break // Expected
@@ -159,13 +144,12 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
     
     func testConcurrentAccess() {
         // Test that the worker can handle concurrent access safely
-        let expectation = XCTestExpectation(description: "Concurrent password strength checks")
+        let expectation = XCTestExpectation(description: "Concurrent review calls")
         expectation.expectedFulfillmentCount = 10
         
-        for i in 0..<10 {
-            DispatchQueue.global(qos: .utility).async { [weak self] in
-                guard let self = self else { return }
-                let result = self.worker.intDoCheckPassStrength(for: "password\(i)", then: nil)
+        for _ in 0..<10 {
+            DispatchQueue.global(qos: .utility).async {
+                let result = self.worker.intDoReview(then: nil)
                 
                 switch result {
                 case .failure(let error):
@@ -180,37 +164,17 @@ final class WKRCrashPasswordStrengthWorkerTests: XCTestCase {
         
         wait(for: [expectation], timeout: 5.0)
     }
-    
-    func testDifferentPasswordInputs() {
-        // Test that the worker fails consistently with different password inputs
-        let passwords = ["123", "password", "StrongP@ssw0rd!", "12345678901234567890"]
-        
-        for password in passwords {
-            let result = worker.intDoCheckPassStrength(for: password, then: nil)
-            
-            switch result {
-            case .failure(let error):
-                XCTAssertTrue(error is (any DNSError))
-                let errorDescription = String(describing: error)
-                XCTAssertTrue(errorDescription.contains("notImplemented"))
-            case .success:
-                XCTFail("Expected failure for password: \(password)")
-            }
-        }
-    }
 
     nonisolated(unsafe) static let allTests = [
         ("testInitialization", testInitialization),
         ("testChainInitializationUnavailable", testChainInitializationUnavailable),
-        ("testCheckPassStrengthReturnsNotImplementedError", testCheckPassStrengthReturnsNotImplementedError),
-        ("testCheckPassStrengthWithEmptyPassword", testCheckPassStrengthWithEmptyPassword),
-        ("testCheckPassStrengthWithResultBlock", testCheckPassStrengthWithResultBlock),
+        ("testReviewReturnsNotImplementedError", testReviewReturnsNotImplementedError),
+        ("testReviewWithResultBlock", testReviewWithResultBlock),
         ("testWorkerTypeBehavior", testWorkerTypeBehavior),
         ("testInheritsFromBlankWorker", testInheritsFromBlankWorker),
         ("testWorkerIsUncheckedSendable", testWorkerIsUncheckedSendable),
         ("testErrorConsistency", testErrorConsistency),
         ("testMemoryManagement", testMemoryManagement),
         ("testConcurrentAccess", testConcurrentAccess),
-        ("testDifferentPasswordInputs", testDifferentPasswordInputs),
     ]
 }

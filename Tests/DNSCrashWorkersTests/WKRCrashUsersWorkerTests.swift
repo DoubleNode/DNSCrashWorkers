@@ -1,5 +1,5 @@
 //
-//  WKRCrashBeaconsWorkerTests.swift
+//  WKRCrashUsersWorkerTests.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkersTests
 //
 //  Created by Darren Ehlers.
@@ -9,16 +9,17 @@
 import XCTest
 import DNSBlankWorkers
 import DNSCore
+import DNSDataObjects
 import DNSError
 import DNSProtocols
 @testable import DNSCrashWorkers
 
-final class WKRCrashBeaconsWorkerTests: XCTestCase {
-    var worker: WKRCrashBeacons!
+final class WKRCrashUsersWorkerTests: XCTestCase {
+    var worker: WKRCrashUsers!
     
     override func setUp() {
         super.setUp()
-        worker = WKRCrashBeacons()
+        worker = WKRCrashUsers()
     }
     
     override func tearDown() {
@@ -28,23 +29,37 @@ final class WKRCrashBeaconsWorkerTests: XCTestCase {
     
     func testInitialization() {
         XCTAssertNotNil(worker)
-        XCTAssertTrue(worker is WKRCrashBeacons)
-        XCTAssertTrue(worker is WKRBlankBeacons)
+        XCTAssertTrue(worker is WKRCrashUsers)
+        XCTAssertTrue(worker is WKRBlankUsers)
+    }
+    
+    func testChainInitializationUnavailable() {
+        // Test that chaining initialization is properly marked as unavailable
+        // This would fail at compile time
     }
     
     func testWorkerTypeBehavior() {
+        // Test that this is indeed a crash worker
         let className = String(describing: type(of: worker))
         XCTAssertTrue(className.contains("Crash"))
     }
     
+    func testInheritsFromBlankWorker() {
+        // Verify inheritance chain
+        XCTAssertTrue(worker is WKRBlankUsers)
+    }
+    
     func testWorkerIsUncheckedSendable() {
+        // Test that worker conforms to @unchecked Sendable
         let sendableWorker: any Sendable = worker
         XCTAssertNotNil(sendableWorker)
     }
 
     nonisolated(unsafe) static let allTests = [
         ("testInitialization", testInitialization),
+        ("testChainInitializationUnavailable", testChainInitializationUnavailable),
         ("testWorkerTypeBehavior", testWorkerTypeBehavior),
+        ("testInheritsFromBlankWorker", testInheritsFromBlankWorker),
         ("testWorkerIsUncheckedSendable", testWorkerIsUncheckedSendable),
     ]
 }
