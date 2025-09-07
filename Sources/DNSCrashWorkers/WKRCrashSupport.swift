@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2025 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -16,9 +16,23 @@ import UIKit
 open class WKRCrashSupport: WKRBlankSupport {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLSupport) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLSupport) {
+        super.init()
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSupport",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: {
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashSupport"))
+            }
+        )
+    }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashSupport") {
+            DNSCore.reportLog("🚨 WKRCrashSupport instantiated in production build - this should not happen!")
+        } }
     
     // MARK: - Internal Work Methods
     override open func intDoGetUpdatedCount(with progress: DNSPTCLProgressBlock?,

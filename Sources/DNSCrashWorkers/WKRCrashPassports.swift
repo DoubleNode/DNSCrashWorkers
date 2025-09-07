@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2025 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -17,9 +17,23 @@ import UIKit
 open class WKRCrashPassports: WKRBlankPassports {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLPassports) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLPassports) {
+        super.init()
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPassports",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: {
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashPassports"))
+            }
+        )
+    }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashPassports") {
+            DNSCore.reportLog("🚨 WKRCrashPassports instantiated in production build - this should not happen!")
+        } }
     
     // MARK: - Internal Work Methods
     override open func intDoBuildPassport(ofType passportType: String,

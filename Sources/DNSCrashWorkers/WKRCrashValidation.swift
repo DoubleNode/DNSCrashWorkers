@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSCrashWorkers
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2025 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import DNSBlankWorkers
@@ -15,9 +15,23 @@ import Foundation
 open class WKRCrashValidation: WKRBlankValidation {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLValidation) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLValidation) {
+        super.init()
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashValidation",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: {
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashValidation"))
+            }
+        )
+    }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashValidation") {
+            DNSCore.reportLog("🚨 WKRCrashValidation instantiated in production build - this should not happen!")
+        } }
 
     // MARK: - Internal Work Methods
     override open func intDoValidateAddress(for address: DNSPostalAddress?,
