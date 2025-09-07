@@ -16,9 +16,21 @@ import Foundation
 open class WKRCrashBeacons: WKRBlankBeacons {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLBeacons) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLBeacons) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashBeacons",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashBeacons"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashBeacons") {
+            DNSCore.reportLog("🚨 WKRCrashBeacons instantiated in production build - this should not happen!")
+        } }
     
     // MARK: - Internal Work Methods
     override open func intDoLoadBeacons(in place: DAOPlace,
@@ -26,7 +38,15 @@ open class WKRCrashBeacons: WKRBlankBeacons {
                                         and block: WKRPTCLBeaconsBlkABeacon?,
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Beacons.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashBeacons.intDoLoadBeacons",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadBeacons(in place: DAOPlace,
                                         for activity: DAOActivity,
@@ -34,7 +54,15 @@ open class WKRCrashBeacons: WKRBlankBeacons {
                                         and block: WKRPTCLBeaconsBlkABeacon?,
                                         then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Beacons.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashBeacons.intDoLoadBeacons",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoRangeBeacons(named uuids: [UUID],
                                          for processKey: String,
@@ -42,7 +70,15 @@ open class WKRCrashBeacons: WKRBlankBeacons {
                                          and block: WKRPTCLBeaconsBlkABeacon?,
                                          then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Beacons.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashBeacons.intDoRangeBeacons",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoStopRangeBeacons(for processKey: String,
                                              then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLBeaconsResVoid {

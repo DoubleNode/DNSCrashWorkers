@@ -8,6 +8,7 @@
 
 import Combine
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -16,9 +17,21 @@ import Foundation
 open class WKRCrashAdmin: WKRBlankAdmin {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLAdmin) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLAdmin) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashAdmin",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashAdmin"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashAdmin") {
+            DNSCore.reportLog("🚨 WKRCrashAdmin instantiated in production build - this should not happen!")
+        } }
 
     // MARK: - Internal Work Methods
     override open func intDoChange(_ user: DAOUser,
@@ -65,13 +78,29 @@ open class WKRCrashAdmin: WKRBlankAdmin {
                                                 and block: WKRPTCLAdminBlkADeletedAccount?,
                                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashAdmin.intDoLoadDeletedAccounts",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadDeletedStatus(with progress: DNSPTCLProgressBlock?,
                                               and block: WKRPTCLAdminBlkDeletedStatus?,
                                               then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Account.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashAdmin.intDoLoadDeletedStatus",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadTabs(with progress: DNSPTCLProgressBlock?,
                                      then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLAdminPubAString {

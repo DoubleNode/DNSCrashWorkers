@@ -17,9 +17,21 @@ import UIKit
 open class WKRCrashMedia: WKRBlankMedia {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLMedia) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLMedia) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashMedia"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashMedia") {
+            DNSCore.reportLog("🚨 WKRCrashMedia instantiated in production build - this should not happen!")
+        } }
     
     // MARK: - Internal Work Methods
     override open func intDoReact(with reaction: DNSReactionType,
@@ -28,14 +40,30 @@ open class WKRCrashMedia: WKRBlankMedia {
                                   and block: WKRPTCLMediaBlkMeta?,
                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia.intDoReact",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoRemove(_ media: DAOMedia,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLMediaBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia.intDoRemove",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUnreact(with reaction: DNSReactionType,
                                     to media: DAOMedia,
@@ -43,7 +71,15 @@ open class WKRCrashMedia: WKRBlankMedia {
                                     and block: WKRPTCLMediaBlkMeta?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia.intDoUnreact",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUpload(from fileUrl: URL,
                                    to path: String,
@@ -51,7 +87,15 @@ open class WKRCrashMedia: WKRBlankMedia {
                                    and block: WKRPTCLMediaBlkMedia?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia.intDoUpload",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUpload(_ image: UIImage,
                                    to path: String,
@@ -59,7 +103,15 @@ open class WKRCrashMedia: WKRBlankMedia {
                                    and block: WKRPTCLMediaBlkMedia?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia.intDoUpload",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUpload(_ pdfDocument: PDFDocument,
                                    to path: String,
@@ -67,7 +119,15 @@ open class WKRCrashMedia: WKRBlankMedia {
                                    and block: WKRPTCLMediaBlkMedia?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia.intDoUpload",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUpload(_ text: String,
                                    to path: String,
@@ -75,6 +135,14 @@ open class WKRCrashMedia: WKRBlankMedia {
                                    and block: WKRPTCLMediaBlkMedia?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Media.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashMedia.intDoUpload",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
 }

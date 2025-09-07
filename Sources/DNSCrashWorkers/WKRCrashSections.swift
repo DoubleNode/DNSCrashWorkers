@@ -8,6 +8,7 @@
 
 import Combine
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -16,9 +17,21 @@ import Foundation
 open class WKRCrashSections: WKRBlankSections {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLSections) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLSections) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashSections"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashSections") {
+            DNSCore.reportLog("🚨 WKRCrashSections instantiated in production build - this should not happen!")
+        } }
 
     // MARK: - Internal Work Methods
     override open func intDoLoadChildren(for section: DAOSection,
@@ -26,27 +39,59 @@ open class WKRCrashSections: WKRBlankSections {
                                 and block: WKRPTCLSectionsBlkASection?,
                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections.intDoLoadChildren",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadParent(for section: DAOSection,
                               with progress: DNSPTCLProgressBlock?,
                               and block: WKRPTCLSectionsBlkSection?,
                               then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections.intDoLoadParent",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadSection(for id: String,
                                with progress: DNSPTCLProgressBlock?,
                                and block: WKRPTCLSectionsBlkSection?,
                                then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections.intDoLoadSection",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadSections(with progress: DNSPTCLProgressBlock?,
                                 and block: WKRPTCLSectionsBlkASection?,
                                 then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections.intDoLoadSections",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoReact(with reaction: DNSReactionType,
                                   to section: DAOSection,
@@ -54,7 +99,15 @@ open class WKRCrashSections: WKRBlankSections {
                                   and block: WKRPTCLSectionsBlkMeta?,
                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections.intDoReact",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUnreact(with reaction: DNSReactionType,
                                     to section: DAOSection,
@@ -62,13 +115,29 @@ open class WKRCrashSections: WKRBlankSections {
                                     and block: WKRPTCLSectionsBlkMeta?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections.intDoUnreact",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUpdate(_ section: DAOSection,
                           with progress: DNSPTCLProgressBlock?,
                           and block: WKRPTCLSectionsBlkVoid?,
                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Sections.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashSections.intDoUpdate",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
 }

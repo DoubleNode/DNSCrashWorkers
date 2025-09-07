@@ -15,30 +15,66 @@ import Foundation
 open class WKRCrashGeo: WKRBlankGeo {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLGeo) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLGeo) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashGeo",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashGeo"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashGeo") {
+            DNSCore.reportLog("🚨 WKRCrashGeo instantiated in production build - this should not happen!")
+        } }
     
     // MARK: - Internal Work Methods
     override open func intDoLocate(with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLGeoBlkStringLocation?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Geo.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashGeo.intDoLocate",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLocate(_ address: DNSPostalAddress,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLGeoBlkStringLocation?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Geo.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashGeo.intDoLocate",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoTrackLocation(for processKey: String,
                                           with progress: DNSPTCLProgressBlock?,
                                           and block: WKRPTCLGeoBlkStringLocation?,
                                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Geo.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashGeo.intDoTrackLocation",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoStopTrackLocation(for processKey: String,
                                               then resultBlock: DNSPTCLResultBlock?) -> WKRPTCLGeoResVoid {

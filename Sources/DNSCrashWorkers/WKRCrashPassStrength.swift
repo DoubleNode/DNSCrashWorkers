@@ -15,9 +15,21 @@ import Foundation
 open class WKRCrashPassStrength: WKRBlankPassStrength {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLPassStrength) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLPassStrength) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPassStrength",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashPassStrength"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashPassStrength") {
+            DNSCore.reportLog("🚨 WKRCrashPassStrength instantiated in production build - this should not happen!")
+        } }
     
     // MARK: - Internal Work Methods
     override open func intDoCheckPassStrength(for password: String,

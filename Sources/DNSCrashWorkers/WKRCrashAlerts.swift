@@ -8,6 +8,7 @@
 
 import Combine
 import DNSBlankWorkers
+import DNSCore
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -16,9 +17,21 @@ import Foundation
 open class WKRCrashAlerts: WKRBlankAlerts {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLAlerts) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLAlerts) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashAlerts",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashAlerts"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashAlerts") {
+            DNSCore.reportLog("🚨 WKRCrashAlerts instantiated in production build - this should not happen!")
+        } }
 
     // MARK: - Internal Work Methods
     override open func intDoLoadAlerts(for place: DAOPlace,

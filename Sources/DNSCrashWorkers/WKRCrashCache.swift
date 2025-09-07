@@ -16,9 +16,21 @@ import UIKit
 open class WKRCrashCache: WKRBlankCache {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLCache) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLCache) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashCache",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashCache"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashCache") {
+            DNSCore.reportLog("🚨 WKRCrashCache instantiated in production build - this should not happen!")
+        } }
     
     // MARK: - Internal Work Methods
     override open func intDoDeleteObject(for id: String,

@@ -16,9 +16,21 @@ import Foundation
 open class WKRCrashPromotions: WKRBlankPromotions {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
-                         nextWorker: WKRPTCLPromotions) { fatalError("Unable to chain CrashWorker(s)") }
+                         nextWorker: WKRPTCLPromotions) { DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions",
+            operation: { fatalError("Unable to chain CrashWorker(s)") },
+            fallbackBlock: { 
+                DNSCore.reportError(DNSCrashWorkerError.crashWorkerInProduction(workerName: "WKRCrashPromotions"))
+            }
+        )
+        fatalError("Should never reach here") }
 
-    public required init() { super.init() }
+    public required init() { super.init()
+        
+        // Log instantiation for tracking
+        if !DNSCrashWorkerProtection.isCrashWorkerAllowed(workerName: "WKRCrashPromotions") {
+            DNSCore.reportLog("🚨 WKRCrashPromotions instantiated in production build - this should not happen!")
+        } }
 
     // MARK: - Internal Work Methods
     override open func intDoActivate(_ id: String,
@@ -26,7 +38,15 @@ open class WKRCrashPromotions: WKRBlankPromotions {
                                      and block: WKRPTCLPromotionsBlkVoid?,
                                      then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoActivate",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoAnalytics(for object: DAOBaseObject,
                                       using data: DNSDataDictionary,
@@ -34,42 +54,90 @@ open class WKRCrashPromotions: WKRBlankPromotions {
                                       and block: WKRPTCLWorkerBaseBlkAAnalyticsData?,
                                       then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoAnalytics",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoDelete(_ promotion: DAOPromotion,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPromotionsBlkVoid?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoDelete",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoDispense(_ id: String,
                                      with progress: DNSPTCLProgressBlock?,
                                      and block: WKRPTCLPromotionsBlkVoid?,
                                      then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoDispense",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadPromotion(for id: String,
                                           with progress: DNSPTCLProgressBlock?,
                                           and block: WKRPTCLPromotionsBlkPromotion?,
                                           then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoLoadPromotion",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadPromotions(for account: DAOAccount?,
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLPromotionsBlkAPromotion?,
                                            then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoLoadPromotions",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoLoadPromotions(for path: String,
                                            with progress: DNSPTCLProgressBlock?,
                                            and block: WKRPTCLPromotionsBlkAPromotion?,
                                            then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoLoadPromotions",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoReact(with reaction: DNSReactionType,
                                   to promotion: DAOPromotion,
@@ -77,7 +145,15 @@ open class WKRCrashPromotions: WKRBlankPromotions {
                                   and block: WKRPTCLPromotionsBlkMeta?,
                                   then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoReact",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUnreact(with reaction: DNSReactionType,
                                     to promotion: DAOPromotion,
@@ -85,13 +161,29 @@ open class WKRCrashPromotions: WKRBlankPromotions {
                                     and block: WKRPTCLPromotionsBlkMeta?,
                                     then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoUnreact",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
     override open func intDoUpdate(_ promotion: DAOPromotion,
                                    with progress: DNSPTCLProgressBlock?,
                                    and block: WKRPTCLPromotionsBlkPromotion?,
                                    then resultBlock: DNSPTCLResultBlock?) {
         let error = DNSError.Promotions.notImplemented(.crashWorkers(self))
-        fatalError(error.errorString)
+        
+        DNSCrashWorkerProtection.safeCrashExecution(
+            workerName: "WKRCrashPromotions.intDoUpdate",
+            operation: { fatalError(error.errorString) },
+            fallbackBlock: {
+                _ = resultBlock?(.failure(error))
+                _ = block?(.failure(error))
+            }
+        )
     }
 }
