@@ -14,7 +14,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashCart: WKRBlankCart {
+open class WKRCrashCart: WKRBaseCart {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLCart) {

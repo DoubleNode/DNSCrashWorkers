@@ -49,7 +49,7 @@ final class WKRCrashGeolocationWorkerTests: XCTestCase {
 
     func test_inheritsFromBlankWorker() {
         // Given & When
-        let isBlankWorker = sut is WKRBlankGeo
+        let isBlankWorker = sut is WKRBaseGeo
 
         // Then
         XCTAssertTrue(isBlankWorker, "Crash worker should inherit from blank worker")

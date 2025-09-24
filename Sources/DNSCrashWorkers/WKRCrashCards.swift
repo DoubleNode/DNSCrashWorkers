@@ -13,7 +13,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashCards: WKRBlankCards {
+open class WKRCrashCards: WKRBaseCards {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLCards) {

@@ -49,7 +49,7 @@ final class WKRCrashMediaWorkerTests: XCTestCase {
 
     func test_inheritsFromBlankWorker() {
         // Given & When
-        let isBlankWorker = sut is WKRBlankMedia
+        let isBlankWorker = sut is WKRBaseMedia
 
         // Then
         XCTAssertTrue(isBlankWorker, "Crash worker should inherit from blank worker")

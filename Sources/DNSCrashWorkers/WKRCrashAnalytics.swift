@@ -12,7 +12,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-open class WKRCrashAnalytics: WKRBlankAnalytics {
+open class WKRCrashAnalytics: WKRBaseAnalytics {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLAnalytics) {

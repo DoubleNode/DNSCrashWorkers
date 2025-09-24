@@ -27,13 +27,13 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", .upToNextMajor(from: "1.12.0")),
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", .upToNextMajor(from: "1.12.3")),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", .upToNextMajor(from: "1.12.1")),
         .package(url: "https://github.com/DoubleNode/DNSDataObjects.git", .upToNextMajor(from: "1.12.0")),
         .package(url: "https://github.com/DoubleNode/DNSDataTypes.git", .upToNextMajor(from: "1.12.0")),
         .package(url: "https://github.com/DoubleNode/DNSDataUIObjects.git", .upToNextMajor(from: "1.12.0")),
         .package(url: "https://github.com/DoubleNode/DNSError.git", .upToNextMajor(from: "1.12.0")),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", .upToNextMajor(from: "1.12.1")),
 //        .package(path: "../DNSBlankWorkers"),
 //        .package(path: "../DNSCore"),
 //        .package(path: "../DNSDataObjects"),

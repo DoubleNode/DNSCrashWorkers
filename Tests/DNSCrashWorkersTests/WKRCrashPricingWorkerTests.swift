@@ -49,7 +49,7 @@ final class WKRCrashPricingWorkerTests: XCTestCase {
 
     func test_inheritsFromBlankWorker() {
         // Given & When
-        let isBlankWorker = sut is WKRBlankPricing
+        let isBlankWorker = sut is WKRBasePricing
 
         // Then
         XCTAssertTrue(isBlankWorker, "Crash worker should inherit from blank worker")

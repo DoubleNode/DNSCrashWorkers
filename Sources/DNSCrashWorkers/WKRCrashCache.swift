@@ -13,7 +13,7 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashCache: WKRBlankCache {
+open class WKRCrashCache: WKRBaseCache {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLCache) {

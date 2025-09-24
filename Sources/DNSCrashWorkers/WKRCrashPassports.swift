@@ -14,7 +14,7 @@ import DNSError
 import DNSProtocols
 import UIKit
 
-open class WKRCrashPassports: WKRBlankPassports {
+open class WKRCrashPassports: WKRBasePassports {
     @available(*, unavailable, message: "Unable to chain CrashWorker(s)")
     public required init(call callNextWhen: DNSPTCLWorker.Call.NextWhen,
                          nextWorker: WKRPTCLPassports) {
